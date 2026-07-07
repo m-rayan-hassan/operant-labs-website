@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const insights = [
@@ -9,20 +10,23 @@ const insights = [
     category: "Engineering",
     time: "5 min read",
     title: "Scaling Microservices in 2024",
-    desc: "Best practices for maintaining robust distributed systems."
+    desc: "Best practices for maintaining robust distributed systems.",
+    image: "/scaling microservices.webp",
   },
   {
     category: "AI",
     time: "8 min read",
     title: "Implementing Enterprise LLMs",
-    desc: "A practical guide to deploying safe AI models in corporate environments."
+    desc: "A practical guide to deploying safe AI models in corporate environments.",
+    image: "/implementing enterprises llm.png",
   },
   {
     category: "Cloud",
     time: "4 min read",
     title: "AWS vs Azure Security",
-    desc: "Comparing native security features across major cloud providers."
-  }
+    desc: "Comparing native security features across major cloud providers.",
+    image: "/AWS-vs-Azure.jpg",
+  },
 ];
 
 export default function Insights() {
@@ -61,8 +65,19 @@ export default function Insights() {
               transition={{ duration: 0.8, delay: index * 0.1 + 0.2 }}
               className="group cursor-pointer flex flex-col h-full"
             >
+              {/* Thumbnail */}
               <div className="aspect-video bg-background rounded-2xl mb-5 overflow-hidden border border-border-subtle group-hover:border-border-strong transition-all duration-500 relative">
+                <Image
+                  src={insight.image}
+                  alt={insight.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
               </div>
+
               <div className="flex-grow flex flex-col">
                 <span className="text-[10px] text-electric-cyan font-medium uppercase tracking-widest mb-2 block">
                   {insight.category} • {insight.time}

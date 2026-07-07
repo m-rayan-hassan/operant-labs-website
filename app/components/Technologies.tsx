@@ -1,21 +1,61 @@
 "use client";
 
-const technologies = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "Python",
-  "AWS",
-  "Azure",
-  "Docker",
-  "Kubernetes",
-  "PostgreSQL",
-  "MongoDB",
-  "TensorFlow",
+import {
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiTypescript,
+  SiPython,
+  SiGooglecloud,
+  SiCloudflare,
+  SiDocker,
+  SiKubernetes,
+  SiPostgresql,
+  SiMongodb,
+  SiTensorflow,
+} from "react-icons/si";
+import type { IconType } from "react-icons";
+
+type Tech = {
+  name: string;
+  Icon: IconType;
+  color: string;
+};
+
+const technologies: Tech[] = [
+  { name: "React",       Icon: SiReact,          color: "#61DAFB" },
+  { name: "Next.js",     Icon: SiNextdotjs,      color: "#FFFFFF" },
+  { name: "Node.js",     Icon: SiNodedotjs,      color: "#539E43" },
+  { name: "TypeScript",  Icon: SiTypescript,     color: "#3178C6" },
+  { name: "Python",      Icon: SiPython,         color: "#3776AB" },
+  { name: "Google Cloud", Icon: SiGooglecloud,    color: "#4285F4" },
+  { name: "Cloudflare",  Icon: SiCloudflare,     color: "#F6821F" },
+  { name: "Docker",      Icon: SiDocker,         color: "#2496ED" },
+  { name: "Kubernetes",  Icon: SiKubernetes,     color: "#326CE5" },
+  { name: "PostgreSQL",  Icon: SiPostgresql,     color: "#4169E1" },
+  { name: "MongoDB",     Icon: SiMongodb,        color: "#47A248" },
+  { name: "TensorFlow",  Icon: SiTensorflow,     color: "#FF6F00" },
 ];
 
+function TechPill({ tech }: { tech: Tech }) {
+  const { name, Icon, color } = tech;
+  return (
+    <span
+      className="mx-3 px-5 py-2.5 border border-border-subtle rounded-full text-[11px] text-foreground/50 uppercase tracking-widest cursor-default bg-card hover:text-foreground hover:border-border-strong transition-all duration-300 flex items-center gap-2.5 shrink-0 group/pill"
+    >
+      <Icon
+        size={14}
+        style={{ color }}
+        className="opacity-70 group-hover/pill:opacity-100 transition-opacity"
+      />
+      {name}
+    </span>
+  );
+}
+
 export default function Technologies() {
+  const tripled = [...technologies, ...technologies, ...technologies];
+
   return (
     <section className="py-12 border-t border-border-subtle relative z-10 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
@@ -26,18 +66,12 @@ export default function Technologies() {
 
       {/* Marquee Container */}
       <div className="relative flex overflow-x-hidden w-full group">
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 
         <div className="animate-marquee whitespace-nowrap flex items-center group-hover:[animation-play-state:paused]">
-          {/* Double the list for seamless scrolling */}
-          {[...technologies, ...technologies, ...technologies].map((tech, i) => (
-            <span
-              key={`${tech}-${i}`}
-              className="mx-4 px-6 py-2.5 border border-border-subtle rounded-full font-technical-data text-[11px] text-foreground/50 uppercase tracking-widest cursor-default bg-card hover:text-electric-cyan hover:border-border-strong transition-colors"
-            >
-              {tech}
-            </span>
+          {tripled.map((tech, i) => (
+            <TechPill key={`${tech.name}-${i}`} tech={tech} />
           ))}
         </div>
       </div>

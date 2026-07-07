@@ -1,4 +1,6 @@
-import { useEffect, useRef } from 'react';
+"use client";
+
+import React, { useEffect, useRef } from 'react';
 import {
   Clock,
   Mesh,
@@ -275,6 +277,7 @@ export default function FloatingLines({
   const currentInfluenceRef = useRef<number>(0);
   const targetParallaxRef = useRef<Vector2>(new Vector2(0, 0));
   const currentParallaxRef = useRef<Vector2>(new Vector2(0, 0));
+  const isVisibleRef = useRef(true);
 
   const getLineCount = (waveType: 'top' | 'middle' | 'bottom'): number => {
     if (typeof lineCount === 'number') return lineCount;
@@ -310,7 +313,8 @@ export default function FloatingLines({
     camera.position.z = 1;
 
     const renderer = new WebGLRenderer({ antialias: true, alpha: false });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, reducedMotion ? 1 : 1.5));
     renderer.domElement.style.width = '100%';
     renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
@@ -440,8 +444,24 @@ export default function FloatingLines({
     }
 
     let raf = 0;
+    const startLoop = () => {
+      if (raf || !active || !isVisibleRef.current) return;
+      raf = requestAnimationFrame(renderLoop);
+    };
+
+    const stopLoop = () => {
+      if (!raf) return;
+      cancelAnimationFrame(raf);
+      raf = 0;
+    };
+
     const renderLoop = () => {
       if (!active) return;
+
+      if (!isVisibleRef.current) {
+        raf = 0;
+        return;
+      }
 
       uniforms.iTime.value = clock.getElapsedTime();
 
@@ -461,12 +481,47 @@ export default function FloatingLines({
       renderer.render(scene, camera);
       raf = requestAnimationFrame(renderLoop);
     };
-    renderLoop();
+
+    const io =
+      typeof IntersectionObserver !== 'undefined'
+        ? new IntersectionObserver(
+            ([entry]) => {
+              isVisibleRef.current = entry?.isIntersecting ?? true;
+
+              if (isVisibleRef.current) {
+                startLoop();
+              } else {
+                stopLoop();
+              }
+            },
+            { threshold: 0.01 }
+          )
+        : null;
+
+    if (io) io.observe(container);
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isVisibleRef.current = false;
+        stopLoop();
+        return;
+      }
+
+      isVisibleRef.current = true;
+      startLoop();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    startLoop();
 
     return () => {
       active = false;
 
-      cancelAnimationFrame(raf);
+      stopLoop();
+
+      if (io) io.disconnect();
+
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
 
       if (ro) ro.disconnect();
 

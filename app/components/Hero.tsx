@@ -40,8 +40,8 @@ export default function Hero() {
             bottomWavePosition={{ x: 2, y: -0.7, rotate: -0.6 }}
             bendRadius={6}
             bendStrength={-1.5}
-            interactive
-            parallax={true}
+            interactive={false}
+            parallax={false}
             parallaxStrength={0.15}
             animationSpeed={0.6}
             mouseDamping={0.03}
@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-[34px] sm:text-5xl md:text-6xl lg:text-[76px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.1] tracking-tight text-center"
+          className="text-[34px] sm:text-5xl md:text-6xl lg:text-[76px] text-foreground w-full max-w-300 mb-6 leading-[1.1] tracking-tight text-center"
         >
           {/* inline-flex and whitespace-nowrap guarantees it stays on one line */}
           <span className="inline-flex items-center justify-center whitespace-nowrap">
@@ -150,10 +150,10 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
         >
-          <button className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer">
+          <button className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-widest uppercase w-full sm:w-auto text-center cursor-pointer">
             Book a Consultation
           </button>
-          <button className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group">
+          <button className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-widest uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group">
             Explore Our Services
             <ArrowRight
               size={16}

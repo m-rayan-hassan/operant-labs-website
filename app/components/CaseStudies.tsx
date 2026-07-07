@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const caseStudies = [
   {
@@ -10,6 +11,7 @@ const caseStudies = [
     challenge: "Legacy system causing high latency.",
     solution: "Microservices architecture on AWS.",
     result: "99.99% uptime achieved.",
+    image: "/global payment gateway.jpg",
   },
   {
     category: "Healthcare",
@@ -17,6 +19,7 @@ const caseStudies = [
     challenge: "Manual data entry errors.",
     solution: "Custom NLP model implementation.",
     result: "85% reduction in processing time.",
+    image: "/patient data ai system.jpg",
   },
   {
     category: "Logistics",
@@ -24,6 +27,7 @@ const caseStudies = [
     challenge: "Inefficient route planning.",
     solution: "Real-time predictive algorithm.",
     result: "30% fuel cost savings.",
+    image: "/automated fleet routing.webp",
   },
 ];
 
@@ -68,23 +72,26 @@ export default function CaseStudies() {
               transition={{ duration: 0.6, delay: 0.1 * i }}
               className="group cursor-pointer flex flex-col h-full"
             >
-              {/* Thumbnail placeholder */}
+              {/* Thumbnail */}
               <div className="aspect-[4/3] bg-card rounded-2xl mb-6 overflow-hidden relative border border-border-subtle group-hover:border-border-strong transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 dark:from-black via-transparent to-transparent opacity-50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[10px] text-foreground/20 uppercase tracking-[0.4em] font-medium">
-                    Case Study
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                {/* Category badge overlaid on image */}
+                <div className="absolute bottom-3 left-4">
+                  <span className="text-[9px] text-white/80 uppercase tracking-[0.2em] font-semibold bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/10">
+                    {study.category}
                   </span>
                 </div>
               </div>
 
               <div className="flex-grow flex flex-col">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="text-[10px] text-foreground/50 uppercase tracking-widest font-medium">
-                    {study.category}
-                  </span>
-                  <span className="w-6 h-px bg-foreground/20" />
-                </div>
                 <h3 className="text-lg font-medium text-foreground mb-3">
                   {study.title}
                 </h3>

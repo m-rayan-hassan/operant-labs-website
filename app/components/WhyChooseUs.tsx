@@ -83,8 +83,8 @@ export default function WhyChooseUs() {
           >
             {/* Base Image: Abstract Digital Network / Software Architecture */}
             <Image
-              src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=2232&auto=format&fit=crop"
-              alt="Operant Labs Digital Architecture and Innovation"
+              src="/team-industrial-scientists-engineers-developers-innovating-new-vaccine-doctor-pointing-tablet-explaining-virus-evolution-coworker.jpg"
+              alt="Operant Labs Engineering Team"
               fill
               className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 dark:opacity-70"
             />
