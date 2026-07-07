@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OPERANT LABS | Cyber-Premium Innovation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-variant": "#2e3637",
+                "primary": "#dbfcff",
+                "on-error": "#690005",
+                "on-tertiary-fixed": "#231b00",
+                "tertiary-fixed": "#ffe179",
+                "deep-charcoal": "#121214",
+                "background": "#0d1515",
+                "secondary-container": "#474649",
+                "primary-container": "#00f0ff",
+                "outline": "#849495",
+                "on-secondary-container": "#b7b4b7",
+                "electric-cyan": "#00F0FF",
+                "inverse-primary": "#006970",
+                "surface-container": "#192122",
+                "surface-dim": "#0d1515",
+                "on-error-container": "#ffdad6",
+                "error": "#ffb4ab",
+                "on-background": "#dce4e5",
+                "primary-fixed-dim": "#00dbe9",
+                "on-surface": "#dce4e5",
+                "surface-bright": "#333b3b",
+                "on-tertiary-container": "#715d00",
+                "tertiary-container": "#fed639",
+                "outline-variant": "#3b494b",
+                "surface-container-high": "#232b2c",
+                "primary-fixed": "#7df4ff",
+                "on-surface-variant": "#b9cacb",
+                "tertiary-fixed-dim": "#eac324",
+                "tertiary": "#fff5de",
+                "glow-accent": "rgba(0, 240, 255, 0.15)",
+                "surface": "#0d1515",
+                "on-primary-fixed-variant": "#004f54",
+                "secondary": "#c8c6c8",
+                "secondary-fixed-dim": "#c8c6c8",
+                "surface-container-lowest": "#080f10",
+                "error-container": "#93000a",
+                "on-primary": "#00363a",
+                "midnight-blue": "#0A0C10",
+                "on-secondary": "#313032",
+                "inverse-on-surface": "#2a3233",
+                "surface-container-highest": "#2e3637",
+                "on-secondary-fixed-variant": "#474649",
+                "surface-container-low": "#151d1e",
+                "surface-tint": "#00dbe9",
+                "secondary-fixed": "#e5e1e4",
+                "on-primary-container": "#006970",
+                "on-tertiary": "#3b2f00",
+                "surface-glass": "rgba(255, 255, 255, 0.03)",
+                "on-primary-fixed": "#002022",
+                "on-secondary-fixed": "#1c1b1d",
+                "on-tertiary-fixed-variant": "#554500",
+                "inverse-surface": "#dce4e5"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "20px",
+                "section-padding": "120px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "base": "8px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Inter"
+                ],
+                "display-xl": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "technical-data": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-xl": [
+                        "72px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "technical-data": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ]
+        },
+        animation: {
+            'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'marquee': 'marquee 25s linear infinite',
+        },
+        keyframes: {
+            fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+            }
+        }
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #000000;
+            color: #dce4e5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Scroll Animation Utilities */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glass and Border Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #849495;
+            margin-bottom: 24px;
+        }
+        .section-number::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background-color: #849495;
+            opacity: 0.5;
+        }
+        .section-number::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background-color: #849495;
+            opacity: 0.5;
+        }
+
+        .section-number-left {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #849495;
+            margin-bottom: 24px;
+        }
+        .section-number-left::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 1px;
+            background-color: #849495;
+            opacity: 0.5;
+        }
+
+        /* Refined Typography */
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: -0.02em;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Button Refinements */
+        .btn-primary-minimal {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-minimal:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .btn-solid-minimal {
+            background-color: #ffffff;
+            color: #000000;
+            transition: all 0.3s ease;
+        }
+        .btn-solid-minimal:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        /* Links */
+        .nav-link-refined {
+            color: #849495;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link-refined:hover, .nav-link-refined.active {
+            color: #ffffff;
+        }
+        .nav-link-refined::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+            opacity: 0.8;
+        }
+        .nav-link-refined:hover::after, .nav-link-refined.active::after {
+            width: 100%;
+        }
+        
+        /* Grid Borders */
+        .grid-glow-border {
+            border-color: rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+            background: #050505;
+        }
+        .grid-glow-border:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: #0a0a0a;
+            transform: translateY(-4px);
+        }
+
+        /* Hide scrollbar for marquee */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="selection:bg-white/20 selection:text-white relative min-h-screen flex flex-col bg-[#000000]">
+<!-- Shader Background (from {{DATA:SCREEN:SCREEN_12}}) -->
+<div class="fixed inset-0 w-full h-full -z-10" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_5" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_5');
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+void main() {
+    vec2 uv = v_texCoord;
+    float aspect = u_resolution.x / u_resolution.y;
+    vec2 p = uv * 2.0 - 1.0;
+    p.x *= aspect;
+    vec3 backgroundColor = vec3(0.01, 0.01, 0.015);
+    vec3 accentColor = vec3(0.0, 0.6, 0.8);
+    float t = u_time * 0.2;
+    float ray1 = abs(1.0 / (p.y + 0.5 * sin(p.x * 0.3 + t) + 0.5 * cos(p.x * 0.1 - t * 0.5) + 0.0) * 0.02);
+    ray1 *= smoothstep(1.0, 0.0, abs(p.x) * 0.5);
+    float ray2 = abs(1.0 / (p.y + 0.3 * cos(p.x * 0.5 - t * 0.3) + 0.4 * sin(p.x * 0.2 + t * 0.7) + 0.2) * 0.01);
+    ray2 *= smoothstep(1.2, 0.0, abs(p.x) * 0.6);
+    vec2 mouse = (u_mouse / u_resolution) * 2.0 - 1.0;
+    mouse.x *= aspect;
+    float mouseGlow = 0.01 / length(p - mouse);
+    mouseGlow = clamp(mouseGlow, 0.0, 0.3);
+    vec3 finalColor = backgroundColor;
+    finalColor += accentColor * (ray1 * 0.4 + ray2 * 0.3 + mouseGlow * 0.2);
+    float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor += noise * 0.01;
+    float vignette = smoothstep(1.5, 0.2, length(p));
+    finalColor *= vignette;
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- TopAppBar - Code Huddle Style -->
+<header class="fixed top-0 w-full z-50 pt-4 px-4 sm:px-6 lg:px-8 transition-all duration-300 pointer-events-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto bg-[#000000]/60 backdrop-blur-md border border-white/10 rounded-full px-6 py-3 pointer-events-auto shadow-2xl">
+<!-- Brand -->
+<div class="flex items-center gap-2 cursor-pointer group">
+<img alt="Operant Labs Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtEwutrRH6f4YexNoiiT1m0ehUgPkOJSLkvXVfCPDPOvmRwM5f7FIyuGzTBEx9Sb7M--pFP_eJJ9c4AWf0EGoY7cKT_qm_ycFG5OpJvZWUvpkG7R1nqWH3FTVGNdi44EipXi4hmEfXmKCCbxo6d9qLFFr3L90RaVA619qVIc8Ei60NwsYzwFcIHwkKLxH_VB3JbzFkFEtPivAoFGZZJF5ENWOJkQk4xMkf_qKTBUvT1lklJPum1oUoxpCBfC8BNaCjDVk"/>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 gap-8">
+<a class="nav-link-refined text-[12px] font-technical-data tracking-[0.05em]" href="#">Sectors</a>
+<div class="relative group">
+<button class="nav-link-refined text-[12px] font-technical-data tracking-[0.05em] flex items-center gap-1">
+                        Solutions <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</button>
+<div class="absolute left-1/2 -translate-x-1/2 mt-4 w-64 bg-[#050505]/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 py-2">
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">Custom Software Development</a>
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">Intelligent Business Automation</a>
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">AI Solutions</a>
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">Cloud &amp; DevOps Solutions</a>
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">Data Analytics &amp; Business Intelligence</a>
+<a class="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-white hover:bg-white/5 transition-colors" href="#">Technology Advisory &amp; Digital Transformation</a>
+</div>
+</div>
+<a class="nav-link-refined text-[12px] font-technical-data tracking-[0.05em]" href="#">About</a>
+<a class="nav-link-refined text-[12px] font-technical-data tracking-[0.05em]" href="#">Careers</a>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden lg:block">
+<button class="btn-solid-minimal font-technical-data text-[11px] px-6 py-2.5 rounded-full font-semibold tracking-[0.1em] uppercase">
+                    Book a Consultation
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="lg:hidden text-on-surface p-2 hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative z-10 pt-20">
+<!-- 1. Hero Section -->
+<section class="relative min-h-[90vh] flex flex-col items-center justify-center py-section-padding px-4 sm:px-6 lg:px-8 text-center max-w-7xl mx-auto">
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center animate-on-scroll">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+<span class="font-technical-data text-[10px] text-white uppercase tracking-[0.15em] font-medium">Innovation Architecture</span>
+</div>
+<h1 class="font-display-xl text-5xl md:text-7xl lg:text-[80px] text-white max-w-4xl mb-6 leading-[1.05] font-semibold tracking-tight">
+                    Building the Technology <br class="hidden md:block"/> Behind Tomorrow's Businesses
+</h1>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto mb-10 text-base md:text-lg font-light leading-relaxed">
+                    Technology is no longer just a competitive advantage, it's the foundation of modern business. Operant Labs helps organisations design, develop, automate, and transform how they operate through intelligent technology solutions.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+<button class="btn-solid-minimal font-technical-data text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center">
+                        Book a Consultation
+                    </button>
+<button class="btn-primary-minimal font-technical-data text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2">
+                        Explore Our Services
+                        <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. Trust Strip -->
+<section class="border-t border-white/5 bg-[#020202] relative z-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-70 transition-all duration-700">
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-white transition-colors font-light" style="font-variation-settings: 'FILL' 0;">workspace_premium</span>
+<span class="font-technical-data text-[11px] tracking-wider uppercase text-on-surface-variant group-hover:text-white transition-colors">10+ Years Experience</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-white transition-colors font-light" style="font-variation-settings: 'FILL' 0;">verified</span>
+<span class="font-technical-data text-[11px] tracking-wider uppercase text-on-surface-variant group-hover:text-white transition-colors">200+ Projects Delivered</span>
+</div>
+<div class="flex items-center gap-2 group cursor-default">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:text-white transition-colors font-light" style="font-variation-settings: 'FILL' 0;">domain</span>
+<span class="font-technical-data text-[11px] tracking-wider uppercase text-on-surface-variant group-hover:text-white transition-colors">Fortune 500 Trusted</span>
+</div>
+</div>
+</section>
+<!-- 3. What We Do (Principles) -->
+<section class="py-section-padding border-t border-white/5 relative z-10 bg-[#000000]"><div class="max-w-7xl mx-auto px-gutter py-24">
+<div class="mb-16 text-center animate-on-scroll">
+<div class="section-number mx-auto">01 / Principles</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Technology built around your business</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-on-scroll" style="transition-delay: 0.2s;">
+<div class="bg-[#050505] p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-white/15 transition-all group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/70 text-[20px] font-light group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 0;">lightbulb</span>
+</div>
+<h3 class="font-technical-data text-sm text-white mb-3 tracking-wide">Innovation</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] font-light leading-relaxed">Leveraging cutting-edge tech to create distinct market advantages.</p>
+</div>
+<div class="bg-[#050505] p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-white/15 transition-all group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/70 text-[20px] font-light group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 0;">trending_up</span>
+</div>
+<h3 class="font-technical-data text-sm text-white mb-3 tracking-wide">Scalability</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] font-light leading-relaxed">Architectures designed to grow seamlessly with your enterprise.</p>
+</div>
+<div class="bg-[#050505] p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-white/15 transition-all group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/70 text-[20px] font-light group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 0;">shield_lock</span>
+</div>
+<h3 class="font-technical-data text-sm text-white mb-3 tracking-wide">Security</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] font-light leading-relaxed">Enterprise-grade protection woven into the fabric of every solution.</p>
+</div>
+<div class="bg-[#050505] p-8 rounded-2xl flex flex-col h-full border border-white/5 hover:border-white/15 transition-all group">
+<div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/5 group-hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-white/70 text-[20px] font-light group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 0;">target</span>
+</div>
+<h3 class="font-technical-data text-sm text-white mb-3 tracking-wide">Business Impact</h3>
+<p class="font-body-md text-on-surface-variant text-[13px] font-light leading-relaxed">Measurable ROI driven by strategic alignment and execution.</p>
+</div>
+</div>
+</div></section>
+<!-- 4. Services Overview -->
+<section class="py-section-padding border-t border-white/5 bg-[#020202] relative z-10"><div class="max-w-7xl mx-auto px-gutter py-24">
+<div class="mb-16 text-center animate-on-scroll">
+<div class="section-number mx-auto">02 / Services</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Core Services</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll" style="transition-delay: 0.2s;">
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">cloud</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">Cloud Architecture</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Designing scalable and resilient cloud infrastructures.</p>
+</a>
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">memory</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">AI &amp; Automation</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Intelligent systems that streamline operations.</p>
+</a>
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">code_blocks</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">Custom Software</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Bespoke applications built to your exact specifications.</p>
+</a>
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">security</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">Cybersecurity</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Protecting your digital assets with advanced protocols.</p>
+</a>
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">analytics</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">Data Engineering</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Transforming raw data into actionable insights.</p>
+</a>
+<a class="bg-[#050505] border border-white/5 rounded-2xl p-8 hover:border-white/20 hover:bg-[#080808] transition-all duration-300 flex flex-col h-full group relative overflow-hidden" href="#">
+<div class="absolute top-6 right-6 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
+<span class="material-symbols-outlined text-white text-[20px] font-light" style="font-variation-settings: 'FILL' 0;">arrow_outward</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-[20px] text-white/70 font-light" style="font-variation-settings: 'FILL' 0;">api</span>
+</div>
+<h3 class="text-base font-medium text-white mb-2">API Integration</h3>
+<p class="text-on-surface-variant text-[13px] font-light leading-relaxed flex-grow">Connecting systems for seamless data flow.</p>
+</a>
+</div>
+</div></section>
+<!-- 5. Case Studies -->
+<section class="py-section-padding border-t border-white/5 relative z-10 bg-[#000000]"><div class="max-w-7xl mx-auto px-gutter py-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 animate-on-scroll">
+<div>
+<div class="section-number-left">03 / Work</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Proven Results</h2>
+</div>
+<a class="text-[11px] font-technical-data uppercase tracking-widest text-white/70 hover:text-white transition-all flex items-center gap-2 group mb-2" href="#">
+                        View All Projects <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll" style="transition-delay: 0.2s;">
+<div class="group cursor-pointer flex flex-col h-full">
+<div class="aspect-[4/3] bg-[#050505] rounded-2xl mb-6 overflow-hidden relative border border-white/5 group-hover:border-white/15 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-50"></div>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] text-white/50 font-technical-data uppercase tracking-widest">FinTech</span>
+<span class="w-6 h-px bg-white/20"></span>
+</div>
+<h3 class="text-lg font-medium text-white mb-3">Global Payment Gateway</h3>
+<div class="space-y-2 text-[13px] font-light mt-auto">
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Challenge:</span>Legacy system causing high latency.</p>
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Solution:</span>Microservices architecture on AWS.</p>
+<p class="text-[#00F0FF] mt-3 font-medium"><span class="text-white/70 text-[10px] font-technical-data uppercase tracking-wider mr-2">Result:</span>99.99% uptime achieved.</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer flex flex-col h-full">
+<div class="aspect-[4/3] bg-[#050505] rounded-2xl mb-6 overflow-hidden relative border border-white/5 group-hover:border-white/15 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-50"></div>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] text-white/50 font-technical-data uppercase tracking-widest">Healthcare</span>
+<span class="w-6 h-px bg-white/20"></span>
+</div>
+<h3 class="text-lg font-medium text-white mb-3">Patient Data AI System</h3>
+<div class="space-y-2 text-[13px] font-light mt-auto">
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Challenge:</span>Manual data entry errors.</p>
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Solution:</span>Custom NLP model implementation.</p>
+<p class="text-[#00F0FF] mt-3 font-medium"><span class="text-white/70 text-[10px] font-technical-data uppercase tracking-wider mr-2">Result:</span>85% reduction in processing time.</p>
+</div>
+</div>
+</div>
+<div class="group cursor-pointer flex flex-col h-full">
+<div class="aspect-[4/3] bg-[#050505] rounded-2xl mb-6 overflow-hidden relative border border-white/5 group-hover:border-white/15 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-[#000000] via-transparent to-transparent opacity-50"></div>
+</div>
+<div class="flex-grow flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<span class="text-[10px] text-white/50 font-technical-data uppercase tracking-widest">Logistics</span>
+<span class="w-6 h-px bg-white/20"></span>
+</div>
+<h3 class="text-lg font-medium text-white mb-3">Automated Fleet Routing</h3>
+<div class="space-y-2 text-[13px] font-light mt-auto">
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Challenge:</span>Inefficient route planning.</p>
+<p class="text-on-surface-variant"><span class="text-white/70 font-medium text-[10px] font-technical-data uppercase tracking-wider mr-2">Solution:</span>Real-time predictive algorithm.</p>
+<p class="text-[#00F0FF] mt-3 font-medium"><span class="text-white/70 text-[10px] font-technical-data uppercase tracking-wider mr-2">Result:</span>30% fuel cost savings.</p>
+</div>
+</div>
+</div>
+</div>
+</div></section>
+<!-- 6. Industries Snapshot -->
+<section class="py-section-padding border-t border-white/5 bg-[#020202] relative z-10"><div class="max-w-7xl mx-auto px-gutter py-24 text-center">
+<div class="section-number mx-auto mb-10 animate-on-scroll">04 / Sectors</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white mb-16 font-semibold tracking-tight animate-on-scroll" style="transition-delay: 0.1s;">Industries We Serve</h2>
+<div class="flex flex-wrap justify-center gap-4 mb-16 animate-on-scroll" style="transition-delay: 0.2s;">
+<div class="px-8 py-4 border border-white/5 rounded-full text-on-surface-variant font-technical-data text-[12px] hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer bg-[#050505] flex items-center gap-3 group">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+                        Finance
+                    </div>
+<div class="px-8 py-4 border border-white/5 rounded-full text-on-surface-variant font-technical-data text-[12px] hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer bg-[#050505] flex items-center gap-3 group">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">monitor_heart</span>
+                        Healthcare
+                    </div>
+<div class="px-8 py-4 border border-white/5 rounded-full text-on-surface-variant font-technical-data text-[12px] hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer bg-[#050505] flex items-center gap-3 group">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">local_shipping</span>
+                        Logistics
+                    </div>
+<div class="px-8 py-4 border border-white/5 rounded-full text-on-surface-variant font-technical-data text-[12px] hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer bg-[#050505] flex items-center gap-3 group">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">storefront</span>
+                        Retail
+                    </div>
+<div class="px-8 py-4 border border-white/5 rounded-full text-on-surface-variant font-technical-data text-[12px] hover:border-white/20 hover:text-white transition-all duration-300 cursor-pointer bg-[#050505] flex items-center gap-3 group">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">precision_manufacturing</span>
+                        Manufacturing
+                    </div>
+</div>
+<a class="inline-flex items-center text-[11px] font-technical-data uppercase tracking-widest text-white/70 hover:text-white transition-all gap-2 group animate-on-scroll" href="#" style="transition-delay: 0.3s;">
+                    View All Industries <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div></section>
+<!-- 7. How We Work - Stepper -->
+<section class="py-section-padding border-t border-white/5 relative z-10 bg-[#000000]"><div class="max-w-7xl mx-auto px-gutter py-24">
+<div class="mb-24 text-center animate-on-scroll">
+<div class="section-number mx-auto">05 / Methodology</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Our Process</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative animate-on-scroll" style="transition-delay: 0.2s;">
+<div class="relative group bg-[#050505] p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-all h-full flex flex-col">
+<div class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center mb-6 font-technical-data text-[10px] text-white">01</div>
+<h3 class="text-base font-medium text-white mb-2">Discover</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed flex-grow">Understanding your business goals and technical constraints.</p>
+</div>
+<div class="relative group bg-[#050505] p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-all h-full flex flex-col">
+<div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center mb-6 font-technical-data text-[10px] text-white/50">02</div>
+<h3 class="text-base font-medium text-white mb-2">Design</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed flex-grow">Architecting robust and scalable solution blueprints.</p>
+</div>
+<div class="relative group bg-[#050505] p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-all h-full flex flex-col">
+<div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center mb-6 font-technical-data text-[10px] text-white/50">03</div>
+<h3 class="text-base font-medium text-white mb-2">Build</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed flex-grow">Agile development with continuous integration and testing.</p>
+</div>
+<div class="relative group bg-[#050505] p-8 rounded-2xl border border-white/5 hover:border-white/15 transition-all h-full flex flex-col">
+<div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center mb-6 font-technical-data text-[10px] text-white/50">04</div>
+<h3 class="text-base font-medium text-white mb-2">Support</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed flex-grow">Ongoing maintenance, optimization, and scaling.</p>
+</div>
+</div>
+</div></section>
+<!-- 8. Why Operant Labs -->
+<section class="py-section-padding border-t border-white/5 bg-[#020202] relative z-10"><div class="max-w-7xl mx-auto px-gutter py-24 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+<div class="lg:w-1/2 animate-on-scroll w-full">
+<div class="section-number-left">06 / Advantage</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white mb-14 font-semibold tracking-tight">Why Partner With Us?</h2>
+<ul class="space-y-10">
+<li class="flex items-start gap-4 group">
+<span class="material-symbols-outlined text-white/30 text-[20px] font-light mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<div>
+<h4 class="font-medium text-white text-base mb-2">Business-First Approach</h4>
+<p class="text-[14px] text-on-surface-variant font-light leading-relaxed">We align technology decisions with your strategic objectives.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 group">
+<span class="material-symbols-outlined text-white/30 text-[20px] font-light mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<div>
+<h4 class="font-medium text-white text-base mb-2">End-to-End Expertise</h4>
+<p class="text-[14px] text-on-surface-variant font-light leading-relaxed">From concept to deployment, we handle the entire lifecycle.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 group">
+<span class="material-symbols-outlined text-white/30 text-[20px] font-light mt-1" style="font-variation-settings: 'FILL' 0;">check</span>
+<div>
+<h4 class="font-medium text-white text-base mb-2">Future-Proof Architecture</h4>
+<p class="text-[14px] text-on-surface-variant font-light leading-relaxed">Systems designed to evolve as new technologies emerge.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 w-full aspect-square md:aspect-video lg:aspect-square bg-[#050505] border border-white/5 rounded-2xl relative overflow-hidden flex items-center justify-center animate-on-scroll" style="transition-delay: 0.2s;">
+<span class="font-technical-data text-xs tracking-[0.4em] text-white/20 uppercase z-10">Innovate</span>
+</div>
+</div></section>
+<!-- 9. Client Testimonials -->
+<section class="py-section-padding border-t border-white/5 relative z-10 bg-[#000000]"><div class="max-w-4xl mx-auto px-gutter py-24 text-center animate-on-scroll">
+<span class="font-display-xl text-[#00F0FF] text-6xl mb-8 block leading-none">"</span>
+<p class="text-2xl md:text-3xl lg:text-4xl font-light text-white mb-14 leading-[1.4] tracking-tight">"Operant Labs completely transformed our legacy infrastructure. Their strategic insight and technical execution were flawless. We've seen a 40% increase in operational efficiency since launch."</p>
+<div class="flex flex-col items-center justify-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-[#050505] border border-white/10"></div>
+<div class="text-center">
+<h5 class="font-medium text-white text-[13px] mb-1">Sarah Jenkins</h5>
+<span class="text-[10px] text-[#00F0FF] font-technical-data uppercase tracking-widest">CTO, Global Logistics Corp</span>
+</div>
+</div>
+</div></section>
+<!-- 10. Technology & Tools - Marquee -->
+<div class="bg-[#020202] border-t border-white/5 relative z-20 py-12 overflow-hidden border-b">
+<div class="flex w-[200%] animate-marquee no-scrollbar">
+<div class="flex w-1/2 justify-around items-center px-4">
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">React</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Node.js</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Python</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">AWS</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Azure</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Docker</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Kubernetes</span>
+</div>
+<div class="flex w-1/2 justify-around items-center px-4">
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">React</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Node.js</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Python</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">AWS</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Azure</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Docker</span>
+<span class="px-6 py-2.5 border border-white/5 rounded-full font-technical-data text-[11px] text-white/50 uppercase tracking-widest cursor-default bg-[#050505]">Kubernetes</span>
+</div>
+</div>
+</div>
+<!-- 11. Insights & Resources -->
+<section class="py-section-padding relative z-10 bg-[#000000]"><div class="max-w-7xl mx-auto px-gutter py-24">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 animate-on-scroll">
+<div>
+<div class="section-number-left">07 / Knowledge</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Latest Insights</h2>
+</div>
+<a class="text-[11px] font-technical-data uppercase tracking-widest text-[#00F0FF] hover:text-white transition-all flex items-center gap-2 group mb-2" href="#">
+                        Read Journal <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll" style="transition-delay: 0.2s;">
+<a class="group cursor-pointer block flex flex-col h-full" href="#">
+<div class="aspect-video bg-[#050505] rounded-2xl mb-5 overflow-hidden border border-white/5 group-hover:border-white/15 transition-all duration-500 relative">
+</div>
+<div class="flex-grow flex flex-col">
+<span class="text-[10px] text-[#00F0FF] font-technical-data uppercase tracking-widest mb-2 block">Engineering • 5 min read</span>
+<h3 class="text-base font-medium text-white mb-2">Scaling Microservices in 2024</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed mt-auto">Best practices for maintaining robust distributed systems.</p>
+</div>
+</a>
+<a class="group cursor-pointer block flex flex-col h-full" href="#">
+<div class="aspect-video bg-[#050505] rounded-2xl mb-5 overflow-hidden border border-white/5 group-hover:border-white/15 transition-all duration-500 relative">
+</div>
+<div class="flex-grow flex flex-col">
+<span class="text-[10px] text-[#00F0FF] font-technical-data uppercase tracking-widest mb-2 block">AI • 8 min read</span>
+<h3 class="text-base font-medium text-white mb-2">Implementing Enterprise LLMs</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed mt-auto">A practical guide to deploying safe AI models in corporate environments.</p>
+</div>
+</a>
+<a class="group cursor-pointer block flex flex-col h-full" href="#">
+<div class="aspect-video bg-[#050505] rounded-2xl mb-5 overflow-hidden border border-white/5 group-hover:border-white/15 transition-all duration-500 relative">
+</div>
+<div class="flex-grow flex flex-col">
+<span class="text-[10px] text-[#00F0FF] font-technical-data uppercase tracking-widest mb-2 block">Cloud • 4 min read</span>
+<h3 class="text-base font-medium text-white mb-2">AWS vs Azure Security</h3>
+<p class="text-[13px] text-on-surface-variant font-light leading-relaxed mt-auto">Comparing native security features across major cloud providers.</p>
+</div>
+</a>
+</div>
+</div></section>
+<!-- 12. FAQ Teaser -->
+<section class="py-section-padding border-t border-white/5 bg-[#020202] relative z-10"><div class="max-w-3xl mx-auto px-gutter py-24">
+<div class="mb-16 text-center animate-on-scroll">
+<div class="section-number mx-auto">08 / FAQ</div>
+<h2 class="font-headline-lg text-3xl md:text-5xl text-white font-semibold tracking-tight">Common Questions</h2>
+</div>
+<div class="space-y-4 animate-on-scroll" style="transition-delay: 0.2s;">
+<div class="bg-[#050505] border border-white/5 rounded-xl p-6 cursor-pointer group hover:border-white/15 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-white text-[15px] tracking-wide">What is your typical project timeline?</h4>
+<span class="material-symbols-outlined text-white/30 font-light" style="font-variation-settings: 'FILL' 0;">add</span>
+</div>
+</div>
+<div class="bg-[#050505] border border-white/5 rounded-xl p-6 cursor-pointer group hover:border-white/15 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-white text-[15px] tracking-wide">Do you offer post-launch support?</h4>
+<span class="material-symbols-outlined text-white/30 font-light" style="font-variation-settings: 'FILL' 0;">add</span>
+</div>
+</div>
+<div class="bg-[#050505] border border-white/5 rounded-xl p-6 cursor-pointer group hover:border-white/15 transition-all">
+<div class="flex justify-between items-center">
+<h4 class="font-medium text-white text-[15px] tracking-wide">How do you handle data security?</h4>
+<span class="material-symbols-outlined text-white/30 font-light" style="font-variation-settings: 'FILL' 0;">add</span>
+</div>
+</div>
+</div>
+</div></section>
+<!-- 13. Final CTA -->
+<section class="py-section-padding border-t border-white/5 relative overflow-hidden bg-[#000000]"><div class="max-w-3xl mx-auto px-gutter py-24 text-center relative z-10 animate-on-scroll">
+<h2 class="font-display-xl text-5xl md:text-6xl text-white mb-6 font-semibold tracking-tight leading-[1.1]">
+                    Let's build <span class="italic font-light text-white/80">intelligent</span> solutions.
+                </h2>
+<p class="font-body-md text-on-surface-variant mb-10 text-base font-light leading-relaxed max-w-xl mx-auto">
+                    Ready to transform your operations? Partner with our engineers to design a system that scales with your ambition.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="btn-solid-minimal font-technical-data text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase">
+                        Book a Consultation
+                    </button>
+<button class="btn-primary-minimal font-technical-data text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase flex items-center justify-center gap-2">
+                        Contact Us
+                        <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</div></section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#020202] pt-20 pb-10 w-full relative z-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
+<!-- Brand Column -->
+<div class="lg:col-span-4">
+<div class="mb-6 cursor-pointer">
+<img alt="Operant Labs Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZWFCQZdcskt6ZjXkV2CQi5UL9JYKwtUkrCAm6hZZg5-DsNxRSBOMGUhkPXR-ow4oUlVZIVwbWmMFejEM2-dfLyeC1jeT_febfoorBQi27RylYGewx1Ea8_QpHnpkVwO1nronKYUviC-ZAVuxxiYVwJlNKRDx9X31z5-o2FgsfifAhThNZOGXXJecO74lcqhAtQ-zgnDD5UK6FxNJ8BMB0by5GongvgzyhJHG51f5c9bAZGQl7R24LtYFB-gxyOENB90U"/>
+</div>
+<p class="font-body-md text-on-surface-variant text-[13px] mb-8 max-w-sm font-light leading-relaxed">
+                    Engineering cyber-premium solutions for the visionary enterprise.
+                </p>
+<div class="flex gap-3 mb-8">
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-xl bg-[#050505] border border-white/5 flex items-center justify-center text-white/40 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined font-light text-[18px]" style="font-variation-settings: 'FILL' 0;">work</span>
+</a>
+<a aria-label="Twitter" class="w-10 h-10 rounded-xl bg-[#050505] border border-white/5 flex items-center justify-center text-white/40 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined font-light text-[18px]" style="font-variation-settings: 'FILL' 0;">tag</span>
+</a>
+</div>
+<ul class="space-y-3 font-body-md text-[13px] font-light">
+<li class="text-on-surface-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-[16px] text-[#00F0FF]/50" style="font-variation-settings: 'FILL' 0;">call</span>
+<span>Contact: +44 7723 346951</span>
+</li>
+<li class="text-on-surface-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-[16px] text-[#00F0FF]/50" style="font-variation-settings: 'FILL' 0;">mail</span>
+<span>Email: info@operantlabs.io</span>
+</li>
+<li class="text-on-surface-variant flex items-center gap-3">
+<span class="material-symbols-outlined text-[16px] text-[#00F0FF]/50" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span>Offices: London &amp; Rawalpindi</span>
+</li>
+</ul>
+</div>
+<!-- Links Column 1: Company -->
+<div class="lg:col-span-2 lg:col-start-6">
+<h4 class="font-technical-data text-[10px] text-[#00F0FF] mb-5 uppercase tracking-[0.15em] font-medium">Company</h4>
+<ul class="space-y-3 font-body-md text-[13px] font-light">
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Why Choose Us</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Contact Us</a></li>
+</ul>
+</div>
+<!-- Links Column 2: Services -->
+<div class="lg:col-span-3">
+<h4 class="font-technical-data text-[10px] text-[#00F0FF] mb-5 uppercase tracking-[0.15em] font-medium">Services</h4>
+<ul class="space-y-3 font-body-md text-[13px] font-light">
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Custom Software Development</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Intelligent Business Automation</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">AI Solutions</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Cloud &amp; DevOps Solutions</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Data Analytics &amp; Business Intelligence</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Technology Advisory &amp; Digital Transformation</a></li>
+</ul>
+</div>
+<!-- Links Column 3: Resources -->
+<div class="lg:col-span-2">
+<h4 class="font-technical-data text-[10px] text-[#00F0FF] mb-5 uppercase tracking-[0.15em] font-medium">Resources</h4>
+<ul class="space-y-3 font-body-md text-[13px] font-light">
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Industries We Serve</a></li>
+<li><a class="text-on-surface-variant hover:text-white transition-colors block" href="#">Our Process</a></li>
+</ul>
+</div>
+</div>
+<!-- Copyright -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-on-surface-variant/50 text-[11px] font-light">
+                © 2024 OPERANT LABS. All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
