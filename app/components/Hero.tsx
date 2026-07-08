@@ -30,7 +30,8 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0 }}
       >
-        <div className="absolute inset-0 w-full h-full opacity-[0.15] dark:opacity-[0.40] transition-opacity duration-700">
+        {/* Adjusted: Increased opacity to 0.60 and dark:opacity to 0.90 for more brightness */}
+        <div className="absolute -top-[35%] -left-[20%] w-[140%] h-[140%] opacity-[0.60] dark:opacity-[0.90] transition-opacity duration-700">
           <FloatingLines
             enabledWaves={["top", "middle", "bottom"]}
             lineCount={[4, 6, 3]}
@@ -40,8 +41,8 @@ export default function Hero() {
             bottomWavePosition={{ x: 2, y: -0.7, rotate: -0.6 }}
             bendRadius={6}
             bendStrength={-1.5}
-            interactive={false}
-            parallax={false}
+            interactive
+            parallax={true}
             parallaxStrength={0.15}
             animationSpeed={0.6}
             mouseDamping={0.03}
@@ -81,7 +82,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Reduced top padding here from py-32 to pt-20 pb-32 */}
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center pt-20 pb-32 px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
         <motion.div
@@ -101,11 +101,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-[34px] sm:text-5xl md:text-6xl lg:text-[76px] text-foreground w-full max-w-300 mb-6 leading-[1.1] tracking-tight text-center"
+          className="flex flex-col items-center text-[26px] sm:text-4xl md:text-5xl lg:text-[70px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.2] tracking-tight text-center"
         >
-          {/* inline-flex and whitespace-nowrap guarantees it stays on one line */}
+          {/* Line 1 */}
           <span className="inline-flex items-center justify-center whitespace-nowrap">
-            {/* The relative container perfectly fits the CURRENT word naturally */}
             <span className="relative inline-flex justify-center text-center">
               <AnimatePresence mode="popLayout">
                 <motion.span
@@ -114,19 +113,18 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
-                  // Added pr-[0.1em] to account for the italic overhang leaning into the next word
                   className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)]"
                 >
                   {ACTION_WORDS[wordIndex]}
                 </motion.span>
               </AnimatePresence>
             </span>
-            {/* Increased left margin to 0.4em for healthy, visually balanced spacing */}
-            <span className="ml-[0.4em]">the Technology</span>
+            <span className="ml-[0.4em]">the Technology Behind</span>
           </span>
-          <br className="hidden md:block" />
-          <span className="block mt-2 md:mt-0 md:inline">
-            Behind Tomorrow&apos;s Businesses
+          
+          {/* Line 2 */}
+          <span className="block mt-1 md:mt-2">
+            Tomorrow&apos;s Businesses
           </span>
         </motion.h1>
 
@@ -150,10 +148,10 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
         >
-          <button className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-widest uppercase w-full sm:w-auto text-center cursor-pointer">
+          <button className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer">
             Book a Consultation
           </button>
-          <button className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-widest uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group">
+          <button className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group">
             Explore Our Services
             <ArrowRight
               size={16}

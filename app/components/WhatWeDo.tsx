@@ -25,14 +25,16 @@ const principles = [
   {
     icon: Target,
     title: "Business Impact",
-    description:
-      "Delivering measurable improvements in efficiency and growth.",
+    description: "Delivering measurable improvements in efficiency and growth.",
   },
 ];
 
 export default function WhatWeDo() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background">
+    <section
+      id="about"
+      className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -49,9 +51,9 @@ export default function WhatWeDo() {
           <p className="text-on-surface-variant max-w-3xl mx-auto text-base font-light leading-relaxed">
             Many organisations are held back by legacy systems, manual
             processes, and tools that don&apos;t talk to each other. Operant
-            Labs builds technology around your business instead of the other
-            way round, covering the full lifecycle: strategy, software
-            engineering, automation, AI, cloud, and ongoing optimisation.
+            Labs builds technology around your business instead of the other way
+            round, covering the full lifecycle: strategy, software engineering,
+            automation, AI, cloud, and ongoing optimisation.
           </p>
         </motion.div>
 

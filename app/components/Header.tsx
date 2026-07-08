@@ -4,16 +4,50 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { 
+  Menu, X, ChevronDown, ArrowRight, Code2, 
+  Zap, Cpu, Cloud, LineChart, Rocket, LayoutGrid 
+} from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
-const services = [
-  { name: "Custom Software Development", href: "#" },
-  { name: "Intelligent Business Automation", href: "#" },
-  { name: "AI Solutions", href: "#" },
-  { name: "Cloud & DevOps Solutions", href: "#" },
-  { name: "Data Analytics & Business Intelligence", href: "#" },
-  { name: "Technology Advisory & Digital Transformation", href: "#" },
+// Enhanced services list with icons and short descriptions for the Mega Menu
+const servicesList = [
+  { 
+    name: "Custom Software Development", 
+    description: "Scalable enterprise engineering",
+    href: "#", 
+    icon: Code2 
+  },
+  { 
+    name: "Intelligent Business Automation", 
+    description: "Streamline complex workflows",
+    href: "#", 
+    icon: Zap 
+  },
+  { 
+    name: "AI Solutions", 
+    description: "Machine learning & predictive models",
+    href: "#", 
+    icon: Cpu 
+  },
+  { 
+    name: "Cloud & DevOps Solutions", 
+    description: "Secure infrastructure & CI/CD",
+    href: "#", 
+    icon: Cloud 
+  },
+  { 
+    name: "Data Analytics & Business Intelligence", 
+    description: "Actionable insights & reporting",
+    href: "#", 
+    icon: LineChart 
+  },
+  { 
+    name: "Technology Advisory & Digital Transformation", 
+    description: "Strategic technology consulting",
+    href: "#", 
+    icon: Rocket 
+  },
 ];
 
 const navLinks = [
@@ -50,7 +84,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 pt-4 px-4 sm:px-6 lg:px-8 pointer-events-none">
       <div
-        className={`flex justify-between items-center max-w-7xl mx-auto backdrop-blur-md border rounded-full px-6 py-3 pointer-events-auto shadow-2xl transition-all duration-300 ${
+        className={`relative flex justify-between items-center max-w-7xl mx-auto backdrop-blur-md border rounded-full px-6 py-3 pointer-events-auto shadow-2xl transition-all duration-300 ${
           scrolled
             ? "bg-background/80 border-border-strong"
             : "bg-background/60 border-border-subtle"
@@ -85,14 +119,14 @@ export default function Header() {
             </Link>
           ))}
 
-          {/* Services Dropdown */}
+          {/* Services Mega Menu Dropdown */}
           <div
             className="relative"
             ref={dropdownRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1">
+            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1 py-2">
               Services
               <ChevronDown
                 size={14}
@@ -105,21 +139,62 @@ export default function Header() {
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute left-1/2 -translate-x-1/2 mt-4 w-72 bg-surface/95 backdrop-blur-xl border border-border-strong rounded-lg shadow-2xl z-50 py-2"
+                  initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: 10, filter: "blur(4px)" }}
+                  transition={{ duration: 0.25, ease: "easeInOut" }}
+                  // pt-4 creates an invisible hover bridge so the mouse doesn't fall off
+                  className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50 cursor-default"
                 >
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="block px-4 py-2.5 text-xs text-on-surface-variant hover:text-foreground hover:bg-border-subtle transition-colors"
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
+                  <div className="w-[780px] bg-surface/95 backdrop-blur-xl border border-border-strong rounded-2xl shadow-2xl flex overflow-hidden">
+                    
+                    {/* Left Pane - Overview Highlight */}
+                    <div className="w-[32%] bg-surface-dim border-r border-border-subtle p-8 flex flex-col justify-between relative overflow-hidden group/pane">
+                      {/* Background decorative glow */}
+                      <div className="absolute -top-12 -left-12 w-40 h-40 bg-electric-cyan/10 rounded-full blur-3xl transition-all duration-700 group-hover/pane:bg-electric-cyan/20"></div>
+                      
+                      <div className="relative z-10">
+                        <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center border border-border-subtle mb-6 shadow-sm">
+                           <LayoutGrid size={18} className="text-foreground" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-foreground mb-3 tracking-wide">
+                          Our Services
+                        </h3>
+                        <p className="text-xs text-on-surface-variant leading-relaxed font-light">
+                          We engineer intelligent solutions that empower businesses to scale, automate, and innovate efficiently.
+                        </p>
+                      </div>
+
+                      <Link href="#services" className="relative z-10 text-[11px] uppercase tracking-widest font-semibold text-electric-cyan flex items-center gap-2 group/link mt-8 w-fit">
+                        View All Services
+                        <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                    
+                    {/* Right Pane - Grid of Services */}
+                    <div className="w-[68%] p-6 grid grid-cols-2 gap-x-2 gap-y-2">
+                      {servicesList.map((service) => (
+                        <Link 
+                          key={service.name} 
+                          href={service.href} 
+                          className="group flex items-start gap-4 p-4 rounded-xl hover:bg-border-subtle transition-all duration-200"
+                        >
+                          <div className="mt-0.5 w-9 h-9 rounded-full bg-background flex items-center justify-center border border-border-strong group-hover:border-electric-cyan/40 group-hover:bg-electric-cyan/5 transition-all shrink-0 shadow-sm">
+                            <service.icon size={16} className="text-foreground group-hover:text-electric-cyan transition-colors" />
+                          </div>
+                          <div>
+                            <h4 className="text-[12px] font-semibold text-foreground mb-1 group-hover:text-electric-cyan transition-colors">
+                              {service.name}
+                            </h4>
+                            <p className="text-[11px] text-on-surface-variant font-light leading-relaxed">
+                              {service.description}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -165,35 +240,42 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden mt-2 mx-auto max-w-7xl bg-surface/95 backdrop-blur-xl border border-border-strong rounded-2xl p-6 pointer-events-auto shadow-2xl"
+            className="lg:hidden mt-2 mx-auto max-w-7xl bg-surface/95 backdrop-blur-xl border border-border-strong rounded-2xl p-6 pointer-events-auto shadow-2xl overflow-y-auto max-h-[80vh]"
           >
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-on-surface-variant hover:text-foreground transition-colors text-sm tracking-wide"
+                  className="text-on-surface-variant hover:text-foreground transition-colors text-sm tracking-wide font-medium"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="border-t border-border-strong pt-4">
-                <p className="text-[10px] text-electric-cyan uppercase tracking-[0.15em] mb-3 font-medium">
+              
+              <div className="border-t border-border-strong pt-5 mt-2">
+                <p className="text-[10px] text-electric-cyan uppercase tracking-[0.15em] mb-4 font-semibold">
                   Services
                 </p>
-                {services.map((service) => (
-                  <Link
-                    key={service.name}
-                    href={service.href}
-                    className="block py-2 text-xs text-on-surface-variant hover:text-foreground transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {service.name}
-                  </Link>
-                ))}
+                <div className="flex flex-col gap-1">
+                  {servicesList.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="group flex items-center gap-3 py-2.5 text-xs text-on-surface-variant hover:text-foreground transition-colors"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <div className="w-7 h-7 rounded-md bg-border-subtle flex items-center justify-center shrink-0 border border-border-strong group-hover:border-electric-cyan/40">
+                        <service.icon size={12} className="text-foreground group-hover:text-electric-cyan transition-colors" />
+                      </div>
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <button className="btn-solid text-[11px] px-6 py-3 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full">
+
+              <button className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full">
                 Book a Consultation
               </button>
             </nav>

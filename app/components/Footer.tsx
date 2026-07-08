@@ -2,92 +2,249 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+
+const companyLinks = [
+  { label: "About Us", href: "#about" },
+  { label: "Why Choose Us", href: "#why-choose-us" },
+  { label: "Careers", href: "#contact" },
+  { label: "Contact Us", href: "#contact" },
+];
+
+const servicesLinks = [
+  { label: "Custom Software Development", href: "#services" },
+  { label: "Intelligent Business Automation", href: "#services" },
+  { label: "AI Solutions", href: "#services" },
+  { label: "Cloud & DevOps Solutions", href: "#services" },
+  { label: "Data Analytics & Business Intelligence", href: "#services" },
+  { label: "Technology Advisory & Digital Transformation", href: "#services" },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-dim pt-20 pb-8 border-t border-border-subtle relative z-10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          {/* Brand & Newsletter */}
-          <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-6 group">
-              <Image
-                src="/logo.png"
-                alt="Operant Labs Logo"
-                width={40}
-                height={40}
-                className="h-8 w-auto dark:invert-0 invert transition-transform duration-300 group-hover:scale-105"
-              />
-              {/* Added Company Name with Contrast matching the Header */}
-              <span className="text-xl tracking-tight flex items-center">
-                <span className="font-bold text-foreground">Operant</span>
-                <span className="font-light text-on-surface-variant ml-0.5">Labs</span>
-              </span>
-            </Link>
-            <p className="text-on-surface-variant text-[13px] font-light leading-relaxed mb-8 max-w-sm">
-              Engineering intelligent technology solutions that drive measurable business impact.
-            </p>
-            
-            <form className="relative max-w-sm group">
-              <input 
-                type="email" 
-                placeholder="Subscribe to our engineering journal" 
-                className="w-full bg-background border border-border-strong rounded-full py-3 px-5 text-[12px] text-foreground placeholder:text-foreground/40 focus:outline-none focus:border-electric-cyan/50 transition-colors"
-              />
-              <button 
-                type="submit"
-                className="absolute right-1 top-1 bottom-1 w-10 flex items-center justify-center bg-card rounded-full border border-border-subtle hover:border-border-strong hover:bg-border-subtle transition-colors cursor-pointer"
+    <footer className="relative z-10 overflow-hidden border-t border-border-subtle bg-surface-dim">
+      {/* Background Glow Effects */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-32 left-1/2 h-64 w-[42rem] -translate-x-1/2 rounded-full bg-electric-cyan/5 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-white/5 blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        {/* Main Unified Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-10">
+          
+          {/* Column 1: Brand, Socials, Contacts & Offices */}
+          <div className="xl:col-span-1 space-y-10">
+            <div>
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2.5 mb-6 group"
               >
-                <ArrowRight size={14} className="text-foreground" />
-              </button>
-            </form>
+                <Image
+                  src="/logo.png"
+                  alt="Operant Labs Logo"
+                  width={64}
+                  height={64}
+                  className="h-12 w-auto dark:invert-0 invert transition-transform duration-300 group-hover:scale-105"
+                />
+                <span className="text-2xl tracking-tight flex items-center">
+                  <span className="font-bold text-foreground">Operant</span>
+                  <span className="font-light text-on-surface-variant ml-0.5">
+                    Labs
+                  </span>
+                </span>
+              </Link>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
+                >
+                  <svg
+                    className="w-[14px] h-[14px] fill-current"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.98h4.56V24H.22V8.98zM8.22 8.98h4.37v2.05h.06c.61-1.16 2.12-2.38 4.36-2.38 4.66 0 5.52 3.06 5.52 7.04V24h-4.56v-6.8c0-1.62-.03-3.71-2.26-3.71-2.27 0-2.62 1.77-2.62 3.6V24H8.22V8.98z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
+                >
+                  <svg
+                    className="w-[14px] h-[14px] fill-current"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 0h10a7 7 0 0 1 7 7v10a7 7 0 0 1-7 7H7a7 7 0 0 1-7-7V7a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7zm5 3.75A6.25 6.25 0 1 1 5.75 12 6.26 6.26 0 0 1 12 5.75zm0 2A4.25 4.25 0 1 0 16.25 12 4.25 4.25 0 0 0 12 7.75zm6.5-3a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18.5 4.75z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
+                >
+                  <svg
+                    className="w-[14px] h-[14px] fill-current"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.12.82-.26.82-.58v-2.2c-3.34.73-4.04-1.4-4.04-1.4-.54-1.38-1.33-1.75-1.33-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.06 1.83 2.8 1.3 3.49.99.1-.77.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.33 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://wa.me/447723346951"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
+                >
+                  <MessageCircle size={14} />
+                </a>
+              </div>
+            </div>
+
+            {/* Contact Info (Moved here) */}
+            <div className="space-y-4">
+              <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                Contact Info
+              </h4>
+              <ul className="space-y-4 text-[13px] font-light text-on-surface-variant">
+                <li className="flex items-start gap-3">
+                  <Mail size={14} className="mt-0.5 shrink-0 text-foreground" />
+                  <a
+                    href="mailto:info@operantlabs.io"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    info@operantlabs.io
+                  </a>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
+                  <a
+                    href="tel:+447723346951"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    +44 7723 346951
+                  </a>
+                </li>
+                <li className="flex items-start gap-3">
+                  <MessageCircle
+                    size={14}
+                    className="mt-0.5 shrink-0 text-foreground"
+                  />
+                  <a
+                    href="https://wa.me/447723346951"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition-colors hover:text-foreground"
+                  >
+                    WhatsApp: +44 7723 346951
+                  </a>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Clock3 size={14} className="mt-0.5 shrink-0 text-foreground" />
+                  <span>Monday to Friday, 9:00 AM to 6:00 PM</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Our Offices (Moved here) */}
+            <div className="space-y-4">
+              <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                Our Offices
+              </h4>
+              <ul className="space-y-4 text-[13px] font-light leading-relaxed text-on-surface-variant">
+                <li>
+                  <div className="mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                    <MapPin size={14} />
+                    UK Office
+                  </div>
+                  <p>
+                    Office 1212, 182 to 184 High Street, North Area 1/1, East Ham,
+                    London, United Kingdom
+                  </p>
+                </li>
+                <li>
+                  <div className="mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                    <MapPin size={14} />
+                    Pakistan Office
+                  </div>
+                  <p>
+                    Gate No. 4, National Aerospace Science and Technology Park,
+                    Industrial Innovative Enclave, Alpha 17, Rawalpindi, Pakistan
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Spacer for grid alignment */}
-          <div className="hidden lg:block lg:col-span-1"></div>
-
-          {/* Links Columns */}
-          <div className="lg:col-span-2 col-span-1">
-            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">Company</h4>
+          {/* Column 2: Company Links */}
+          <div>
+            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+              Company
+            </h4>
             <ul className="space-y-4">
-              {['About Us', 'Why Choose Us', 'Careers', 'Contact Us'].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light">
-                    {link}
+              {companyLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="lg:col-span-3 col-span-1">
-            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">Services</h4>
+          {/* Column 3: Services Links */}
+          <div>
+            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+              Services
+            </h4>
+            <ul className="space-y-4">
+              {servicesLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Resources Links */}
+          <div>
+            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+              Resources
+            </h4>
             <ul className="space-y-4">
               {[
-                'Custom Software Development', 
-                'Intelligent Business Automation', 
-                'AI Solutions', 
-                'Cloud & DevOps Solutions'
+                { label: "Industries We Serve", href: "#industries" },
+                { label: "Our Process", href: "#process" },
               ].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light">
-                    {link}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          <div className="lg:col-span-2 col-span-1">
-            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">Legal</h4>
-            <ul className="space-y-4">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((link) => (
-                <li key={link}>
-                  <Link href="#" className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light">
-                    {link}
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -95,31 +252,14 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[11px] text-foreground/40 font-light tracking-wide">
-            © {currentYear} Operant Labs. All rights reserved.
-          </p>
-          
-          <div className="flex items-center gap-4">
-            {/* LinkedIn */}
-            <a href="#" className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors" aria-label="LinkedIn">
-              <svg className="w-[14px] h-[14px] fill-current" viewBox="0 0 24 24">
-                <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.7H9.33V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29z"/>
-              </svg>
-            </a>
-            {/* Twitter / X */}
-            <a href="#" className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors" aria-label="Twitter">
-              <svg className="w-[14px] h-[14px] fill-current" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-            {/* GitHub */}
-            <a href="#" className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors" aria-label="GitHub">
-              <svg className="w-[14px] h-[14px] fill-current" viewBox="0 0 24 24">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
+        {/* Bottom Copyright Section */}
+        <div className="mt-16 border-t border-border-subtle pt-8">
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
+            <div />
+            <p className="text-center text-[11px] font-light tracking-wide text-foreground/50">
+              © {currentYear} Operant Labs. All rights reserved.
+            </p>
+            <div className="hidden md:block" />
           </div>
         </div>
       </div>

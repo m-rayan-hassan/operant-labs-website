@@ -12,6 +12,9 @@ import Insights from "./components/Insights";
 import FaqTeaser from "./components/FaqTeaser";
 import FinalCta from "./components/FinalCta";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
+import WorldMap from "./components/WorldMap";
+import Partners from "./components/Partners";
 
 export default function Home() {
   return (
@@ -26,10 +29,13 @@ export default function Home() {
         <IndustriesSnapshot />
         <OurProcess />
         <WhyChooseUs />
+        <Testimonials />
+        <Partners />
         <Technologies />
         <Insights />
         <FaqTeaser />
         <FinalCta />
+        <WorldMap />
       </main>
       <Footer />
     </>

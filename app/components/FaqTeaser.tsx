@@ -6,19 +6,19 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "Do you integrate with our existing legacy systems?",
+    question: "How is Operant Labs different from a typical software vendor?",
     answer:
-      "Yes. We specialise in modernising legacy architecture through APIs, microservices, and targeted refactoring, ensuring zero disruption to your current operations.",
+      "We work as a long term technology partner, starting with your business goals rather than jumping straight to a technical solution.",
   },
   {
-    question: "How do you handle data security and compliance?",
+    question: "Do you work with startups as well as larger enterprises?",
     answer:
-      "Security is foundational. We build to SOC2 and ISO27001 standards, employing end-to-end encryption, role-based access control (RBAC), and continuous vulnerability scanning.",
+      "Yes. We support everyone from early stage startups building their first product to enterprises modernising complex systems.",
   },
   {
-    question: "What is your typical engagement model?",
+    question: "Can you support us after the project is launched?",
     answer:
-      "We operate primarily on dedicated squad or fixed-scope outcome models. After an initial discovery phase, we align our engineering teams with your business objectives.",
+      "Yes. Ongoing maintenance, monitoring, and optimisation are part of how we work, not an afterthought.",
   },
 ];
 
@@ -52,7 +52,9 @@ export default function FaqTeaser() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * i }}
                 className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${
-                  isOpen ? "border-border-strong bg-border-subtle/50" : "border-border-subtle bg-transparent hover:border-border-strong"
+                  isOpen
+                    ? "border-border-strong bg-border-subtle/50"
+                    : "border-border-subtle bg-transparent hover:border-border-strong"
                 }`}
               >
                 <button

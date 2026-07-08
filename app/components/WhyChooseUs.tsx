@@ -29,7 +29,10 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden">
+    <section
+      id="why-choose-us"
+      className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -79,7 +82,7 @@ export default function WhyChooseUs() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[500px] w-full rounded-2xl border border-border-subtle overflow-hidden group shadow-2xl"
+            className="relative h-125 w-full rounded-2xl border border-border-subtle overflow-hidden group shadow-2xl"
           >
             {/* Base Image: Abstract Digital Network / Software Architecture */}
             <Image
@@ -90,7 +93,7 @@ export default function WhyChooseUs() {
             />
 
             {/* Gradient Overlay for blending and text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent mix-blend-normal"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent mix-blend-normal"></div>
 
             {/* Grid Overlay for the "Blueprint / Architecture" feel */}
             <div
@@ -141,7 +144,7 @@ export default function WhyChooseUs() {
                 </p>
                 <ShieldCheck size={14} className="text-electric-cyan" />
               </div>
-              
+
               {/* Progress Bar Animation */}
               <div className="w-full h-1.5 bg-border-strong rounded-full overflow-hidden mb-2">
                 <motion.div
@@ -155,7 +158,6 @@ export default function WhyChooseUs() {
                 Enterprise Grade Active
               </p>
             </motion.div>
-
           </motion.div>
         </div>
       </div>
