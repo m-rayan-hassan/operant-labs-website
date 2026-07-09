@@ -167,7 +167,7 @@ export default function ServicesLandingPage() {
            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-electric-cyan/10 blur-[120px] rounded-full z-0"></div>
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Ready to transform your business?</h2>
-             <Link href="/contact" className="btn-solid inline-block text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">
+             <Link href="/contact-us" className="btn-solid inline-block text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">
                Discuss Your Project
              </Link>
            </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function FinalCta() {
   return (
@@ -57,13 +58,19 @@ export default function FinalCta() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <button className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-300">
+              <Link 
+                href="/contact-us"
+                className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-300 flex items-center justify-center"
+              >
                 Book a Consultation
-              </button>
-              <button className="btn-outline bg-background/50 backdrop-blur-md text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer hover:border-electric-cyan transition-colors duration-300 group">
+              </Link>
+              <Link 
+                href="/contact-us"
+                className="btn-outline bg-background/50 backdrop-blur-md text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer hover:border-electric-cyan transition-colors duration-300 group"
+              >
                 Contact Us
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </motion.div>
           </div>
         </div>

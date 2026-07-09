@@ -5,19 +5,19 @@ import Link from "next/link";
 import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const companyLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Why Choose Us", href: "#why-choose-us" },
-  { label: "Careers", href: "#contact" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const servicesLinks = [
-  { label: "Custom Software Development", href: "#services" },
-  { label: "Intelligent Business Automation", href: "#services" },
-  { label: "AI Solutions", href: "#services" },
-  { label: "Cloud & DevOps Solutions", href: "#services" },
-  { label: "Data Analytics & Business Intelligence", href: "#services" },
-  { label: "Technology Advisory & Digital Transformation", href: "#services" },
+  { label: "Custom Software Development", href: "/services/custom-software" },
+  { label: "Intelligent Business Automation", href: "/services/business-automation" },
+  { label: "AI Solutions", href: "/services/ai-solutions" },
+  { label: "Cloud & DevOps Solutions", href: "/services/cloud-devops" },
+  { label: "Data Analytics & Business Intelligence", href: "/services/data-analytics" },
+  { label: "Technology Advisory & Digital Transformation", href: "/services/technology-advisory" },
 ];
 
 export default function Footer() {
@@ -240,8 +240,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               {[
-                { label: "Industries We Serve", href: "#industries" },
-                { label: "Our Process", href: "#process" },
+                { label: "Industries We Serve", href: "/industries" },
+                { label: "Our Process", href: "/our-process" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link

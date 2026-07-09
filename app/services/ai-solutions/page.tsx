@@ -18,7 +18,7 @@ export default function AISolutionsPage() {
             We develop practical, responsible AI that solves real operational challenges rather than AI for its own sake, spanning virtual assistants, predictive analytics, and intelligent automation.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+            <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
           </div>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-border-subtle">
@@ -73,8 +73,8 @@ export default function AISolutionsPage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Let's build intelligent solutions together.</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore AI Solutions</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore AI Solutions</Link>
              </div>
            </div>
         </div>

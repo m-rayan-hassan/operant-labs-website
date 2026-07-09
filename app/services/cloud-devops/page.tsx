@@ -17,7 +17,7 @@ export default function CloudDevOpsPage() {
           <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-8">
             Growth shouldn't be limited by fragile infrastructure or slow release cycles. We design, migrate, and manage cloud environments, and build the delivery pipelines that let your team ship reliably and often.
           </p>
-          <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Talk to Our Cloud Team</Link>
+          <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Talk to Our Cloud Team</Link>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-border-subtle">
           <Image src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Server Infrastructure" fill className="object-cover" />
@@ -72,8 +72,8 @@ export default function CloudDevOpsPage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Let's modernise your infrastructure.</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Talk to Our Cloud Team</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Talk to Our Cloud Team</Link>
              </div>
            </div>
         </div>

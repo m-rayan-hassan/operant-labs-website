@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import FloatingLines from "./FloatingLens";
@@ -121,11 +122,9 @@ export default function Hero() {
             </span>
             <span className="ml-[0.4em]">the Technology Behind</span>
           </span>
-          
+
           {/* Line 2 */}
-          <span className="block mt-1 md:mt-2">
-            Tomorrow&apos;s Businesses
-          </span>
+          <span className="block mt-1 md:mt-2">Tomorrow&apos;s Businesses</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -148,16 +147,22 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
         >
-          <button className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer">
+          <Link
+            href="/contact-us"
+            className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer"
+          >
             Book a Consultation
-          </button>
-          <button className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group">
+          </Link>
+          <Link
+            href="/services"
+            className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group"
+          >
             Explore Our Services
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

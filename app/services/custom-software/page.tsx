@@ -19,7 +19,7 @@ export default function CustomSoftwarePage() {
             Off-the-shelf software often forces your business to adapt to it. We build secure, scalable, high-performance software tailored to your operations, whether that's enterprise systems, internal platforms, web apps, or mobile solutions.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+            <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
             <Link href="#process" className="btn-outline text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase flex items-center gap-2">
               How We Deliver <ArrowRight size={14} />
             </Link>
@@ -81,8 +81,8 @@ export default function CustomSoftwarePage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Ready to build software that drives business growth?</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Discuss Your Project</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Discuss Your Project</Link>
              </div>
            </div>
         </div>

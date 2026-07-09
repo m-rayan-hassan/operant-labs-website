@@ -17,7 +17,7 @@ export default function TechnologyAdvisoryPage() {
           <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-8">
             Adopting the right technology takes more than technical skill—it takes a clear understanding of your business and industry. We help organisations evaluate opportunities, build strategies, and modernise with confidence.
           </p>
-          <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Talk to an Advisor</Link>
+          <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Talk to an Advisor</Link>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-border-subtle">
           <Image src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Business Strategy Meeting" fill className="object-cover" />
@@ -55,8 +55,8 @@ export default function TechnologyAdvisoryPage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Let's plan your next move.</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Talk to an Advisor</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Talk to an Advisor</Link>
              </div>
            </div>
         </div>

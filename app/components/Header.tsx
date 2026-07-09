@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { 
@@ -52,11 +52,12 @@ const servicesList = [
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "About Us", href: "#" },
-  { name: "Industries", href: "#" },
-  { name: "Our Process", href: "/#process" },
-  { name: "Careers", href: "#" },
-  { name: "Contact Us", href: "/contact" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Industries", href: "/industries" },
+  { name: "Our Process", href: "/our-process" },
+  { name: "Why Us", href: "/why-choose-us" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 export default function Header() {
@@ -100,20 +101,19 @@ export default function Header() {
             className="h-8 w-auto dark:invert-0 invert transition-transform duration-300 group-hover:scale-105"
             priority
           />
-          {/* Added Company Name with Contrast */}
           <span className="text-xl tracking-tight flex items-center">
             <span className="font-bold text-foreground">Operant</span>
             <span className="font-light text-on-surface-variant ml-0.5">Labs</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 gap-8">
+        {/* Desktop Navigation - Reduced gap on smaller screens to ensure a single line */}
+        <nav className="hidden lg:flex items-center justify-center absolute left-1/2 -translate-x-1/2 gap-4 xl:gap-8 whitespace-nowrap">
           {navLinks.slice(0, 2).map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="nav-link text-[12px] tracking-[0.05em]"
+              className="nav-link text-[12px] tracking-[0.05em] flex items-center"
             >
               {link.name}
             </Link>
@@ -126,7 +126,7 @@ export default function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1">
+            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1 cursor-pointer">
               Services
               <ChevronDown
                 size={14}
@@ -143,24 +143,22 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: 10, filter: "blur(4px)" }}
                   transition={{ duration: 0.25, ease: "easeInOut" }}
-                  // pt-4 creates an invisible hover bridge so the mouse doesn't fall off
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-4 z-50 cursor-default"
                 >
                   <div className="w-[780px] bg-surface/95 backdrop-blur-xl border border-border-strong rounded-2xl shadow-2xl flex overflow-hidden">
                     
                     {/* Left Pane - Overview Highlight */}
                     <div className="w-[32%] bg-surface-dim border-r border-border-subtle p-8 flex flex-col justify-between relative overflow-hidden group/pane">
-                      {/* Background decorative glow */}
                       <div className="absolute -top-12 -left-12 w-40 h-40 bg-electric-cyan/10 rounded-full blur-3xl transition-all duration-700 group-hover/pane:bg-electric-cyan/20"></div>
                       
                       <div className="relative z-10">
                         <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center border border-border-subtle mb-6 shadow-sm">
                            <LayoutGrid size={18} className="text-foreground" />
                         </div>
-                        <h3 className="text-sm font-semibold text-foreground mb-3 tracking-wide">
+                        <h3 className="text-sm font-semibold text-foreground mb-3 tracking-wide whitespace-normal">
                           Our Services
                         </h3>
-                        <p className="text-xs text-on-surface-variant leading-relaxed font-light">
+                        <p className="text-xs text-on-surface-variant leading-relaxed font-light whitespace-normal">
                           We engineer intelligent solutions that empower businesses to scale, automate, and innovate efficiently.
                         </p>
                       </div>
@@ -183,10 +181,10 @@ export default function Header() {
                             <service.icon size={16} className="text-foreground group-hover:text-electric-cyan transition-colors" />
                           </div>
                           <div>
-                            <h4 className="text-[12px] font-semibold text-foreground mb-1 group-hover:text-electric-cyan transition-colors">
+                            <h4 className="text-[12px] font-semibold text-foreground mb-1 group-hover:text-electric-cyan transition-colors whitespace-normal">
                               {service.name}
                             </h4>
-                            <p className="text-[11px] text-on-surface-variant font-light leading-relaxed">
+                            <p className="text-[11px] text-on-surface-variant font-light leading-relaxed whitespace-normal">
                               {service.description}
                             </p>
                           </div>
@@ -204,7 +202,7 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="nav-link text-[12px] tracking-[0.05em]"
+              className="nav-link text-[12px] tracking-[0.05em] flex items-center"
             >
               {link.name}
             </Link>
@@ -212,18 +210,18 @@ export default function Header() {
         </nav>
 
         {/* CTA Button & Theme Toggle */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
           <ThemeToggle />
-          <button className="btn-solid text-[11px] px-6 py-2.5 rounded-full font-semibold tracking-[0.1em] uppercase">
+          <Link href="/contact-us" className="btn-solid text-[11px] px-6 py-2.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap">
             Book a Consultation
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="lg:hidden flex items-center gap-3">
+        <div className="lg:hidden flex items-center gap-3 shrink-0">
           <ThemeToggle />
           <button
-            className="text-on-surface-variant p-2 hover:text-foreground transition-colors"
+            className="text-on-surface-variant p-2 hover:text-foreground transition-colors cursor-pointer"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -275,9 +273,9 @@ export default function Header() {
                 </div>
               </div>
 
-              <button className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full">
+              <Link href="/contact-us" className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full text-center block">
                 Book a Consultation
-              </button>
+              </Link>
             </nav>
           </motion.div>
         )}

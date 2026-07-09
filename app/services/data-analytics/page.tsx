@@ -17,7 +17,7 @@ export default function DataAnalyticsPage() {
           <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-8">
             Most organisations sit on more data than they use. We help you collect, clean, and visualise it, so leadership can make decisions based on evidence rather than guesswork.
           </p>
-          <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Explore Data Solutions</Link>
+          <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Explore Data Solutions</Link>
         </motion.div>
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden border border-border-subtle">
           <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Analytics Dashboards" fill className="object-cover" />
@@ -71,8 +71,8 @@ export default function DataAnalyticsPage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Let's put your data to work.</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore Data Solutions</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore Data Solutions</Link>
              </div>
            </div>
         </div>

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const caseStudies = [
   {
@@ -49,8 +50,8 @@ export default function CaseStudies() {
               Proven Results
             </h2>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/case-studies"
             className="text-[11px] uppercase tracking-widest text-foreground/70 hover:text-foreground transition-all flex items-center gap-2 group mb-2 font-medium"
           >
             View All Projects
@@ -58,7 +59,7 @@ export default function CaseStudies() {
               size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Case Study Cards */}

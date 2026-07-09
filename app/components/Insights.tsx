@@ -46,7 +46,7 @@ export default function Insights() {
             </h2>
           </motion.div>
           <Link
-            href="#"
+            href="/insights"
             className="text-[11px] font-medium uppercase tracking-widest text-electric-cyan hover:text-foreground transition-all flex items-center gap-2 group mb-2"
           >
             Read Journal
@@ -58,7 +58,7 @@ export default function Insights() {
           {insights.map((insight, index) => (
             <motion.a
               key={insight.title}
-              href="#"
+              href="/insights"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

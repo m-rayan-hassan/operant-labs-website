@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { Lightbulb, TrendingUp, ShieldCheck, Target } from "lucide-react";
 
 const principles = [
@@ -74,18 +74,24 @@ export default function WhatWeDo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                className="glass-card p-8 flex flex-col h-full group"
+                // Added hover:shadow for the border outline glow
+                className="glass-card p-8 flex flex-col h-full group hover:border-electric-cyan/50 hover:bg-electric-cyan/5 hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] transition-all duration-500"
               >
-                <div className="w-10 h-10 rounded-full bg-border-subtle flex items-center justify-center mb-6 border border-border-subtle group-hover:bg-border-strong transition-colors">
+                {/* Added box-shadow glow and border transition to the icon container */}
+                <div className="w-10 h-10 rounded-full bg-border-subtle flex items-center justify-center mb-6 border border-border-subtle group-hover:border-electric-cyan/50 group-hover:bg-electric-cyan/10 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-500">
                   <Icon
                     size={20}
-                    className="text-foreground/70 group-hover:text-foreground transition-colors"
+                    // Added drop-shadow directly to the SVG for a true "lit up" glow effect
+                    className="text-foreground/70 group-hover:text-electric-cyan group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] transition-all duration-500"
                     strokeWidth={1.5}
                   />
                 </div>
-                <h3 className="text-sm text-foreground mb-3 tracking-wide font-medium">
+                
+                {/* Text transitions to electric cyan to tie the effect together */}
+                <h3 className="text-sm text-foreground mb-3 tracking-wide font-medium group-hover:text-electric-cyan transition-colors duration-300">
                   {item.title}
                 </h3>
+                
                 <p className="text-on-surface-variant text-[13px] font-light leading-relaxed">
                   {item.description}
                 </p>

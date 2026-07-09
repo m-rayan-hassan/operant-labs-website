@@ -18,7 +18,7 @@ export default function BusinessAutomationPage() {
             Manual processes slow teams down and add cost. We automate repetitive tasks, connect disconnected systems, and build workflows that let your people focus on higher-value work.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+            <Link href="/contact-us" className="btn-solid inline-block text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
             <button className="btn-outline text-xs px-6 py-3 rounded-full font-semibold tracking-widest uppercase flex items-center gap-2">
               Explore Solutions <ArrowRight size={14} />
             </button>
@@ -77,8 +77,8 @@ export default function BusinessAutomationPage() {
            <div className="relative z-10">
              <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Let's automate your business.</h2>
              <div className="flex flex-wrap justify-center gap-4">
-               <Link href="/contact" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
-               <Link href="/contact" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore Automation Solutions</Link>
+               <Link href="/contact-us" className="btn-solid text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Schedule a Consultation</Link>
+               <Link href="/contact-us" className="btn-outline text-xs px-8 py-4 rounded-full font-semibold tracking-widest uppercase">Explore Automation Solutions</Link>
              </div>
            </div>
         </div>
