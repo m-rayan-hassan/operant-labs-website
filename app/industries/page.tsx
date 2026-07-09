@@ -34,10 +34,10 @@ const industriesData = [
       "Citizen engagement tools",
     ],
   },
-  {
+{
     name: "Defense",
     icon: Shield,
-    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2J5UP_tMGXeNK6--l04L4O5pmTxpmk8DI4lp-TkM7Q&s=10",
     description: "Developing mission-critical systems with a focus on security, reliability, and performance for national security and defense operations.",
     solutions: [
       "Mission-critical comms",
@@ -49,7 +49,7 @@ const industriesData = [
   {
     name: "Healthcare",
     icon: HeartPulse,
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1767716134786-92b647b12846?q=80&w=800&auto=format&fit=crop",
     description: "Building HIPAA-compliant solutions that streamline patient management, enable telehealth, and leverage AI for better health outcomes.",
     solutions: [
       "Patient management",
@@ -61,7 +61,7 @@ const industriesData = [
   {
     name: "Financial Services",
     icon: Scale,
-    img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=800&auto=format&fit=crop",
     description: "Engineering secure fintech platforms, automating compliance, and deploying fraud detection systems to navigate a complex regulatory landscape.",
     solutions: [
       "Financial platforms",
@@ -70,10 +70,10 @@ const industriesData = [
       "Fraud detection support",
     ],
   },
-  {
+{
     name: "Legal & Compliance",
     icon: Gavel,
-    img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop",
+    img: "https://media.licdn.com/dms/image/v2/D4E12AQElsqP5sAif5A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685009669416?e=2147483647&v=beta&t=gHg2IIGxZBk09-3VuwGiLMftezCR8ZlZcUWUVnS06LA",
     description: "Automating document analysis and contract lifecycle management to increase efficiency and reduce risk for legal professionals.",
     solutions: [
       "Document lifecycle management",
@@ -85,7 +85,7 @@ const industriesData = [
   {
     name: "Manufacturing",
     icon: Factory,
-    img: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1513257805917-a0da1146eb15?q=80&w=800&auto=format&fit=crop",
     description: "Integrating IoT and AI to optimize production lines, enable predictive maintenance, and build resilient, automated supply chains.",
     solutions: [
       "Production management",

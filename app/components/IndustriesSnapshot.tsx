@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+
 export const industries = [
   {
     icon: Landmark,
@@ -32,35 +33,35 @@ export const industries = [
     icon: Shield,
     name: "Defense",
     desc: "Mission-critical systems, secure communications, and advanced threat intelligence.",
-    img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=800&auto=format&fit=crop",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2J5UP_tMGXeNK6--l04L4O5pmTxpmk8DI4lp-TkM7Q&s=10",
     href: "/industries",
   },
   {
     icon: HeartPulse,
     name: "Healthcare",
     desc: "AI-driven diagnostics and HIPAA-compliant patient data management systems.",
-    img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1767716134786-92b647b12846?q=80&w=800&auto=format&fit=crop",
     href: "/industries",
   },
   {
     icon: Scale,
     name: "Financial Services",
     desc: "High-frequency trading platforms and robust fintech security architectures.",
-    img: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=800&auto=format&fit=crop",
     href: "/industries",
   },
   {
     icon: Gavel,
     name: "Legal",
     desc: "Automated contract analysis and secure, immutable case management tools.",
-    img: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop",
+    img: "https://media.licdn.com/dms/image/v2/D4E12AQElsqP5sAif5A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685009669416?e=2147483647&v=beta&t=gHg2IIGxZBk09-3VuwGiLMftezCR8ZlZcUWUVnS06LA",
     href: "/industries",
   },
   {
     icon: Factory,
     name: "Manufacturing",
     desc: "IoT integration, automation, and supply chain optimization systems.",
-    img: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1513257805917-a0da1146eb15?q=80&w=800&auto=format&fit=crop",
     href: "/industries",
   },
   {
