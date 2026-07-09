@@ -117,7 +117,9 @@ export default function ContactPage() {
                       {item.href ? (
                         <a
                           href={item.href}
-                          target={item.label === "WhatsApp" ? "_blank" : "_self"}
+                          target={
+                            item.label === "WhatsApp" ? "_blank" : "_self"
+                          }
                           rel="noreferrer"
                           className="text-sm text-foreground hover:text-electric-cyan transition-colors font-medium"
                         >
@@ -162,8 +164,8 @@ export default function ContactPage() {
                       </span>
                     </div>
                     <p className="text-[13px] text-on-surface-variant font-light leading-relaxed">
-                      Gate No. 4, National Aerospace Science and Technology Park,
-                      Industrial Innovative Enclave, Alpha 17, Rawalpindi,
+                      Gate No. 4, National Aerospace Science and Technology
+                      Park, Industrial Innovative Enclave, Alpha 17, Rawalpindi,
                       Pakistan
                     </p>
                   </div>

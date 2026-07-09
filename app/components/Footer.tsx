@@ -13,11 +13,20 @@ const companyLinks = [
 
 const servicesLinks = [
   { label: "Custom Software Development", href: "/services/custom-software" },
-  { label: "Intelligent Business Automation", href: "/services/business-automation" },
+  {
+    label: "Intelligent Business Automation",
+    href: "/services/business-automation",
+  },
   { label: "AI Solutions", href: "/services/ai-solutions" },
   { label: "Cloud & DevOps Solutions", href: "/services/cloud-devops" },
-  { label: "Data Analytics & Business Intelligence", href: "/services/data-analytics" },
-  { label: "Technology Advisory & Digital Transformation", href: "/services/technology-advisory" },
+  {
+    label: "Data Analytics & Business Intelligence",
+    href: "/services/data-analytics",
+  },
+  {
+    label: "Technology Advisory & Digital Transformation",
+    href: "/services/technology-advisory",
+  },
 ];
 
 export default function Footer() {
@@ -34,14 +43,10 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
         {/* Main Unified Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-10">
-          
           {/* Column 1: Brand & Contact Info with Socials */}
           <div className="xl:col-span-1 space-y-10">
             <div>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2.5 group"
-              >
+              <Link href="/" className="inline-flex items-center gap-2.5 group">
                 <Image
                   src="/logo.png"
                   alt="Operant Labs Logo"
@@ -65,7 +70,10 @@ export default function Footer() {
                 </h4>
                 <ul className="space-y-4 text-[13px] font-light text-on-surface-variant">
                   <li className="flex items-start gap-3">
-                    <Mail size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <Mail
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
                     <a
                       href="mailto:info@operantlabs.io"
                       className="transition-colors hover:text-foreground"
@@ -74,7 +82,10 @@ export default function Footer() {
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <Phone
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
                     <a
                       href="tel:+923100004256"
                       className="transition-colors hover:text-foreground"
@@ -83,7 +94,10 @@ export default function Footer() {
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <Phone
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
                     <a
                       href="tel:+447723346951"
                       className="transition-colors hover:text-foreground"
@@ -120,7 +134,10 @@ export default function Footer() {
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Clock3 size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <Clock3
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
                     <span>Monday to Friday, 9:00 AM to 6:00 PM</span>
                   </li>
                 </ul>
@@ -218,8 +235,8 @@ export default function Footer() {
                     UK Office
                   </div>
                   <p>
-                    Office 1212, 182 to 184 High Street, North Area 1/1, East Ham,
-                    London, United Kingdom
+                    Office 1212, 182 to 184 High Street, North Area 1/1, East
+                    Ham, London, United Kingdom
                   </p>
                 </li>
                 <li>
@@ -229,7 +246,8 @@ export default function Footer() {
                   </div>
                   <p>
                     Gate No. 4, National Aerospace Science and Technology Park,
-                    Industrial Innovative Enclave, Alpha 17, Rawalpindi, Pakistan
+                    Industrial Innovative Enclave, Alpha 17, Rawalpindi,
+                    Pakistan
                   </p>
                 </li>
               </ul>
