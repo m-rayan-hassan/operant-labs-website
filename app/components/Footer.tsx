@@ -47,7 +47,6 @@ export default function Footer() {
                   alt="Operant Labs Logo"
                   width={64}
                   height={64}
-                  className="h-12 w-auto dark:invert-0 invert transition-transform duration-300 group-hover:scale-105"
                 />
                 <span className="text-2xl tracking-tight flex items-center">
                   <span className="font-bold text-foreground">Operant</span>

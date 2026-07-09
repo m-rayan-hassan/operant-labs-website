@@ -102,11 +102,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col items-center text-[26px] sm:text-4xl md:text-5xl lg:text-[70px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.2] tracking-tight text-center"
+          className="flex flex-col items-center text-[clamp(1.45rem,6vw,4.4rem)] sm:text-4xl md:text-5xl lg:text-[70px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.05] sm:leading-[1.15] tracking-tight text-center"
         >
           {/* Line 1 */}
-          <span className="inline-flex items-center justify-center whitespace-nowrap">
-            <span className="relative inline-flex justify-center text-center">
+          <span className="inline-flex items-center justify-center whitespace-nowrap text-center">
+            <span className="relative inline-flex justify-center text-center shrink-0">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={wordIndex}
@@ -114,7 +114,7 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
-                  className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)]"
+                  className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)] leading-none"
                 >
                   {ACTION_WORDS[wordIndex]}
                 </motion.span>
