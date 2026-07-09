@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -27,7 +28,11 @@ export default function RootLayout({
       className={`${inter.variable} antialiased dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

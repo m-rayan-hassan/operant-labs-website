@@ -35,12 +35,12 @@ export default function Footer() {
         {/* Main Unified Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12 xl:gap-10">
           
-          {/* Column 1: Brand, Socials, Contacts & Offices */}
+          {/* Column 1: Brand & Contact Info with Socials */}
           <div className="xl:col-span-1 space-y-10">
             <div>
               <Link
                 href="/"
-                className="inline-flex items-center gap-2.5 mb-6 group"
+                className="inline-flex items-center gap-2.5 group"
               >
                 <Image
                   src="/logo.png"
@@ -56,9 +56,56 @@ export default function Footer() {
                   </span>
                 </span>
               </Link>
+            </div>
 
-              {/* Social Icons */}
-              <div className="flex items-center gap-3">
+            {/* Contact Info & Socials */}
+            <div className="space-y-6">
+              <div>
+                <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground mb-4">
+                  Contact Info
+                </h4>
+                <ul className="space-y-4 text-[13px] font-light text-on-surface-variant">
+                  <li className="flex items-start gap-3">
+                    <Mail size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <a
+                      href="mailto:info@operantlabs.io"
+                      className="transition-colors hover:text-foreground"
+                    >
+                      info@operantlabs.io
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <a
+                      href="tel:+447723346951"
+                      className="transition-colors hover:text-foreground"
+                    >
+                      +44 7723 346951
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MessageCircle
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
+                    <a
+                      href="https://wa.me/447723346951"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition-colors hover:text-foreground"
+                    >
+                      WhatsApp: +44 7723 346951
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Clock3 size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <span>Monday to Friday, 9:00 AM to 6:00 PM</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Social Icons (Moved here) */}
+              <div className="flex items-center gap-3 pt-2">
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
@@ -115,60 +162,36 @@ export default function Footer() {
                 </a>
               </div>
             </div>
+          </div>
 
-            {/* Contact Info (Moved here) */}
-            <div className="space-y-4">
-              <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground">
-                Contact Info
+          {/* Column 2: Company Links & Our Offices */}
+          <div className="space-y-10">
+            <div>
+              <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+                Company
               </h4>
-              <ul className="space-y-4 text-[13px] font-light text-on-surface-variant">
-                <li className="flex items-start gap-3">
-                  <Mail size={14} className="mt-0.5 shrink-0 text-foreground" />
-                  <a
-                    href="mailto:info@operantlabs.io"
-                    className="transition-colors hover:text-foreground"
-                  >
-                    info@operantlabs.io
-                  </a>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
-                  <a
-                    href="tel:+447723346951"
-                    className="transition-colors hover:text-foreground"
-                  >
-                    +44 7723 346951
-                  </a>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MessageCircle
-                    size={14}
-                    className="mt-0.5 shrink-0 text-foreground"
-                  />
-                  <a
-                    href="https://wa.me/447723346951"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="transition-colors hover:text-foreground"
-                  >
-                    WhatsApp: +44 7723 346951
-                  </a>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Clock3 size={14} className="mt-0.5 shrink-0 text-foreground" />
-                  <span>Monday to Friday, 9:00 AM to 6:00 PM</span>
-                </li>
+              <ul className="space-y-4">
+                {companyLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             {/* Our Offices (Moved here) */}
-            <div className="space-y-4">
-              <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground">
+            <div>
+              <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground mb-6">
                 Our Offices
               </h4>
-              <ul className="space-y-4 text-[13px] font-light leading-relaxed text-on-surface-variant">
+              <ul className="space-y-6 text-[13px] font-light leading-relaxed text-on-surface-variant">
                 <li>
-                  <div className="mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                  <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
                     <MapPin size={14} />
                     UK Office
                   </div>
@@ -178,7 +201,7 @@ export default function Footer() {
                   </p>
                 </li>
                 <li>
-                  <div className="mb-1.5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
+                  <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-widest text-foreground">
                     <MapPin size={14} />
                     Pakistan Office
                   </div>
@@ -189,25 +212,6 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-          </div>
-
-          {/* Column 2: Company Links */}
-          <div>
-            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
-              Company
-            </h4>
-            <ul className="space-y-4">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Column 3: Services Links */}

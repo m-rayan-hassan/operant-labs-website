@@ -19,7 +19,7 @@ const services = [
     title: "Custom Software Development",
     description:
       "Secure, scalable software built around how your business actually works.",
-    href: "#",
+    href: "/services/custom-software",
     img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -27,7 +27,7 @@ const services = [
     title: "Intelligent Business Automation",
     description:
       "Turning manual, repetitive processes into fast, connected digital workflows.",
-    href: "#",
+    href: "/services/business-automation",
     img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -35,7 +35,7 @@ const services = [
     title: "AI Solutions",
     description:
       "Practical AI, from virtual assistants to predictive analytics, built to solve real problems.",
-    href: "#",
+    href: "/services/ai-solutions",
     img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -43,7 +43,7 @@ const services = [
     title: "Cloud & DevOps Solutions",
     description:
       "Cloud infrastructure, migration, and delivery pipelines that keep pace with your growth.",
-    href: "#",
+    href: "/services/cloud-devops",
     img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -51,7 +51,7 @@ const services = [
     title: "Data Analytics & Business Intelligence",
     description:
       "Turning scattered business data into dashboards and insight you can act on.",
-    href: "#",
+    href: "/services/data-analytics",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -59,7 +59,7 @@ const services = [
     title: "Technology Advisory & Transformation",
     description:
       "Strategic guidance so you invest in the right technology at the right time.",
-    href: "#",
+    href: "/services/technology-advisory",
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
   },
 ];

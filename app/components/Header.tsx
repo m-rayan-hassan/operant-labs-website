@@ -15,48 +15,48 @@ const servicesList = [
   { 
     name: "Custom Software Development", 
     description: "Scalable enterprise engineering",
-    href: "#", 
+    href: "/services/custom-software", 
     icon: Code2 
   },
   { 
     name: "Intelligent Business Automation", 
     description: "Streamline complex workflows",
-    href: "#", 
+    href: "/services/business-automation", 
     icon: Zap 
   },
   { 
     name: "AI Solutions", 
     description: "Machine learning & predictive models",
-    href: "#", 
+    href: "/services/ai-solutions", 
     icon: Cpu 
   },
   { 
     name: "Cloud & DevOps Solutions", 
     description: "Secure infrastructure & CI/CD",
-    href: "#", 
+    href: "/services/cloud-devops", 
     icon: Cloud 
   },
   { 
     name: "Data Analytics & Business Intelligence", 
     description: "Actionable insights & reporting",
-    href: "#", 
+    href: "/services/data-analytics", 
     icon: LineChart 
   },
   { 
     name: "Technology Advisory & Digital Transformation", 
     description: "Strategic technology consulting",
-    href: "#", 
+    href: "/services/technology-advisory", 
     icon: Rocket 
   },
 ];
 
 const navLinks = [
-  { name: "Home", href: "#" },
+  { name: "Home", href: "/" },
   { name: "About Us", href: "#" },
   { name: "Industries", href: "#" },
-  { name: "Our Process", href: "#process" },
+  { name: "Our Process", href: "/#process" },
   { name: "Careers", href: "#" },
-  { name: "Contact Us", href: "#" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
@@ -126,7 +126,7 @@ export default function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1 py-2">
+            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1">
               Services
               <ChevronDown
                 size={14}
@@ -165,7 +165,7 @@ export default function Header() {
                         </p>
                       </div>
 
-                      <Link href="#services" className="relative z-10 text-[11px] uppercase tracking-widest font-semibold text-electric-cyan flex items-center gap-2 group/link mt-8 w-fit">
+                      <Link href="/services" className="relative z-10 text-[11px] uppercase tracking-widest font-semibold text-electric-cyan flex items-center gap-2 group/link mt-8 w-fit">
                         View All Services
                         <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                       </Link>
