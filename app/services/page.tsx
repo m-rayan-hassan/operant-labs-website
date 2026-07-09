@@ -142,7 +142,7 @@ export default function ServicesLandingPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-electric-cyan/5 rounded-full blur-[100px] pointer-events-none"></div>
           
           <div className="text-center mb-12">
-            <h2 className="text-3xl italic font-normal mb-4">Technology We Work With</h2>
+            <h2 className="text-3xl font-bold mb-4">Technology We Work With</h2>
             <p className="text-on-surface-variant max-w-2xl mx-auto">Our teams are proficient in modern, enterprise-grade stacks designed for scale, security, and performance.</p>
           </div>
 

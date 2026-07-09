@@ -60,6 +60,10 @@ const navLinks = [
   { name: "Contact Us", href: "/contact-us" },
 ];
 
+// Shared class for the animated hover-underline effect on nav links
+const navLinkUnderline =
+  "nav-link relative text-[12px] tracking-[0.05em] flex items-center after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[1px] after:w-0 after:bg-electric-cyan after:transition-all after:duration-300 hover:after:w-full";
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -113,7 +117,7 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="nav-link text-[12px] tracking-[0.05em] flex items-center"
+              className={navLinkUnderline}
             >
               {link.name}
             </Link>
@@ -126,7 +130,9 @@ export default function Header() {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <button className="nav-link text-[12px] tracking-[0.05em] flex items-center gap-1 cursor-pointer">
+            <button
+              className={`${navLinkUnderline} gap-1 cursor-pointer`}
+            >
               Services
               <ChevronDown
                 size={14}
@@ -202,7 +208,7 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className="nav-link text-[12px] tracking-[0.05em] flex items-center"
+              className={navLinkUnderline}
             >
               {link.name}
             </Link>

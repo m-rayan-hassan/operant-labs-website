@@ -3,39 +3,39 @@
 import { motion } from "motion/react";
 
 const locations = [
-  { 
-    city: "Silicon Valley", 
-    country: "USA", 
+  {
+    city: "Silicon Valley",
+    country: "USA",
     top: "32%",
     // Increased to push the pin East (right) out of the ocean and onto land
-    left: "22%", 
-    delay: 0 
+    left: "22%",
+    delay: 0,
   },
-  { 
-    city: "London", 
-    country: "United Kingdom", 
-    top: "23%", 
+  {
+    city: "London",
+    country: "United Kingdom",
+    top: "23%",
     // Left as is (assuming this one was centered correctly for you)
-    left: "47.5%", 
-    delay: 0.2 
+    left: "47.5%",
+    delay: 0.2,
   },
-  { 
-    city: "Rawalpindi", 
-    country: "Pakistan", 
-    top: "36%", 
-    // Decreased to push the pin West (left), moving it out of India 
-    left: "63%", 
-    delay: 0.4 
+  {
+    city: "Rawalpindi",
+    country: "Pakistan",
+    top: "36%",
+    // Decreased to push the pin West (left), moving it out of India
+    left: "63%",
+    delay: 0.4,
   },
 ];
 
 export default function WorldMap() {
   return (
-    <section className="py-24 md:py-32 bg-background relative overflow-hidden border-t border-border-subtle z-10">
+    <section className="py-16 md:py-20 bg-background relative overflow-hidden border-t border-border-subtle z-10">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-electric-cyan/5 blur-[120px] rounded-[100%] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,9 +50,8 @@ export default function WorldMap() {
       </div>
 
       {/* Map Container - Allows horizontal scroll on mobile so it doesn't get impossibly tiny */}
-      <div className="w-full overflow-x-auto no-scrollbar relative z-10 cursor-grab active:cursor-grabbing pb-20 pt-10">
-        <div className="w-[1000px] md:w-full max-w-6xl mx-auto aspect-[2.2/1] relative">
-          
+      <div className="w-full overflow-x-auto no-scrollbar relative z-10 cursor-grab active:cursor-grabbing pb-4 pt-6">
+        <div className="w-250 md:w-full max-w-6xl mx-auto aspect-[2.2/1] relative">
           {/* 
             The Dot Matrix Map using CSS Masking 
             UPDATED: Brighter dots, larger radius, and 100% opacity for maximum visibility
@@ -61,16 +60,20 @@ export default function WorldMap() {
             className="absolute inset-0 opacity-100 pointer-events-none"
             style={{
               // Brighter cyan color with a slightly larger 1.5px dot size for crisp visibility
-              backgroundImage: "radial-gradient(circle, rgba(0, 240, 255, 0.7) 1.5px, transparent 1.5px)",
+              backgroundImage:
+                "radial-gradient(circle, rgba(0, 240, 255, 0.7) 1.5px, transparent 1.5px)",
               backgroundSize: "8px 8px", // Density of the dot grid
-              WebkitMaskImage: "url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')",
+              WebkitMaskImage:
+                "url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')",
               WebkitMaskSize: "contain",
               WebkitMaskPosition: "center",
               WebkitMaskRepeat: "no-repeat",
-              maskImage: "url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')",
+              maskImage:
+                "url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')",
               maskSize: "contain",
               maskPosition: "center",
               maskRepeat: "no-repeat",
+              clipPath: "inset(0 0 18% 0)",
             }}
           />
 
@@ -96,7 +99,7 @@ function LocationMarker({ city, country, top, left, delay }: any) {
       transition={{ duration: 0.6, delay, type: "spring", stiffness: 100 }}
     >
       {/* Tooltip Card */}
-      <div className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 px-4 py-2.5 border border-electric-cyan/80 bg-background/95 backdrop-blur-md rounded-lg flex flex-col items-start min-w-[140px] shadow-[0_0_20px_rgba(0,240,255,0.25)] pointer-events-auto">
+      <div className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 px-4 py-2.5 border border-electric-cyan/80 bg-background/95 backdrop-blur-md rounded-lg flex flex-col items-start min-w-35 shadow-[0_0_20px_rgba(0,240,255,0.25)] pointer-events-auto">
         <span className="text-foreground font-semibold text-[15px] leading-tight mb-1">
           {city}
         </span>
@@ -106,7 +109,7 @@ function LocationMarker({ city, country, top, left, delay }: any) {
       </div>
 
       {/* Vertical Connecting Line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1.5px] h-10 md:h-14 bg-gradient-to-b from-electric-cyan to-transparent opacity-90" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1.5px] h-10 md:h-14 bg-linear-to-b from-electric-cyan to-transparent opacity-90" />
 
       {/* Target Glowing Dot (Centered exactly on the coordinates) */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
