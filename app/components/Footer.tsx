@@ -76,10 +76,33 @@ export default function Footer() {
                   <li className="flex items-start gap-3">
                     <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
                     <a
+                      href="tel:+923100004256"
+                      className="transition-colors hover:text-foreground"
+                    >
+                      +92 310 0004256
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Phone size={14} className="mt-0.5 shrink-0 text-foreground" />
+                    <a
                       href="tel:+447723346951"
                       className="transition-colors hover:text-foreground"
                     >
                       +44 7723 346951
+                    </a>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <MessageCircle
+                      size={14}
+                      className="mt-0.5 shrink-0 text-foreground"
+                    />
+                    <a
+                      href="https://wa.me/923100004256"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition-colors hover:text-foreground"
+                    >
+                      WhatsApp: +92 310 0004256
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
@@ -151,7 +174,7 @@ export default function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://wa.me/447723346951"
+                  href="https://wa.me/923100004256"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="WhatsApp"

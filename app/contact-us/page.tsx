@@ -74,9 +74,21 @@ export default function ContactPage() {
                   },
                   {
                     icon: Phone,
+                    label: "Cell Number",
+                    value: "+92 310 0004256",
+                    href: "tel:+923100004256",
+                  },
+                  {
+                    icon: Phone,
                     label: "Phone Support",
                     value: "+44 7723 346951",
                     href: "tel:+447723346951",
+                  },
+                  {
+                    icon: MessageCircle,
+                    label: "WhatsApp",
+                    value: "+92 310 0004256",
+                    href: "https://wa.me/923100004256",
                   },
                   {
                     icon: MessageCircle,

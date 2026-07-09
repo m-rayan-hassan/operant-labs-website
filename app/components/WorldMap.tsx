@@ -42,7 +42,7 @@ export default function WorldMap() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="section-number mx-auto mb-6">08 / Global Reach</div>
+          <div className="section-number mx-auto mb-6">Global Reach</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
             Our Global Presence
           </h2>
