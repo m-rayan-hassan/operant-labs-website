@@ -102,7 +102,6 @@ export default function Header() {
             alt="Operant Labs Logo"
             width={40}
             height={40}
-            className="h-8 w-auto dark:invert-0 invert transition-transform duration-300 group-hover:scale-105"
             priority
           />
           <span className="text-xl tracking-tight flex items-center">
