@@ -1,9 +1,11 @@
-import React from 'react'
+import Contact from "./Contact";
 
-function page() {
+export default function ContactPage() {
   return (
-    <div>page</div>
-  )
+    <>
+      <main className="flex-grow pt-24 pb-0 relative z-10">
+        <Contact />
+      </main>
+    </>
+  );
 }
-
-export default page
