@@ -15,6 +15,8 @@ const stats = [
   { icon: Layers, label: "Flexible Delivery Teams" },
   { icon: Brain, label: "AI-Native Architecture" },
   { icon: ShieldCheck, label: "Enterprise Delivery Governance" },
+  { icon: Brain, label: "Responsible AI" },
+  { icon: Layers, label: "MLOps & Governance" },
 ];
 
 export default function TrustStrip() {

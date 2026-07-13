@@ -11,23 +11,23 @@ const caseStudies = [
     title: "Pre-Acquisition Technical Due Diligence",
     challenge: "Validating proprietary AI claims of a target company.",
     solution: "Deep code-level audit and architecture assessment.",
-    result: "Prevented £12M overvaluation due to technical debt.",
+    result: "Potential to identify significant overvaluation risk from hidden technical debt before transaction close.",
     image: "/global payment gateway.jpg",
   },
   {
     category: "Healthcare",
-    title: "Clinical Document Copilot",
-    challenge: "High manual overhead in processing patient records.",
-    solution: "Secure, HIPAA-compliant NLP & RAG pipeline.",
-    result: "85% reduction in document processing time.",
+    title: "Clinical Document Intelligence",
+    challenge: "High manual overhead in processing clinical documentation.",
+    solution: "Governed clinical intelligence platform with secure NLP and practitioner decision-support workflows.",
+    result: "Potential for substantial reduction in document processing time, enabling practitioners to focus on patient care.",
     image: "/patient data ai system.jpg",
   },
   {
     category: "Manufacturing",
-    title: "Predictive Maintenance System",
-    challenge: "Unplanned downtime causing significant revenue loss.",
-    solution: "Deployed IoT edge analytics with ML forecasting.",
-    result: "30% increase in overall equipment effectiveness.",
+    title: "Predictive Maintenance Platform",
+    challenge: "Unplanned downtime causing significant operational and revenue impact.",
+    solution: "IoT edge analytics with ML-based forecasting and intelligent workflow automation.",
+    result: "Potential for meaningful improvement in equipment effectiveness and reduction in unplanned downtime events.",
     image: "/automated fleet routing.webp",
   },
 ];
@@ -121,7 +121,7 @@ export default function CaseStudies() {
                   </p>
                   <p className="text-electric-cyan mt-3 font-medium">
                     <span className="text-foreground/70 text-[10px] uppercase tracking-wider mr-2">
-                      Result:
+                      Potential Impact:
                     </span>
                     {study.result}
                   </p>
@@ -129,6 +129,14 @@ export default function CaseStudies() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Illustrative Scenarios Disclaimer */}
+        <div className="mt-12 px-6 py-5 rounded-xl border border-border-subtle bg-surface-dim">
+          <p className="text-on-surface-variant text-[12px] font-light leading-relaxed">
+            <span className="text-foreground/60 font-medium uppercase tracking-wider text-[10px] mr-2">Note:</span>
+            These scenarios illustrate representative applications and potential value-creation opportunities. Actual outcomes depend on organizational context, data maturity, implementation scope, operating conditions, and adoption.
+          </p>
         </div>
       </div>
     </section>

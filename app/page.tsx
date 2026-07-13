@@ -7,6 +7,7 @@ import EngagementModels from "./components/EngagementModels";
 import IndustriesSnapshot from "./components/IndustriesSnapshot";
 import OurProcess from "./components/OurProcess";
 import WhyChooseUs from "./components/WhyChooseUs";
+import StrategyToExecution from "./components/StrategyToExecution";
 import Technologies from "./components/Technologies";
 import Insights from "./components/Insights";
 import FaqTeaser from "./components/FaqTeaser";
@@ -28,9 +29,9 @@ export default function Home() {
         <EngagementModels />
         <IndustriesSnapshot />
         <WhyChooseUs />
+        <StrategyToExecution />
         <OurProcess />
-        <Testimonials />
-        <Partners />
+        <Testimonials />  
         <Technologies />
         <Insights />
         <FaqTeaser />

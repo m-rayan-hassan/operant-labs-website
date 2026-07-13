@@ -6,24 +6,24 @@ import Image from "next/image";
 
 const reasons = [
   {
-    title: "Technical Depth over Staff Augmentation",
+    title: "Senior Technical Capability, Not Commodity Staffing",
     description:
-      "We don't provide generic coders. We embed specialized engineers, AI architects, and MLOps experts who bring proprietary frameworks to solve complex problems.",
+      "We provide senior architects, AI engineers, and MLOps specialists who bring a Structured Delivery Methodology to complex enterprise challenges — not generalist resources filling headcount.",
   },
   {
     title: "Forward-Deployed Execution Model",
     description:
-      "Our teams embed directly into your organization, eliminating the friction of outsourced agencies and accelerating enterprise time-to-value.",
+      "Multidisciplinary teams embed directly alongside your leadership, operating teams, and domain experts to translate strategic AI priorities into production systems — without the friction of traditional outsourcing.",
   },
   {
     title: "Investor & Enterprise Aligned",
     description:
-      "Every technical decision is mapped to value creation. We help PE/VC firms and enterprises leverage AI to drive margin expansion and revenue growth.",
+      "Every technical decision is anchored to measurable value creation. We help PE/VC firms and enterprises identify, validate, and realize AI-driven margin expansion and revenue growth.",
   },
   {
     title: "Secure & Governed by Design",
     description:
-      "From HIPAA-compliant architectures to strict RBAC vector databases, security and AI governance are foundational to every system we build.",
+      "Security, responsible AI, and governance are foundational — not afterthoughts. Every system we build incorporates enterprise-grade controls, compliance considerations, and human-oversight mechanisms.",
   },
 ];
 
@@ -44,7 +44,8 @@ export default function WhyChooseUs() {
           >
             <div className="section-number-left">06 / Advantage</div>
             <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight mb-8">
-              Why partner with Operant Labs?
+              Where Strategy Becomes an{" "}
+              <span className="text-electric-cyan font-normal italic">Operating Capability</span>
             </h2>
             <div className="space-y-6">
               {reasons.map((reason, i) => (

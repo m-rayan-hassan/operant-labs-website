@@ -36,7 +36,8 @@ const ongoing = [
     n: "05",
     icon: Activity,
     title: "Managed AI Operations",
-    description: "Ongoing governance, monitoring, optimization, and support.",
+    description:
+      "Ongoing workflow monitoring, agent performance tracking, model and prompt optimization, MLOps pipeline management, data-pipeline monitoring, governance reviews, security controls, incident support, continuous improvement cycles, and executive-level reporting.",
   },
   {
     n: "06",
@@ -83,8 +84,20 @@ function ModelCard({ model, index }: { model: typeof projectBased[number]; index
 
 export default function EngagementModels() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-surface">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-24 md:py-32 relative z-10 bg-surface">
+      {/* Smooth gradient blend from the preceding bg-background section */}
+      <div
+        className="pointer-events-none absolute top-0 inset-x-0 h-32"
+        style={{ background: "linear-gradient(to bottom, var(--background), var(--surface))" }}
+        aria-hidden
+      />
+      {/* Smooth gradient blend into the following bg-background section */}
+      <div
+        className="pointer-events-none absolute bottom-0 inset-x-0 h-32"
+        style={{ background: "linear-gradient(to top, var(--background), var(--surface))" }}
+        aria-hidden
+      />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

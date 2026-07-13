@@ -5,29 +5,48 @@ import { motion } from "motion/react";
 const steps = [
   {
     number: "01",
-    title: "Discovery & Strategy",
-    description: "Deep dive into your business model, current constraints, and growth objectives to define the right architecture.",
+    title: "AI Baseline & Readiness",
+    description:
+      "Assess your organization's current AI maturity, data infrastructure, governance posture, and readiness to support production AI systems.",
   },
   {
     number: "02",
-    title: "Solution Design",
-    description: "Creating the technical blueprint, selecting the right stack, and mapping the user journey or data flow.",
+    title: "Value-Creation Opportunity Mapping",
+    description:
+      "Identify and prioritize the highest-ROI AI opportunities across your operations, aligned to strategic objectives and measurable business outcomes.",
   },
   {
     number: "03",
-    title: "Agile Engineering",
-    description: "Iterative development with regular feedback loops, ensuring what we build exactly matches what you need.",
+    title: "Technical Validation & Architecture",
+    description:
+      "Design secure, scalable AI architectures and validate technical feasibility through structured proof-of-concept work before full investment.",
   },
   {
     number: "04",
-    title: "Deployment & Scale",
-    description: "Secure, zero-downtime deployment followed by ongoing monitoring, support, and optimisation.",
+    title: "Pilot / Proof of Value",
+    description:
+      "Deliver a focused, time-boxed pilot to validate the solution in a real operational context and establish the baseline for enterprise rollout.",
+  },
+  {
+    number: "05",
+    title: "Forward-Deployed Execution",
+    description:
+      "Embed multidisciplinary engineering teams directly into your organization to build, integrate, and deploy production AI systems at pace.",
+  },
+  {
+    number: "06",
+    title: "Scale, Governance & Optimization",
+    description:
+      "Expand proven systems across the enterprise, establish AI governance frameworks, monitor performance, and continuously optimize for sustained value.",
   },
 ];
 
 export default function OurProcess() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background" id="process">
+    <section
+      className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background"
+      id="process"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -37,36 +56,47 @@ export default function OurProcess() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <div className="section-number mx-auto">05 / Approach</div>
+          <div className="section-number mx-auto">How We Deliver</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
-            How We Deliver
+            Six Stages of{" "}
+            <span className="text-electric-cyan font-normal italic">
+              AI Transformation
+            </span>
           </h2>
+          <p className="text-on-surface-variant max-w-2xl mx-auto mt-6 font-light text-base leading-relaxed">
+            A structured, repeatable methodology — from initial assessment to
+            scalable, governed AI operations.
+          </p>
         </motion.div>
 
-        {/* Process Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {/* Connector Line (Desktop) */}
-          <div className="hidden lg:block absolute top-[45px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-border-strong to-transparent" />
-
+        {/* Process Steps — 3+3 grid on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <motion.div
               key={step.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="relative flex flex-col items-center text-center group"
+              transition={{ duration: 0.6, delay: 0.08 * i }}
+              className="relative flex flex-col group glass-card p-8 hover:border-electric-cyan/40 transition-colors duration-500"
             >
-              {/* Step Circle */}
-              <div className="w-[90px] h-[90px] rounded-full bg-card border border-border-strong flex items-center justify-center mb-8 relative z-10 group-hover:border-electric-cyan/50 transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.1)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                <span className="font-technical-data text-2xl text-foreground/80 group-hover:text-electric-cyan transition-colors font-light">
+              {/* Step Number */}
+              <div className="w-14 h-14 rounded-full bg-card border border-border-strong flex items-center justify-center mb-6 relative z-10 group-hover:border-electric-cyan/50 transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.1)] dark:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                <span className="font-technical-data text-xl text-foreground/80 group-hover:text-electric-cyan transition-colors font-light">
                   {step.number}
                 </span>
               </div>
-              <h3 className="text-lg font-medium text-foreground mb-3">
+
+              {/* Accent line */}
+              <span
+                className="absolute left-0 top-0 h-full w-[2px] bg-electric-cyan scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 rounded-l-sm"
+                aria-hidden
+              />
+
+              <h3 className="text-base font-medium text-foreground mb-3 group-hover:text-electric-cyan transition-colors duration-300">
                 {step.title}
               </h3>
-              <p className="text-on-surface-variant text-[13px] font-light leading-relaxed max-w-[260px]">
+              <p className="text-on-surface-variant text-[13px] font-light leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 const locations = [
   {
     city: "Silicon Valley",
-    country: "USA",
+    country: "USA (Comming Soon)",
     top: "32%",
     // Increased to push the pin East (right) out of the ocean and onto land
     left: "22%",

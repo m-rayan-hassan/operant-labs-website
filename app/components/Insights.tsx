@@ -31,7 +31,13 @@ const insights = [
 
 export default function Insights() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle bg-surface relative z-10">
+    <section className="py-24 md:py-32 bg-surface relative z-10">
+      {/* Smooth gradient blend from the preceding bg-background sections */}
+      <div
+        className="pointer-events-none absolute top-0 inset-x-0 h-32"
+        style={{ background: "linear-gradient(to bottom, var(--background), var(--surface))" }}
+        aria-hidden
+      />
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <motion.div

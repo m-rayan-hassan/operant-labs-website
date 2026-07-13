@@ -7,11 +7,11 @@ import { ArrowRight } from "lucide-react";
 import FloatingLines from "./FloatingLens";
 
 const ACTION_WORDS = [
-  "Assessing",
-  "Architecting",
+  "Strategy",
+  "Architecture",
   "Engineering",
-  "Deploying",
-  "Scaling",
+  "Deployment",
+  "Scale",
 ];
 
 export default function Hero() {
