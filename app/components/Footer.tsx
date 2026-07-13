@@ -6,27 +6,32 @@ import { Clock3, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 
 const companyLinks = [
   { label: "About Us", href: "/about-us" },
-  { label: "Why Choose Us", href: "/why-choose-us" },
+  { label: "Investors", href: "/investors" },
   { label: "Careers", href: "/careers" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
-const servicesLinks = [
-  { label: "Custom Software Development", href: "/services/custom-software" },
-  {
-    label: "Intelligent Business Automation",
-    href: "/services/business-automation",
-  },
-  { label: "AI Solutions", href: "/services/ai-solutions" },
-  { label: "Cloud & DevOps Solutions", href: "/services/cloud-devops" },
-  {
-    label: "Data Analytics & Business Intelligence",
-    href: "/services/data-analytics",
-  },
-  {
-    label: "Technology Advisory & Digital Transformation",
-    href: "/services/technology-advisory",
-  },
+const capabilitiesLinks = [
+  { label: "AI Strategy & Transformation", href: "/capabilities/ai-strategy" },
+  { label: "Technical AI Due Diligence", href: "/capabilities/ai-due-diligence" },
+  { label: "AI Solution Architecture", href: "/capabilities/ai-architecture" },
+  { label: "Forward-Deployed Engineering", href: "/capabilities/forward-deployed-engineering" },
+  { label: "Custom AI Systems", href: "/capabilities/custom-ai-systems" },
+  { label: "Intelligent Automation", href: "/capabilities/intelligent-automation" },
+  { label: "Data & Cloud Engineering", href: "/capabilities/data-cloud-engineering" },
+  { label: "AI Governance", href: "/capabilities/ai-governance" },
+  { label: "Managed AI Operations", href: "/capabilities/managed-ai-operations" },
+];
+
+const resourceLinks = [
+  { label: "Industries We Serve", href: "/industries" },
+  { label: "How We Deliver", href: "/our-process" },
+  { label: "Insights", href: "/insights" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" },
 ];
 
 export default function Footer() {
@@ -106,34 +111,6 @@ export default function Footer() {
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MessageCircle
-                      size={14}
-                      className="mt-0.5 shrink-0 text-foreground"
-                    />
-                    <a
-                      href="https://wa.me/923100004256"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="transition-colors hover:text-foreground"
-                    >
-                      WhatsApp: +92 310 0004256
-                    </a>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <MessageCircle
-                      size={14}
-                      className="mt-0.5 shrink-0 text-foreground"
-                    />
-                    <a
-                      href="https://wa.me/447723346951"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="transition-colors hover:text-foreground"
-                    >
-                      WhatsApp: +44 7723 346951
-                    </a>
-                  </li>
-                  <li className="flex items-start gap-3">
                     <Clock3
                       size={14}
                       className="mt-0.5 shrink-0 text-foreground"
@@ -143,7 +120,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* Social Icons (Moved here) */}
+              {/* Social Icons */}
               <div className="flex items-center gap-3 pt-2">
                 <a
                   href="https://www.linkedin.com"
@@ -159,45 +136,6 @@ export default function Footer() {
                   >
                     <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.98h4.56V24H.22V8.98zM8.22 8.98h4.37v2.05h.06c.61-1.16 2.12-2.38 4.36-2.38 4.66 0 5.52 3.06 5.52 7.04V24h-4.56v-6.8c0-1.62-.03-3.71-2.26-3.71-2.27 0-2.62 1.77-2.62 3.6V24H8.22V8.98z" />
                   </svg>
-                </a>
-                <a
-                  href="https://www.instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
-                >
-                  <svg
-                    className="w-[14px] h-[14px] fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M7 0h10a7 7 0 0 1 7 7v10a7 7 0 0 1-7 7H7a7 7 0 0 1-7-7V7a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5H7zm5 3.75A6.25 6.25 0 1 1 5.75 12 6.26 6.26 0 0 1 12 5.75zm0 2A4.25 4.25 0 1 0 16.25 12 4.25 4.25 0 0 0 12 7.75zm6.5-3a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18.5 4.75z" />
-                  </svg>
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
-                >
-                  <svg
-                    className="w-[14px] h-[14px] fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.12.82-.26.82-.58v-2.2c-3.34.73-4.04-1.4-4.04-1.4-.54-1.38-1.33-1.75-1.33-1.75-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.06 1.83 2.8 1.3 3.49.99.1-.77.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.33 3.3 1.23.96-.27 1.98-.4 3-.4 1.02 0 2.04.13 3 .4 2.29-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z" />
-                  </svg>
-                </a>
-                <a
-                  href="https://wa.me/923100004256"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="WhatsApp"
-                  className="w-8 h-8 rounded-full bg-border-subtle border border-border-strong flex items-center justify-center text-foreground hover:bg-border-strong hover:text-electric-cyan transition-colors"
-                >
-                  <MessageCircle size={14} />
                 </a>
               </div>
             </div>
@@ -223,7 +161,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Our Offices (Moved here) */}
+            {/* Our Offices */}
             <div>
               <h4 className="text-[11px] font-semibold uppercase tracking-widest text-foreground mb-6">
                 Our Offices
@@ -254,13 +192,13 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3: Services Links */}
+          {/* Column 3: Capabilities Links */}
           <div>
             <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
-              Services
+              Capabilities
             </h4>
             <ul className="space-y-4">
-              {servicesLinks.map((link) => (
+              {capabilitiesLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -273,26 +211,43 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Resources Links */}
-          <div>
-            <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
-              Resources
-            </h4>
-            <ul className="space-y-4">
-              {[
-                { label: "Industries We Serve", href: "/industries" },
-                { label: "Our Process", href: "/our-process" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Column 4: Resources & Legal Links */}
+          <div className="space-y-10">
+            <div>
+              <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+                Resources
+              </h4>
+              <ul className="space-y-4">
+                {resourceLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-foreground text-[11px] uppercase tracking-widest font-semibold mb-6">
+                Legal
+              </h4>
+              <ul className="space-y-4">
+                {legalLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-on-surface-variant text-[13px] hover:text-foreground transition-colors font-light"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

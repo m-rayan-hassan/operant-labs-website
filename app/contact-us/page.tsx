@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { phoneCountries } from "../lib/phoneCountries";
 import { Mail, Phone, Clock3, MapPin, MessageCircle, Send } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import WorldMap from "../components/WorldMap";
 
 export default function ContactPage() {
@@ -28,15 +28,13 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <div className="section-number justify-center mb-6">Contact Us</div>
+            <div className="section-number justify-center mb-6">Transformation &amp; Engineering</div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic mb-6 leading-tight tracking-tight">
-              Ready to Turn Your Vision{" "}
-              <span className="text-electric-cyan">Into Reality?</span>
+              Ready to Scale Your{" "}
+              <span className="text-electric-cyan">AI Capabilities?</span>
             </h1>
             <p className="text-lg text-on-surface-variant font-light leading-relaxed">
-              Partner with Operant Labs to build intelligent software, automate
-              business processes, and create digital experiences that drive
-              measurable results. We're just a conversation away.
+              Partner with Operant Labs to assess AI opportunities, design scalable architectures, and deploy specialized engineering teams to turn your transformation strategies into production systems.
             </p>
           </motion.div>
         </section>
@@ -57,9 +55,7 @@ export default function ContactPage() {
                   Let's Build the Future Together
                 </h2>
                 <p className="text-on-surface-variant text-sm font-light leading-relaxed">
-                  Every good project starts with a conversation. Whether you're
-                  planning new software, automation, AI, or a wider digital
-                  transformation, our team is ready to help.
+                  Every successful transformation starts with a strategic conversation. Whether you're exploring AI readiness, planning complex enterprise architectures, or scaling forward-deployed engineering teams, our experts are ready to assist.
                 </p>
               </div>
 
@@ -186,7 +182,7 @@ export default function ContactPage() {
 
                 <div className="relative z-10">
                   <h3 className="text-2xl font-semibold text-foreground mb-8">
-                    Schedule Your Solution Briefing
+                    Request a Technical Assessment
                   </h3>
 
                   <form
@@ -207,7 +203,7 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
-                          First Name
+                          First Name *
                         </label>
                         <input
                           type="text"
@@ -218,7 +214,7 @@ export default function ContactPage() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
-                          Last Name
+                          Last Name *
                         </label>
                         <input
                           type="text"
@@ -228,10 +224,34 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
+                          Organization *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all"
+                          placeholder="Company Name"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
+                          Role / Title
+                        </label>
+                        <input
+                          type="text"
+                          className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all"
+                          placeholder="CTO, VP of Engineering..."
+                        />
+                      </div>
+                    </div>
 
                     <div className="space-y-2">
                       <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
-                        Corporate Email
+                        Corporate Email *
                       </label>
                       <input
                         type="email"
@@ -272,7 +292,6 @@ export default function ContactPage() {
 
                         <input
                           type="tel"
-                          required
                           inputMode="numeric"
                           value={phone}
                           onChange={(e) => handlePhoneChange(e.target.value)}
@@ -283,38 +302,52 @@ export default function ContactPage() {
                       </div>
                     </div>
 
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
+                          Engagement Type
+                        </label>
+                        <select className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all appearance-none cursor-pointer">
+                          <option className="bg-background text-foreground">AI Strategy &amp; Assessment</option>
+                          <option className="bg-background text-foreground">Technical AI Due Diligence</option>
+                          <option className="bg-background text-foreground">Solution Architecture &amp; Pilot</option>
+                          <option className="bg-background text-foreground">Forward-Deployed Engineering</option>
+                          <option className="bg-background text-foreground">Custom AI Systems</option>
+                          <option className="bg-background text-foreground">Managed AI Operations</option>
+                        </select>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
+                          AI Maturity Level
+                        </label>
+                        <select className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all appearance-none cursor-pointer">
+                          <option className="bg-background text-foreground">Exploring opportunities</option>
+                          <option className="bg-background text-foreground">Have isolated proofs-of-concept</option>
+                          <option className="bg-background text-foreground">Scaling existing AI solutions</option>
+                          <option className="bg-background text-foreground">Enterprise-wide AI deployment</option>
+                        </select>
+                      </div>
+                    </div>
+                    
                     <div className="space-y-2">
-                      <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
-                        Primary Interest
-                      </label>
-                      <select className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all appearance-none cursor-pointer">
-                        <option className="bg-background text-foreground">
-                          Custom Software Development
-                        </option>
-                        <option className="bg-background text-foreground">
-                          Intelligent Business Automation
-                        </option>
-                        <option className="bg-background text-foreground">
-                          Artificial Intelligence / LLMs
-                        </option>
-                        <option className="bg-background text-foreground">
-                          Cloud Infrastructure &amp; DevOps
-                        </option>
-                        <option className="bg-background text-foreground">
-                          Data Analytics &amp; BI
-                        </option>
-                        <option className="bg-background text-foreground">
-                          Strategic Technology Advisory
-                        </option>
-                      </select>
+                        <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
+                          Expected Timeline
+                        </label>
+                        <select className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all appearance-none cursor-pointer">
+                          <option className="bg-background text-foreground">Immediate (1-2 months)</option>
+                          <option className="bg-background text-foreground">Short-term (3-6 months)</option>
+                          <option className="bg-background text-foreground">Long-term (6+ months)</option>
+                          <option className="bg-background text-foreground">Just exploring</option>
+                        </select>
                     </div>
 
                     <div className="space-y-2">
                       <label className="text-[11px] font-semibold text-on-surface-variant uppercase tracking-widest">
-                        Project Outline
+                        Project Summary (Optional)
                       </label>
                       <textarea
-                        rows={4}
+                        rows={3}
                         className="w-full bg-surface-dim border border-border-subtle rounded-xl px-4 py-3.5 text-sm text-foreground focus:outline-none focus:border-electric-cyan focus:ring-1 focus:ring-electric-cyan transition-all resize-none"
                         placeholder="Describe your current systems, constraints, and target outcomes..."
                       ></textarea>
@@ -324,7 +357,7 @@ export default function ContactPage() {
                       type="submit"
                       className="btn-solid w-full py-4 rounded-xl flex items-center justify-center gap-2 text-[12px] font-semibold tracking-widest uppercase shadow-md hover:shadow-lg mt-4"
                     >
-                      Submit Briefing Details <Send size={16} />
+                      Discuss an AI Transformation <Send size={16} />
                     </button>
                   </form>
                 </div>

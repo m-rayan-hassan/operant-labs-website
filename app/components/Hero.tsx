@@ -7,11 +7,11 @@ import { ArrowRight } from "lucide-react";
 import FloatingLines from "./FloatingLens";
 
 const ACTION_WORDS = [
-  "Building",
+  "Assessing",
+  "Architecting",
   "Engineering",
-  "Innovating",
-  "Powering",
-  "Shaping",
+  "Deploying",
+  "Scaling",
 ];
 
 export default function Hero() {
@@ -20,7 +20,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % ACTION_WORDS.length);
-    }, 2500); // Cycles every 2.5 seconds
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -31,7 +31,6 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0 }}
       >
-        {/* Adjusted: Increased opacity to 0.60 and dark:opacity to 0.90 for more brightness */}
         <div className="absolute -top-[35%] -left-[20%] w-[140%] h-[140%] opacity-[0.60] dark:opacity-[0.90] transition-opacity duration-700">
           <FloatingLines
             enabledWaves={["top", "middle", "bottom"]}
@@ -93,7 +92,7 @@ export default function Hero() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan animate-pulse" />
           <span className="text-[10px] text-foreground uppercase tracking-[0.15em] font-medium">
-            Innovation Architecture
+            AI Transformation &amp; Engineering
           </span>
         </motion.div>
 
@@ -106,7 +105,8 @@ export default function Hero() {
         >
           {/* Line 1 */}
           <span className="inline-flex items-center justify-center whitespace-nowrap text-center">
-            <span className="relative inline-flex justify-center text-center shrink-0">
+            From AI{" "}
+            <span className="relative inline-flex justify-center text-center shrink-0 ml-[0.3em]">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={wordIndex}
@@ -120,11 +120,10 @@ export default function Hero() {
                 </motion.span>
               </AnimatePresence>
             </span>
-            <span className="ml-[0.4em]">the Technology Behind</span>
           </span>
 
           {/* Line 2 */}
-          <span className="block mt-1 md:mt-2">Tomorrow&apos;s Businesses</span>
+          <span className="block mt-1 md:mt-2">to Enterprise Execution</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -132,12 +131,22 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="text-on-surface-variant max-w-2xl mx-auto mb-10 text-base md:text-lg font-light leading-relaxed"
+          className="text-on-surface-variant max-w-2xl mx-auto mb-4 text-base md:text-lg font-light leading-relaxed"
         >
-          Technology is no longer just a competitive advantage, it&apos;s the
-          foundation of modern business. Operant Labs helps organisations
-          design, develop, automate, and transform how they operate through
-          intelligent technology solutions.
+          We help enterprises and investment-backed companies assess AI
+          opportunities, design scalable architectures, deploy specialized
+          engineering teams, and turn transformation strategies into production
+          systems.
+        </motion.p>
+
+        {/* Supporting line */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="text-on-surface-variant/70 max-w-xl mx-auto mb-10 text-sm italic font-light"
+        >
+          Strategy defines the opportunity. Engineering creates the value.
         </motion.p>
 
         {/* CTAs */}
@@ -151,13 +160,13 @@ export default function Hero() {
             href="/contact-us"
             className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer"
           >
-            Book a Consultation
+            Discuss an AI Transformation
           </Link>
           <Link
-            href="/services"
+            href="/capabilities"
             className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group"
           >
-            Explore Our Services
+            Explore Our Capabilities
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"

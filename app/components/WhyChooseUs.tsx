@@ -6,24 +6,24 @@ import Image from "next/image";
 
 const reasons = [
   {
-    title: "Engineering Excellence over Assembly Lines",
+    title: "Technical Depth over Staff Augmentation",
     description:
-      "We don't just churn out code. We engineer robust, scalable systems using modern, best-in-class technologies.",
+      "We don't provide generic coders. We embed specialized engineers, AI architects, and MLOps experts who bring proprietary frameworks to solve complex problems.",
   },
   {
-    title: "Business-First Architecture",
+    title: "Forward-Deployed Execution Model",
     description:
-      "Every technical decision is driven by your specific business goals, not just technical trends.",
+      "Our teams embed directly into your organization, eliminating the friction of outsourced agencies and accelerating enterprise time-to-value.",
   },
   {
-    title: "Enterprise-Grade Security",
+    title: "Investor & Enterprise Aligned",
     description:
-      "Security is built in from day one, ensuring your data and infrastructure are protected against modern threats.",
+      "Every technical decision is mapped to value creation. We help PE/VC firms and enterprises leverage AI to drive margin expansion and revenue growth.",
   },
   {
-    title: "Transparent Partnership",
+    title: "Secure & Governed by Design",
     description:
-      "No technical jargon hiding missed deadlines. We provide clear communication, honest timelines, and measurable results.",
+      "From HIPAA-compliant architectures to strict RBAC vector databases, security and AI governance are foundational to every system we build.",
   },
 ];
 

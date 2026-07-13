@@ -33,11 +33,10 @@ export default function FinalCta() {
               transition={{ duration: 0.8 }}
               className="text-5xl md:text-6xl text-foreground mb-6 font-semibold tracking-tight leading-[1.1]"
             >
-              Let&apos;s build{" "}
+              Initiate your{" "}
               <span className="italic font-light text-foreground/80">
-                intelligent
-              </span>{" "}
-              solutions.
+                AI transformation.
+              </span>
             </motion.h2>
             
             <motion.p
@@ -47,8 +46,7 @@ export default function FinalCta() {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-on-surface-variant mb-10 text-base md:text-lg font-light leading-relaxed max-w-xl mx-auto"
             >
-              Ready to transform your operations? Partner with our engineers to
-              design a system that scales with your ambition.
+              Partner with our engineers to assess maturity, define strategy, and deploy enterprise-grade AI systems that scale with your ambition.
             </motion.p>
             
             <motion.div
@@ -62,7 +60,7 @@ export default function FinalCta() {
                 href="/contact-us"
                 className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-300 flex items-center justify-center"
               >
-                Book a Consultation
+                Schedule a Briefing
               </Link>
               <Link 
                 href="/contact-us"

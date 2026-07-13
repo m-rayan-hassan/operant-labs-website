@@ -1,9 +1,9 @@
-
 import Hero from "./components/Hero";
 import TrustStrip from "./components/TrustStrip";
 import WhatWeDo from "./components/WhatWeDo";
 import ServicesOverview from "./components/ServicesOverview";
 import CaseStudies from "./components/CaseStudies";
+import EngagementModels from "./components/EngagementModels";
 import IndustriesSnapshot from "./components/IndustriesSnapshot";
 import OurProcess from "./components/OurProcess";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -25,9 +25,10 @@ export default function Home() {
         <WhatWeDo />
         <ServicesOverview />
         <CaseStudies />
+        <EngagementModels />
         <IndustriesSnapshot />
-        <OurProcess />
         <WhyChooseUs />
+        <OurProcess />
         <Testimonials />
         <Partners />
         <Technologies />

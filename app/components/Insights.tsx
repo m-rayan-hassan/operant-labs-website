@@ -7,24 +7,24 @@ import Link from "next/link";
 
 const insights = [
   {
-    category: "Engineering",
+    category: "Private Equity",
     time: "5 min read",
-    title: "Scaling Microservices in 2024",
-    desc: "Best practices for maintaining robust distributed systems.",
+    title: "The AI Value Creation Playbook",
+    desc: "How operating partners are using AI to drive EBITDA growth across portfolios.",
     image: "/scaling microservices.webp",
   },
   {
-    category: "AI",
+    category: "Architecture",
     time: "8 min read",
-    title: "Implementing Enterprise LLMs",
-    desc: "A practical guide to deploying safe AI models in corporate environments.",
+    title: "Securing RAG Architectures",
+    desc: "A practical guide to deploying safe, compliant generative AI in enterprise environments.",
     image: "/implementing enterprises llm.png",
   },
   {
-    category: "Cloud",
+    category: "Due Diligence",
     time: "4 min read",
-    title: "AWS vs Azure Security",
-    desc: "Comparing native security features across major cloud providers.",
+    title: "Evaluating Technical IP in M&A",
+    desc: "How to separate true proprietary AI from API wrappers during technical due diligence.",
     image: "/AWS-vs-Azure.jpg",
   },
 ];

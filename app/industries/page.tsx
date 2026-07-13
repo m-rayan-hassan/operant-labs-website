@@ -258,13 +258,13 @@ export default function IndustriesPage() {
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link href="/contact-us" className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase shadow-md hover:shadow-lg">
-                Schedule a Consultation
+                Schedule a Briefing
               </Link>
               <Link 
-                href="/services" 
+                href="/capabilities" 
                 className="btn-outline text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase flex items-center gap-2 bg-surface/50 backdrop-blur-md"
               >
-                Explore Our Solutions <ArrowRight size={14} />
+                Explore Capabilities <ArrowRight size={14} />
               </Link>
             </div>
           </div>

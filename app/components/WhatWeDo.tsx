@@ -1,31 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Lightbulb, TrendingUp, ShieldCheck, Target } from "lucide-react";
+import { motion } from "motion/react";
+import { Lightbulb, LayoutGrid, ShieldCheck, Users } from "lucide-react";
 
 const principles = [
   {
     icon: Lightbulb,
-    title: "Innovation",
+    title: "Strategic Alignment",
     description:
-      "Applying emerging technology to solve real business problems.",
+      "Connecting technical execution directly to measurable business outcomes and enterprise value creation.",
   },
   {
-    icon: TrendingUp,
-    title: "Scalability",
+    icon: LayoutGrid,
+    title: "Enterprise Architecture",
     description:
-      "Building flexible systems that grow alongside your organisation.",
+      "Designing secure, scalable AI topologies that respect data boundaries, privacy, and existing infrastructure.",
   },
   {
     icon: ShieldCheck,
-    title: "Security",
+    title: "Responsible AI",
     description:
-      "Protecting your business through reliable, resilient technology.",
+      "Implementing guardrails, model explainability, and robust governance for autonomous systems.",
   },
   {
-    icon: Target,
-    title: "Business Impact",
-    description: "Delivering measurable improvements in efficiency and growth.",
+    icon: Users,
+    title: "Forward-Deployed Delivery",
+    description: "Embedding specialized engineering squads to eliminate friction and accelerate time-to-value.",
   },
 ];
 
@@ -44,16 +44,12 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8 }}
           className="mb-8 text-center"
         >
-          <div className="section-number mx-auto">01 / Principles</div>
+          <div className="section-number mx-auto">01 / Philosophy</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight mb-6">
-            Technology built around your business
+            Engineering AI <span className="text-electric-cyan font-normal italic">Transformation</span>
           </h2>
           <p className="text-on-surface-variant max-w-3xl mx-auto text-base font-light leading-relaxed">
-            Many organisations are held back by legacy systems, manual
-            processes, and tools that don&apos;t talk to each other. Operant
-            Labs builds technology around your business instead of the other way
-            round, covering the full lifecycle: strategy, software engineering,
-            automation, AI, cloud, and ongoing optimisation.
+            True AI transformation requires more than off-the-shelf models. It demands deep technical integration, secure architecture, and strategic alignment. Operant Labs acts as the execution engine for enterprise AI, bridging the gap between high-level ambition and robust, scalable production systems.
           </p>
         </motion.div>
 
@@ -74,20 +70,16 @@ export default function WhatWeDo() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * i }}
-                // Added hover:shadow for the border outline glow
                 className="glass-card p-8 flex flex-col h-full group hover:border-electric-cyan/50 hover:bg-electric-cyan/5 hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] transition-all duration-500"
               >
-                {/* Added box-shadow glow and border transition to the icon container */}
                 <div className="w-10 h-10 rounded-full bg-border-subtle flex items-center justify-center mb-6 border border-border-subtle group-hover:border-electric-cyan/50 group-hover:bg-electric-cyan/10 group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-500">
                   <Icon
                     size={20}
-                    // Added drop-shadow directly to the SVG for a true "lit up" glow effect
                     className="text-foreground/70 group-hover:text-electric-cyan group-hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.8)] transition-all duration-500"
                     strokeWidth={1.5}
                   />
                 </div>
                 
-                {/* Text transitions to electric cyan to tie the effect together */}
                 <h3 className="text-sm text-foreground mb-3 tracking-wide font-medium group-hover:text-electric-cyan transition-colors duration-300">
                   {item.title}
                 </h3>

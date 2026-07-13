@@ -1,33 +1,33 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const caseStudies = [
   {
-    category: "FinTech",
-    title: "Global Payment Gateway",
-    challenge: "Legacy system causing high latency.",
-    solution: "Microservices architecture on AWS.",
-    result: "99.99% uptime achieved.",
+    category: "Private Equity",
+    title: "Pre-Acquisition Technical Due Diligence",
+    challenge: "Validating proprietary AI claims of a target company.",
+    solution: "Deep code-level audit and architecture assessment.",
+    result: "Prevented £12M overvaluation due to technical debt.",
     image: "/global payment gateway.jpg",
   },
   {
     category: "Healthcare",
-    title: "Patient Data AI System",
-    challenge: "Manual data entry errors.",
-    solution: "Custom NLP model implementation.",
-    result: "85% reduction in processing time.",
+    title: "Clinical Document Copilot",
+    challenge: "High manual overhead in processing patient records.",
+    solution: "Secure, HIPAA-compliant NLP & RAG pipeline.",
+    result: "85% reduction in document processing time.",
     image: "/patient data ai system.jpg",
   },
   {
-    category: "Logistics",
-    title: "Automated Fleet Routing",
-    challenge: "Inefficient route planning.",
-    solution: "Real-time predictive algorithm.",
-    result: "30% fuel cost savings.",
+    category: "Manufacturing",
+    title: "Predictive Maintenance System",
+    challenge: "Unplanned downtime causing significant revenue loss.",
+    solution: "Deployed IoT edge analytics with ML forecasting.",
+    result: "30% increase in overall equipment effectiveness.",
     image: "/automated fleet routing.webp",
   },
 ];
@@ -45,22 +45,34 @@ export default function CaseStudies() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6"
         >
           <div>
-            <div className="section-number-left">03 / Work</div>
-            <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
-              Proven Results
-            </h2>
+            <div className="section-number-left">03 / Impact</div>
+            <div className="flex items-center gap-3">
+              <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
+                Enterprise Impact
+              </h2>
+              <div className="hidden md:flex items-center gap-1.5 px-3 py-1 bg-surface-dim border border-border-subtle rounded-full text-[10px] text-on-surface-variant uppercase tracking-widest font-medium">
+                <Info size={12} />
+                <span>Illustrative Scenarios</span>
+              </div>
+            </div>
           </div>
           <Link
             href="/case-studies"
             className="text-[11px] uppercase tracking-widest text-foreground/70 hover:text-foreground transition-all flex items-center gap-2 group mb-2 font-medium"
           >
-            View All Projects
+            Explore Our Work
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
           </Link>
         </motion.div>
+
+        {/* Mobile Badge */}
+        <div className="md:hidden flex items-center gap-1.5 px-3 py-1.5 mb-8 w-fit bg-surface-dim border border-border-subtle rounded-full text-[10px] text-on-surface-variant uppercase tracking-widest font-medium">
+          <Info size={12} />
+          <span>Illustrative Scenarios</span>
+        </div>
 
         {/* Case Study Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -82,9 +94,7 @@ export default function CaseStudies() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                {/* Subtle gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                {/* Category badge overlaid on image */}
                 <div className="absolute bottom-3 left-4">
                   <span className="text-[9px] text-white/80 uppercase tracking-[0.2em] font-semibold bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-full border border-white/10">
                     {study.category}

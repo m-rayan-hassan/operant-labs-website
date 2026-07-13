@@ -6,19 +6,19 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "How is Operant Labs different from a typical software vendor?",
+    question: "How does your forward-deployed model differ from staff augmentation?",
     answer:
-      "We work as a long term technology partner, starting with your business goals rather than jumping straight to a technical solution.",
+      "We embed autonomous, cross-functional squads (AI architects, data engineers, MLOps) directly into your organization. They operate as a specialized unit with proprietary frameworks to accelerate time-to-value, rather than just providing individual contractors.",
   },
   {
-    question: "Do you work with startups as well as larger enterprises?",
+    question: "Do you support pre-acquisition technical due diligence for private equity?",
     answer:
-      "Yes. We support everyone from early stage startups building their first product to enterprises modernising complex systems.",
+      "Yes. We conduct deep code-level audits of target companies to validate proprietary AI claims, assess data maturity, and uncover technical debt before you finalize transactions.",
   },
   {
-    question: "Can you support us after the project is launched?",
+    question: "How do you handle AI model governance and MLOps?",
     answer:
-      "Yes. Ongoing maintenance, monitoring, and optimisation are part of how we work, not an afterthought.",
+      "We implement strict RBAC, data privacy controls, and deploy continuous monitoring (MLOps) to detect model drift, prevent hallucinations, and ensure sustained ROI post-deployment.",
   },
 ];
 
