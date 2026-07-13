@@ -1,7 +1,7 @@
 "use client";
 
 import { memo, useRef, useState, useEffect } from "react";
-import { motion, useAnimationControls, useMotionValue } from "motion/react";
+import { motion, useAnimationFrame, useMotionValue } from "motion/react";
 import { Star, Quote, Building2, Landmark, TrendingUp, ArrowRight } from "lucide-react";
 
 const partners = [
@@ -31,30 +31,51 @@ const partners = [
   },
 ];
 
-// Duplicate for infinite scroll feel
+// Duplicate 3 times to guarantee a seamless wrap
 const allItems = [...partners, ...partners, ...partners];
 
 export default function Testimonials() {
   const [isHovered, setIsHovered] = useState(false);
-  const controls = useAnimationControls();
+  const [wrapWidth, setWrapWidth] = useState(0);
+  
   const x = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
 
-  // Auto-scroll logic
+  // Measure exactly one-third of the container width to know when to wrap
   useEffect(() => {
-    if (!isHovered) {
-      controls.start({
-        x: "-50%",
-        transition: {
-          duration: 30,
-          ease: "linear",
-          repeat: Infinity,
-        },
-      });
-    } else {
-      controls.stop();
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setWrapWidth(containerRef.current.scrollWidth / 3);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
+  // Zero-re-render, hardware-accelerated animation loop
+  useAnimationFrame((time, delta) => {
+    if (wrapWidth === 0) return;
+
+    let currentX = x.get();
+
+    // 1. Wrap Logic (runs continuously to seamlessly wrap even while dragging)
+    if (currentX <= -wrapWidth) {
+      currentX += wrapWidth;
+      x.set(currentX);
+    } else if (currentX > 0) {
+      currentX -= wrapWidth;
+      x.set(currentX);
     }
-  }, [isHovered, controls]);
+
+    // 2. Auto-scroll Logic (pauses on hover or drag)
+    if (!isHovered && !isDragging.current) {
+      // Normalize speed based on frame delta (~1px per frame at 60fps)
+      const moveBy = -0.75 * (delta / 16); 
+      x.set(currentX + moveBy);
+    }
+  });
 
   return (
     <section className="py-24 md:py-32 border-t border-border-subtle bg-background relative z-10 overflow-hidden">
@@ -74,17 +95,17 @@ export default function Testimonials() {
 
         <motion.div
           ref={containerRef}
-          className="flex gap-8 w-max px-4"
+          className="flex w-max px-4" // Removed gap-8 to manage spacing purely through margins (crucial for exact math)
           drag="x"
-          dragConstraints={{ left: -2000, right: 0 }}
-          style={{ x }}
-          animate={controls}
+          style={{ x, touchAction: "pan-y", willChange: "transform" }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onDragStart={() => setIsHovered(true)}
+          onDragStart={() => { isDragging.current = true; }}
+          onDragEnd={() => { isDragging.current = false; }}
         >
           {allItems.map((item, idx) => (
-            <div key={`${item.title}-${idx}`} className="w-[350px] md:w-[500px] shrink-0">
+            // Replaced gap with mr-8 (32px) so the last element in a set adds to the total width calculations flawlessly
+            <div key={`${item.name}-${idx}`} className="w-[350px] md:w-[500px] shrink-0 mr-8">
               <TestimonialCard item={item} />
             </div>
           ))}
@@ -116,6 +137,8 @@ const TestimonialCard = memo(function TestimonialCard({ item }: { item: any }) {
             <img
               src={item.avatar}
               alt={item.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full rounded-full object-cover border border-border-strong grayscale group-hover:grayscale-0 transition-all duration-1000"
             />
             <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-background border border-border-subtle rounded-full flex items-center justify-center shadow-sm">

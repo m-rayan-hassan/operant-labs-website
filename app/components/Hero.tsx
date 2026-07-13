@@ -107,19 +107,19 @@ export default function Hero() {
           <span className="inline-flex items-center justify-center whitespace-nowrap text-center">
             From AI{" "}
             <span className="relative inline-flex justify-center text-center shrink-0 ml-[0.3em]">
-              <AnimatePresence mode="popLayout">
-                <motion.span
-                  key={wordIndex}
-                  initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: -20, filter: "blur(4px)" }}
-                  transition={{ duration: 0.35, ease: "easeInOut" }}
-                  className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)] leading-none"
-                >
-                  {ACTION_WORDS[wordIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
+  <AnimatePresence mode="wait">
+    <motion.span
+      key={wordIndex}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)] leading-none"
+    >
+      {ACTION_WORDS[wordIndex]}
+    </motion.span>
+  </AnimatePresence>
+</span>
           </span>
 
           {/* Line 2 */}
