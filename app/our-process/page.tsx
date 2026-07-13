@@ -60,7 +60,8 @@ export default function OurProcessPage() {
       {/* Background glow */}
       <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-electric-cyan/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-24">
+      {/* Intro Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-16 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,29 +72,32 @@ export default function OurProcessPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
             How We <span className="text-electric-cyan">Deliver</span>
           </h1>
-          <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-10">
+          <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-6">
             A proven, 6-stage enterprise execution model designed to de-risk AI investments, accelerate time-to-value, and build sustainable technical capabilities.
           </p>
         </motion.div>
-
-        {/* ADDED HERO IMAGE: Wide cinematic banner right below the text */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative w-full h-[300px] md:h-[450px] mt-12 rounded-3xl overflow-hidden glass-card group shadow-2xl"
-        >
-          <div className="absolute inset-0 bg-electric-cyan/5 mix-blend-overlay z-10 transition-opacity duration-500 group-hover:opacity-0"></div>
-          <Image
-            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2070"
-            alt="Technology process and execution"
-            fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-105"
-            priority
-            unoptimized
-          />
-        </motion.div>
       </section>
+
+      {/* FULL-WIDTH HERO IMAGE: Replaced card look with a cinematic edge-to-edge banner */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative w-full h-[350px] md:h-[500px] lg:h-[600px] mb-32 overflow-hidden"
+      >
+        {/* Top & Bottom gradient fades to seamlessly blend the image into the background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-10 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-electric-cyan/5 mix-blend-overlay z-10 pointer-events-none"></div>
+        
+        <Image
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2070"
+          alt="Technology process and execution"
+          fill
+          className="object-cover opacity-60"
+          priority
+          unoptimized
+        />
+      </motion.div>
 
       <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-32 relative">
         {/* Vertical Line for desktop timeline */}
@@ -163,7 +167,7 @@ export default function OurProcessPage() {
       <section className="max-w-4xl mx-auto px-6 text-center">
         <div className="glass-panel rounded-3xl p-12 border-electric-cyan/20 relative overflow-hidden group">
            
-           {/* ADDED CTA BACKGROUND IMAGE */}
+           {/* CTA BACKGROUND IMAGE */}
            <div className="absolute inset-0 z-0">
              <Image 
                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2034"

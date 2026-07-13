@@ -28,7 +28,7 @@ const capabilities = [
     description:
       "Design secure, scalable, and compliant AI architectures that seamlessly integrate with your systems.",
     href: "/capabilities/ai-architecture",
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
   },
   {
     icon: Users,
@@ -52,7 +52,7 @@ const capabilities = [
     description:
       "Automate complex, multi-step business processes by integrating legacy systems with modern AI.",
     href: "/capabilities/intelligent-automation",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
   },
   {
     icon: Cloud,
@@ -60,7 +60,7 @@ const capabilities = [
     description:
       "Modernize your data infrastructure and establish secure cloud pipelines ready for AI applications.",
     href: "/capabilities/data-cloud-engineering",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
   },
 ];
 

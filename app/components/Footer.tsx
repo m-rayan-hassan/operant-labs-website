@@ -123,7 +123,7 @@ export default function Footer() {
               {/* Social Icons */}
               <div className="flex items-center gap-3 pt-2">
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/company/mechlinks.io/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"

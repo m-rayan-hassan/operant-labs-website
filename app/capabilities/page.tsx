@@ -14,6 +14,7 @@ const capabilities = [
     description: "Assess enterprise readiness, map value-creation opportunities, and define an implementation roadmap that connects AI capabilities to strategic business outcomes.",
     href: "/capabilities/ai-strategy",
     icon: Rocket,
+    // Team analyzing strategy and mapping roadmaps
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -21,20 +22,23 @@ const capabilities = [
     description: "Deep technical assessments of AI architectures, data maturity, and algorithmic IP for private equity firms, venture capital, and pre-acquisition reviews.",
     href: "/capabilities/ai-due-diligence",
     icon: FileSearch,
-    img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop",
+    // Deep code analysis and technical inspection
+    img: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "AI Solution Architecture",
     description: "Design secure, scalable, and compliant AI architectures that seamlessly integrate with your existing enterprise systems and data infrastructure.",
     href: "/capabilities/ai-architecture",
     icon: LayoutGrid,
-    img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    // Blueprints and complex network topologies
+    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Forward-Deployed Engineering",
     description: "Embed specialized, multi-disciplinary engineering teams into your organization to execute complex AI and software implementations at speed.",
     href: "/capabilities/forward-deployed-engineering",
     icon: Users,
+    // Engineering team actively collaborating and executing
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -42,6 +46,7 @@ const capabilities = [
     description: "Build proprietary machine learning models, generative AI applications, and specialized intelligent systems tailored to your unique operational requirements.",
     href: "/capabilities/custom-ai-systems",
     icon: Cpu,
+    // Advanced glowing neural network representing proprietary AI models
     img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop",
   },
   {
@@ -49,28 +54,32 @@ const capabilities = [
     description: "Automate complex, multi-step business processes by integrating legacy systems with modern AI capabilities to eliminate manual friction.",
     href: "/capabilities/intelligent-automation",
     icon: Zap,
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+    // Robotic process automation and mechanical efficiency
+    img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Data & Cloud Engineering",
     description: "Modernize your data infrastructure, establish secure cloud pipelines, and ensure your data is accessible, clean, and ready for AI applications.",
     href: "/capabilities/data-cloud-engineering",
     icon: Cloud,
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    // Modern server racks representing robust cloud and data infrastructure
+    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "AI Governance",
     description: "Implement robust frameworks for responsible AI usage, data security, model explainability, and regulatory compliance across the enterprise.",
     href: "/capabilities/ai-governance",
     icon: ShieldCheck,
-    img: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop",
+    // Digital lock representing security, compliance, and governance frameworks
+    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
   },
   {
     title: "Managed AI Operations",
     description: "Provide continuous monitoring, optimization, and support for deployed AI systems to ensure sustained performance and ROI over time.",
     href: "/capabilities/managed-ai-operations",
     icon: Activity,
-    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop",
+    // Dashboards and monitoring metrics for continuous operations (MLOps)
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
   },
 ];
 

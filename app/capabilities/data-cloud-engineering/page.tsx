@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, Cloud } from "lucide-react";
 
@@ -9,23 +10,41 @@ export default function DataCloudEngineeringPage() {
   return (
     <div className="min-h-screen pt-32 pb-24">
       <section className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-strong bg-border-subtle mb-6">
-            <Cloud size={12} className="text-electric-cyan" />
-            <span className="text-[10px] text-foreground uppercase tracking-[0.15em] font-medium">Capability</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
-            Data &amp; Cloud <span className="text-electric-cyan">Engineering</span>
-          </h1>
-          <p className="text-lg text-on-surface-variant font-light leading-relaxed">
-            Modernize your data infrastructure, establish secure cloud pipelines, and ensure your data is accessible, clean, and ready for AI applications.
-          </p>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row gap-12 items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl lg:w-3/5"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border-strong bg-border-subtle mb-6">
+              <Cloud size={12} className="text-electric-cyan" />
+              <span className="text-[10px] text-foreground uppercase tracking-[0.15em] font-medium">Capability</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
+              Data &amp; Cloud <span className="text-electric-cyan">Engineering</span>
+            </h1>
+            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+              Modernize your data infrastructure, establish secure cloud pipelines, and ensure your data is accessible, clean, and ready for AI applications.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full lg:w-2/5 h-[280px] lg:h-[320px] relative rounded-3xl overflow-hidden border border-border-strong shadow-2xl"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop"
+              alt="Data and Cloud Engineering"
+              fill
+              className="object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
+              priority
+              unoptimized
+            />
+          </motion.div>
+        </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-6 lg:px-8">
