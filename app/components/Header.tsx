@@ -4,24 +4,79 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Menu, X, ChevronDown, ArrowRight, Code2, 
-  Zap, Cpu, Cloud, LineChart, Rocket, LayoutGrid,
-  Search, ShieldCheck, Activity, Users, FileSearch
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ArrowRight,
+  Zap,
+  Cpu,
+  Cloud,
+  Rocket,
+  LayoutGrid,
+  ShieldCheck,
+  Activity,
+  Users,
+  FileSearch,
 } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 // Enterprise capabilities for the Mega Menu
 const capabilitiesList = [
-  { name: "AI Strategy & Transformation", description: "Enterprise readiness & roadmapping", href: "/capabilities/ai-strategy", icon: Rocket },
-  { name: "Technical AI Due Diligence", description: "Assessment for private capital", href: "/capabilities/ai-due-diligence", icon: FileSearch },
-  { name: "AI Solution Architecture", description: "Secure, scalable system design", href: "/capabilities/ai-architecture", icon: LayoutGrid },
-  { name: "Forward-Deployed Engineering", description: "Dedicated execution teams", href: "/capabilities/forward-deployed-engineering", icon: Users },
-  { name: "Custom AI Systems", description: "Proprietary intelligent platforms", href: "/capabilities/custom-ai-systems", icon: Cpu },
-  { name: "Intelligent Automation", description: "Streamline complex workflows", href: "/capabilities/intelligent-automation", icon: Zap },
-  { name: "Data & Cloud Engineering", description: "Modern data infrastructure", href: "/capabilities/data-cloud-engineering", icon: Cloud },
-  { name: "AI Governance", description: "Responsible & secure AI scaling", href: "/capabilities/ai-governance", icon: ShieldCheck },
-  { name: "Managed AI Operations", description: "Continuous optimization & MLOps", href: "/capabilities/managed-ai-operations", icon: Activity },
+  {
+    name: "AI Strategy & Transformation",
+    description: "Enterprise readiness & roadmapping",
+    href: "/capabilities/ai-strategy",
+    icon: Rocket,
+  },
+  {
+    name: "Technical AI Due Diligence",
+    description: "Assessment for private capital",
+    href: "/capabilities/ai-due-diligence",
+    icon: FileSearch,
+  },
+  {
+    name: "AI Solution Architecture",
+    description: "Secure, scalable system design",
+    href: "/capabilities/ai-architecture",
+    icon: LayoutGrid,
+  },
+  {
+    name: "Forward-Deployed Engineering",
+    description: "Dedicated execution teams",
+    href: "/capabilities/forward-deployed-engineering",
+    icon: Users,
+  },
+  {
+    name: "Custom AI Systems",
+    description: "Proprietary intelligent platforms",
+    href: "/capabilities/custom-ai-systems",
+    icon: Cpu,
+  },
+  {
+    name: "Intelligent Automation",
+    description: "Streamline complex workflows",
+    href: "/capabilities/intelligent-automation",
+    icon: Zap,
+  },
+  {
+    name: "Data & Cloud Engineering",
+    description: "Modern data infrastructure",
+    href: "/capabilities/data-cloud-engineering",
+    icon: Cloud,
+  },
+  {
+    name: "AI Governance",
+    description: "Responsible & secure AI scaling",
+    href: "/capabilities/ai-governance",
+    icon: ShieldCheck,
+  },
+  {
+    name: "Managed AI Operations",
+    description: "Continuous optimization & MLOps",
+    href: "/capabilities/managed-ai-operations",
+    icon: Activity,
+  },
 ];
 
 const navLinks = [
@@ -44,11 +99,33 @@ export default function Header() {
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scrolledRef = useRef(false);
+  const scrollRafRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (scrollRafRef.current !== null) return;
+
+      scrollRafRef.current = window.requestAnimationFrame(() => {
+        scrollRafRef.current = null;
+        const nextScrolled = window.scrollY > 20;
+
+        if (scrolledRef.current !== nextScrolled) {
+          scrolledRef.current = nextScrolled;
+          setScrolled(nextScrolled);
+        }
+      });
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollRafRef.current !== null) {
+        window.cancelAnimationFrame(scrollRafRef.current);
+      }
+    };
   }, []);
 
   const handleMouseEnter = () => {
@@ -70,7 +147,10 @@ export default function Header() {
         }`}
       >
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2.5 cursor-pointer group shrink-0">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 cursor-pointer group shrink-0"
+        >
           <Image
             src="/logo.png"
             alt="Operant Labs Logo"
@@ -80,7 +160,9 @@ export default function Header() {
           />
           <span className="text-xl tracking-tight flex items-center">
             <span className="font-bold text-foreground">Operant</span>
-            <span className="font-light text-on-surface-variant ml-0.5">Labs</span>
+            <span className="font-light text-on-surface-variant ml-0.5">
+              Labs
+            </span>
           </span>
         </Link>
 
@@ -121,39 +203,48 @@ export default function Header() {
                   className="absolute top-full left-1/2 -translate-x-1/2 pt-5 z-50 cursor-default w-full max-w-[980px]"
                 >
                   <div className="w-full bg-surface/95 backdrop-blur-xl border border-border-strong rounded-2xl shadow-2xl flex overflow-hidden">
-                    
                     {/* Left Pane - Overview Highlight */}
                     <div className="w-[30%] shrink-0 bg-surface-dim border-r border-border-subtle p-8 flex flex-col justify-between relative overflow-hidden group/pane">
                       <div className="absolute -top-12 -left-12 w-40 h-40 bg-electric-cyan/10 rounded-full blur-3xl transition-all duration-700 group-hover/pane:bg-electric-cyan/20"></div>
-                      
+
                       <div className="relative z-10">
                         <div className="w-10 h-10 rounded-xl bg-background flex items-center justify-center border border-border-subtle mb-6 shadow-sm">
-                           <Cpu size={18} className="text-foreground" />
+                          <Cpu size={18} className="text-foreground" />
                         </div>
                         <h3 className="text-sm font-semibold text-foreground mb-3 tracking-wide whitespace-normal">
                           Our Capabilities
                         </h3>
                         <p className="text-xs text-on-surface-variant leading-relaxed font-light whitespace-normal">
-                          We help enterprises and portfolio companies assess, architect, and execute AI transformations at scale.
+                          We help enterprises and portfolio companies assess,
+                          architect, and execute AI transformations at scale.
                         </p>
                       </div>
 
-                      <Link href="/capabilities" className="relative z-10 text-[11px] uppercase tracking-widest font-semibold text-electric-cyan flex items-center gap-2 group/link mt-8 w-fit">
+                      <Link
+                        href="/capabilities"
+                        className="relative z-10 text-[11px] uppercase tracking-widest font-semibold text-electric-cyan flex items-center gap-2 group/link mt-8 w-fit"
+                      >
                         View All Capabilities
-                        <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                        <ArrowRight
+                          size={14}
+                          className="group-hover/link:translate-x-1 transition-transform"
+                        />
                       </Link>
                     </div>
-                    
+
                     {/* Right Pane - Grid of Capabilities (3x3) */}
                     <div className="w-[70%] p-6 grid grid-cols-3 gap-x-2 gap-y-2">
                       {capabilitiesList.map((capability) => (
-                        <Link 
-                          key={capability.name} 
-                          href={capability.href} 
+                        <Link
+                          key={capability.name}
+                          href={capability.href}
                           className="group flex flex-col gap-3 p-4 rounded-xl hover:bg-border-subtle transition-all duration-200"
                         >
                           <div className="w-9 h-9 rounded-full bg-background flex items-center justify-center border border-border-strong group-hover:border-electric-cyan/40 group-hover:bg-electric-cyan/5 transition-all shrink-0 shadow-sm">
-                            <capability.icon size={16} className="text-foreground group-hover:text-electric-cyan transition-colors" />
+                            <capability.icon
+                              size={16}
+                              className="text-foreground group-hover:text-electric-cyan transition-colors"
+                            />
                           </div>
                           <div>
                             <h4 className="text-[12px] font-semibold text-foreground mb-1 group-hover:text-electric-cyan transition-colors whitespace-normal leading-snug">
@@ -166,7 +257,6 @@ export default function Header() {
                         </Link>
                       ))}
                     </div>
-
                   </div>
                 </motion.div>
               )}
@@ -183,7 +273,10 @@ export default function Header() {
         {/* CTA Button & Theme Toggle */}
         <div className="hidden xl:flex items-center gap-4 shrink-0">
           <ThemeToggle />
-          <Link href="/contact-us" className="btn-solid text-[11px] px-6 py-2.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap">
+          <Link
+            href="/contact-us"
+            className="btn-solid text-[11px] px-6 py-2.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap"
+          >
             Discuss an AI Transformation
           </Link>
         </div>
@@ -222,7 +315,7 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
-              
+
               <div className="border-t border-border-strong pt-5 mt-2">
                 <p className="text-[10px] text-electric-cyan uppercase tracking-[0.15em] mb-4 font-semibold">
                   Capabilities
@@ -236,7 +329,10 @@ export default function Header() {
                       onClick={() => setMobileOpen(false)}
                     >
                       <div className="w-7 h-7 rounded-md bg-border-subtle flex items-center justify-center shrink-0 border border-border-strong group-hover:border-electric-cyan/40">
-                        <capability.icon size={12} className="text-foreground group-hover:text-electric-cyan transition-colors" />
+                        <capability.icon
+                          size={12}
+                          className="text-foreground group-hover:text-electric-cyan transition-colors"
+                        />
                       </div>
                       {capability.name}
                     </Link>
@@ -255,7 +351,10 @@ export default function Header() {
                 </Link>
               ))}
 
-              <Link href="/contact-us" className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full text-center block">
+              <Link
+                href="/contact-us"
+                className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase mt-4 w-full text-center block"
+              >
                 Discuss an AI Transformation
               </Link>
             </nav>

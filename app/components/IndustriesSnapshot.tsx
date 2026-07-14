@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Landmark,
   HeartPulse,
@@ -19,7 +20,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
-
 
 export const industries = [
   {
@@ -105,21 +105,38 @@ const doubledIndustries = [...industries, ...industries, ...industries];
 
 export default function IndustriesSnapshot() {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeftState, setScrollLeftState] = useState(0);
+  const isHoveredRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const scrollLeftRef = useRef(0);
+  const isVisibleRef = useRef(true);
 
   useEffect(() => {
     let animationId: number;
     let lastTime = performance.now();
     const speed = 0.06;
 
+    const element = carouselRef.current;
+    if (!element) return;
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { rootMargin: "200px 0px", threshold: 0.05 },
+    );
+    visibilityObserver.observe(element);
+
     const scrollLoop = (currentTime: number) => {
       const deltaTime = currentTime - lastTime;
       lastTime = currentTime;
 
-      if (carouselRef.current && !isHovered && !isDragging) {
+      if (
+        carouselRef.current &&
+        isVisibleRef.current &&
+        !isHoveredRef.current &&
+        !isDraggingRef.current
+      ) {
         carouselRef.current.scrollLeft += speed * deltaTime;
 
         const maxScroll = carouselRef.current.scrollWidth / 3;
@@ -133,82 +150,169 @@ export default function IndustriesSnapshot() {
     };
 
     animationId = requestAnimationFrame(scrollLoop);
-    return () => cancelAnimationFrame(animationId);
-  }, [isHovered, isDragging]);
+    return () => {
+      cancelAnimationFrame(animationId);
+      visibilityObserver.disconnect();
+    };
+  }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true);
+    isDraggingRef.current = true;
     if (carouselRef.current) {
-      setStartX(e.pageX - carouselRef.current.offsetLeft);
-      setScrollLeftState(carouselRef.current.scrollLeft);
+      startXRef.current = e.pageX - carouselRef.current.offsetLeft;
+      scrollLeftRef.current = carouselRef.current.scrollLeft;
     }
   };
 
-  const handleMouseLeave = () => { setIsDragging(false); setIsHovered(false); };
-  const handleMouseUp = () => { setIsDragging(false); };
+  const handleMouseLeave = () => {
+    isDraggingRef.current = false;
+    isHoveredRef.current = false;
+  };
+  const handleMouseUp = () => {
+    isDraggingRef.current = false;
+  };
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !carouselRef.current) return;
+    if (!isDraggingRef.current || !carouselRef.current) return;
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2.5; 
-    carouselRef.current.scrollLeft = scrollLeftState - walk;
+    const walk = (x - startXRef.current) * 2.5;
+    carouselRef.current.scrollLeft = scrollLeftRef.current - walk;
   };
 
   const scroll = (dir: "left" | "right") => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: dir === "left" ? -350 : 350, behavior: "smooth" });
+      carouselRef.current.scrollBy({
+        left: dir === "left" ? -350 : 350,
+        behavior: "smooth",
+      });
     }
   };
 
   return (
-    <section id="industries" className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden">
+    <section
+      id="industries"
+      className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }} className="text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="text-left"
+        >
           <div className="section-number-left mb-6">04 / Sectors</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
             Industries We Serve
           </h2>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="flex items-center gap-4 text-sm text-on-surface-variant">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex items-center gap-4 text-sm text-on-surface-variant"
+        >
           <div className="flex items-center gap-2">
-            <button onClick={() => scroll("left")} className="p-2 rounded-full border border-border-subtle hover:bg-surface hover:text-foreground transition-colors group bg-card" aria-label="Scroll left">
-              <ChevronLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
+            <button
+              onClick={() => scroll("left")}
+              className="p-2 rounded-full border border-border-subtle hover:bg-surface hover:text-foreground transition-colors group bg-card"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft
+                size={16}
+                className="group-hover:-translate-x-0.5 transition-transform"
+              />
             </button>
             <span className="hidden md:inline-block px-4 py-2 rounded-full border border-border-subtle bg-surface/50 text-[11px] uppercase tracking-widest cursor-default">
               Drag to explore
             </span>
-            <button onClick={() => scroll("right")} className="p-2 rounded-full border border-border-subtle hover:bg-surface hover:text-foreground transition-colors group bg-card" aria-label="Scroll right">
-              <ChevronRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+            <button
+              onClick={() => scroll("right")}
+              className="p-2 rounded-full border border-border-subtle hover:bg-surface hover:text-foreground transition-colors group bg-card"
+              aria-label="Scroll right"
+            >
+              <ChevronRight
+                size={16}
+                className="group-hover:translate-x-0.5 transition-transform"
+              />
             </button>
           </div>
         </motion.div>
       </div>
 
-      <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }} className="relative">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="relative"
+      >
         <div className="absolute top-0 bottom-0 left-0 w-8 md:w-24 bg-gradient-to-r from-surface-dim to-transparent z-10 pointer-events-none" />
         <div className="absolute top-0 bottom-0 right-0 w-8 md:w-24 bg-gradient-to-l from-surface-dim to-transparent z-10 pointer-events-none" />
 
-        <div ref={carouselRef} onMouseEnter={() => setIsHovered(true)} onMouseLeave={handleMouseLeave} onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} onMouseMove={handleMouseMove} style={{ willChange: 'scroll-position', WebkitTransform: 'translateZ(0)' }} className="flex gap-6 py-4 px-6 lg:px-8 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing select-none">
+        <div
+          ref={carouselRef}
+          onMouseEnter={() => {
+            isHoveredRef.current = true;
+          }}
+          onMouseLeave={handleMouseLeave}
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          style={{
+            willChange: "scroll-position",
+            WebkitTransform: "translateZ(0)",
+          }}
+          className="flex gap-6 py-4 px-6 lg:px-8 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing select-none"
+        >
           {doubledIndustries.map((industry, i) => {
             const Icon = industry.icon;
             return (
-              <div key={`${industry.name}-${i}`} style={{ willChange: 'transform', WebkitTransform: 'translateZ(0)' }} className="w-[280px] md:w-[340px] shrink-0 glass-card group overflow-hidden relative flex flex-col pointer-events-none md:pointer-events-auto shadow-sm">
+              <div
+                key={`${industry.name}-${i}`}
+                style={{
+                  willChange: "transform",
+                  WebkitTransform: "translateZ(0)",
+                }}
+                className="w-[280px] md:w-[340px] shrink-0 glass-card group overflow-hidden relative flex flex-col pointer-events-none md:pointer-events-auto shadow-sm"
+              >
                 <div className="h-[160px] md:h-[200px] w-full relative overflow-hidden bg-card">
-                  <img src={industry.img} alt={industry.name} draggable={false} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out opacity-80 group-hover:opacity-100" />
+                  <Image
+                    src={industry.img}
+                    alt={industry.name}
+                    fill
+                    sizes="(max-width: 768px) 280px, 340px"
+                    draggable={false}
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out opacity-80 group-hover:opacity-100"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
                   <div className="absolute bottom-4 left-6 p-2 rounded-lg bg-card/90 border border-border-subtle group-hover:border-border-strong transition-colors duration-300">
-                    <Icon className="text-foreground group-hover:text-electric-cyan transition-colors" size={20} />
+                    <Icon
+                      className="text-foreground group-hover:text-electric-cyan transition-colors"
+                      size={20}
+                    />
                   </div>
                 </div>
                 <div className="p-6 pt-4 flex-grow flex flex-col">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{industry.name}</h3>
-                  <p className="text-sm text-on-surface-variant leading-relaxed mb-6">{industry.desc}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {industry.name}
+                  </h3>
+                  <p className="text-sm text-on-surface-variant leading-relaxed mb-6">
+                    {industry.desc}
+                  </p>
                   <div className="mt-auto pt-4 border-t border-border-subtle/50">
-                    <Link href={industry.href} className="inline-flex items-center text-[11px] uppercase tracking-widest text-foreground/60 group-hover:text-electric-cyan transition-colors gap-2 font-semibold">
+                    <Link
+                      href={industry.href}
+                      className="inline-flex items-center text-[11px] uppercase tracking-widest text-foreground/60 group-hover:text-electric-cyan transition-colors gap-2 font-semibold"
+                    >
                       View Industry
-                      <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform duration-300" />
+                      <ArrowRight
+                        size={14}
+                        className="group-hover:translate-x-1.5 transition-transform duration-300"
+                      />
                     </Link>
                   </div>
                 </div>
@@ -219,10 +323,21 @@ export default function IndustriesSnapshot() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-12 text-center relative z-20">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.3 }}>
-          <Link href="/industries" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-border-strong text-[11px] uppercase tracking-widest font-semibold text-foreground hover:bg-card-hover hover:border-foreground transition-all duration-300 group bg-card shadow-sm">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <Link
+            href="/industries"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border border-border-strong text-[11px] uppercase tracking-widest font-semibold text-foreground hover:bg-card-hover hover:border-foreground transition-all duration-300 group bg-card shadow-sm"
+          >
             View All Industries
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight
+              size={16}
+              className="group-hover:translate-x-1 transition-transform"
+            />
           </Link>
         </motion.div>
       </div>
