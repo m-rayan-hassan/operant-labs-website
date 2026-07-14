@@ -44,7 +44,7 @@ const pipelineSteps = [
 
 export default function StrategyToExecution() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden">
+    <section className="py-16 md:py-24 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

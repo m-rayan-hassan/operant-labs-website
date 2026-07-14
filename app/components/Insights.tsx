@@ -31,10 +31,10 @@ const insights = [
 
 export default function Insights() {
   return (
-    <section className="py-24 md:py-32 bg-surface relative z-10">
+    <section className="py-16 md:py-24 bg-surface relative z-10">
       {/* Smooth gradient blend from the preceding bg-background sections */}
       <div
-        className="pointer-events-none absolute top-0 inset-x-0 h-32"
+        className="pointer-events-none absolute top-0 inset-x-0 h-16 md:h-24"
         style={{ background: "linear-gradient(to bottom, var(--background), var(--surface))" }}
         aria-hidden
       />

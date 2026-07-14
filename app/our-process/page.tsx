@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { 
   Search, LayoutGrid, Users, 
-  Activity, CheckCircle2, Cloud, FileSearch 
+  Activity, CheckCircle2, Cloud, FileSearch, ArrowRight
 } from "lucide-react";
 
 const processSteps = [
@@ -163,34 +163,35 @@ export default function OurProcessPage() {
         </div>
       </section>
 
-      {/* CTA Bottom */}
-      <section className="max-w-4xl mx-auto px-6 text-center">
-        <div className="glass-panel rounded-3xl p-12 border-electric-cyan/20 relative overflow-hidden group">
-           
-           {/* CTA BACKGROUND IMAGE */}
-           <div className="absolute inset-0 z-0">
-             <Image 
-               src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=2034"
-               alt="Server architecture background"
-               fill
-               className="object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700 grayscale-[80%]"
-               unoptimized
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-transparent"></div>
-           </div>
-
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-electric-cyan/10 blur-[120px] rounded-full z-0 pointer-events-none"></div>
-           
-           <div className="relative z-10">
-             <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Begin Phase One</h2>
-             <p className="text-sm text-on-surface-variant font-light mb-8 max-w-xl mx-auto">
-               Engage our team for a Discovery & Maturity Assessment to define your enterprise AI roadmap.
-             </p>
-             <Link href="/contact-us" className="btn-solid inline-block text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase">
-               Request an Assessment
-             </Link>
-           </div>
-        </div>
+      {/* CTA Bottom Panel */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-panel rounded-3xl p-10 md:p-16 relative overflow-hidden border-electric-cyan/20"
+        >
+          <div className="absolute top-0 left-0 w-64 h-64 bg-electric-cyan/10 blur-[80px] rounded-full z-0"></div>
+          <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 blur-[80px] rounded-full z-0"></div>
+          
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl italic font-normal mb-6">Begin Phase One</h2>
+            <p className="text-sm text-on-surface-variant font-light mb-8 max-w-xl mx-auto">
+              Engage our team for a Discovery & Maturity Assessment to define your enterprise AI roadmap.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link href="/contact-us" className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase shadow-md hover:shadow-lg">
+                Request an Assessment
+              </Link>
+              <Link 
+                href="/services" 
+                className="btn-outline text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase flex items-center gap-2 bg-surface/50 backdrop-blur-md"
+              >
+                Explore Services <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </section>
     </div>
   );

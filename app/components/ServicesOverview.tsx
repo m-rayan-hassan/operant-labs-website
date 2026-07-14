@@ -68,7 +68,7 @@ export default function ServicesOverview() {
   return (
     <section
       id="capabilities"
-      className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10"
+      className="py-16 md:py-24 border-t border-border-subtle bg-surface-dim relative z-10"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}

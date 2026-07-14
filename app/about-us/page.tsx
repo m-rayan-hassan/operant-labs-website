@@ -228,7 +228,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 lg:px-8 pb-16 text-center">
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

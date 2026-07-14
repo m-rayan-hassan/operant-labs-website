@@ -28,7 +28,7 @@ const locations = [
 
 export default function WorldMap() {
   return (
-    <section className="py-16 md:py-20 bg-background relative overflow-hidden border-t border-border-subtle z-10">
+    <section className="py-16 md:py-24 bg-background relative overflow-hidden border-t border-border-subtle z-10">
       {/* Background Ambient Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[40vw] bg-electric-cyan/5 blur-[120px] rounded-[100%] pointer-events-none" />
 

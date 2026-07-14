@@ -8,7 +8,7 @@ export default function FinalCta() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 relative overflow-hidden bg-background"
+      className="py-16 md:py-24 relative overflow-hidden bg-background"
     >
       {/* Massive ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[50vw] md:h-[50vw] bg-electric-cyan/10 blur-[120px] rounded-full pointer-events-none" />

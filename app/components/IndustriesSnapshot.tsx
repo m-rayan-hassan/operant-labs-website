@@ -192,7 +192,7 @@ export default function IndustriesSnapshot() {
   return (
     <section
       id="industries"
-      className="py-24 md:py-32 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
+      className="py-16 md:py-24 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <motion.div

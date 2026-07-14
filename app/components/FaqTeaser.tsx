@@ -26,7 +26,7 @@ export default function FaqTeaser() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle bg-background relative z-10">
+    <section className="py-16 md:py-24 border-t border-border-subtle bg-background relative z-10">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -34,7 +34,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background">
+    <section className="py-16 md:py-24 border-t border-border-subtle relative z-10 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

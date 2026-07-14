@@ -84,17 +84,17 @@ function ModelCard({ model, index }: { model: typeof projectBased[number]; index
 
 export default function EngagementModels() {
   return (
-    <section className="py-24 md:py-32 relative z-10 bg-surface">
+    <section className="py-16 md:py-24 relative z-10 bg-surface">
       {/* Smooth gradient blend from the preceding bg-background section */}
       <div
-        className="pointer-events-none absolute top-0 inset-x-0 h-32"
+        className="pointer-events-none absolute top-0 inset-x-0 h-16 md:h-24"
         style={{ background: "linear-gradient(to bottom, var(--background), var(--surface))" }}
         aria-hidden
       />
-      {/* Smooth gradient blend into the following bg-background section */}
+      {/* Smooth gradient blend into the following bg-surface-dim section */}
       <div
-        className="pointer-events-none absolute bottom-0 inset-x-0 h-32"
-        style={{ background: "linear-gradient(to top, var(--background), var(--surface))" }}
+        className="pointer-events-none absolute bottom-0 inset-x-0 h-16 md:h-24"
+        style={{ background: "linear-gradient(to top, var(--surface-dim), var(--surface))" }}
         aria-hidden
       />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
@@ -159,7 +159,7 @@ export default function EngagementModels() {
           </span>
           <span className="flex-1 h-px bg-border-subtle" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {ongoing.map((model, i) => (
             <ModelCard key={model.title} model={model} index={i + 3} />
           ))}

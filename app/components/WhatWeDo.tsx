@@ -33,7 +33,7 @@ export default function WhatWeDo() {
   return (
     <section
       id="about"
-      className="py-24 md:py-32 border-t border-border-subtle relative z-10 bg-background"
+      className="py-16 md:py-24 border-t border-border-subtle relative z-10 bg-background"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}

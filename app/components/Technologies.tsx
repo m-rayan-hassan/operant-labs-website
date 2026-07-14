@@ -153,7 +153,7 @@ export default function Technologies() {
   return (
     <section
       ref={sectionRef}
-      className="py-12 border-t border-border-subtle relative z-10 bg-background overflow-hidden"
+      className="py-12 md:py-16 border-t border-border-subtle relative z-10 bg-background overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8 text-center">
         <p className="text-[10px] text-foreground/40 uppercase tracking-[0.2em] font-medium">
