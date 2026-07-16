@@ -236,7 +236,7 @@ export default function Header() {
             : "bg-background/60 border-border-subtle"
         }`}
       >
-        {/* Brand */}
+{/* Brand */}
         <Link
           href="/"
           className="flex items-center gap-2 md:gap-1 lg:gap-2.5 cursor-pointer group shrink-0"
@@ -244,17 +244,17 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Operant Labs Logo"
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             priority
-            className="shrink-0 w-8 h-8 md:w-7 md:h-7 lg:w-9 lg:h-9"
+            className="shrink-0 w-10 h-10 md:w-7 md:h-7 lg:w-9 lg:h-9"
           />
-          <span className="text-[18px] md:text-[16px] lg:text-[20px] tracking-tight flex items-center -ml-[6px] lg:-ml-[8px] -mt-[1px]">
+          <span className="text-[20px] md:text-[16px] lg:text-[20px] tracking-tight flex items-center -ml-[6px] lg:-ml-[8px] -mt-[1px]">
             <span className="font-bold text-foreground">Operant</span>
             <span className="font-light text-on-surface-variant ml-0.5">Labs</span>
           </span>
         </Link>
-
+        
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-1.5 lg:gap-4 xl:gap-6 whitespace-nowrap px-1 min-w-0">
           <Link href="/" className={navLinkUnderline}>Home</Link>
