@@ -24,7 +24,7 @@ export default function AIArchitecturePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               AI Solution <span className="text-electric-cyan">Architecture</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Design secure, scalable, and compliant AI architectures that seamlessly integrate with your existing enterprise systems and data infrastructure.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function AIArchitecturePage() {
               <p className="text-base md:text-lg mb-6">
                 Integrating AI into an enterprise environment introduces profound architectural challenges. From data ingestion and vector storage to model hosting, inference scaling, and security boundary management, a poorly designed architecture limits scalability and introduces critical risks.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our AI Solution Architecture service provides the foundational blueprint for production-ready AI. We design system topologies that balance performance, latency, and cost, ensuring models can access secure enterprise data via Retrieval-Augmented Generation (RAG) or hybrid approaches without compromising compliance or data residency requirements.
               </p>
 
@@ -85,7 +85,7 @@ export default function AIArchitecturePage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Discuss Architecture</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Consult with an enterprise AI architect to review your technical requirements and constraints.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

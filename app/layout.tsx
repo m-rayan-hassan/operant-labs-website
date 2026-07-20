@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Operant Labs | AI Transformation & Engineering Partner",
   description:
-    "Operant Labs is an AI transformation and engineering partner helping enterprises, investors, and growth-stage companies move from AI opportunity assessment to architecture, implementation, and scalable operations.",
+    "Operant Labs is an independent technical advisory and AI engineering partner, helping enterprises and private capital assess, architect, and execute AI transformation at scale.",
   icons: {
     icon: "/icon.png",
   },

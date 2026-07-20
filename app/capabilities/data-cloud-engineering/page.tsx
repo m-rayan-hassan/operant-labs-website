@@ -24,7 +24,7 @@ export default function DataCloudEngineeringPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               Data &amp; Cloud <span className="text-electric-cyan">Engineering</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Modernize your data infrastructure, establish secure cloud pipelines, and ensure your data is accessible, clean, and ready for AI applications.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function DataCloudEngineeringPage() {
               <p className="text-base md:text-lg mb-6">
                 An AI transformation cannot succeed on brittle infrastructure. Fragmented data lakes, inconsistent schemas, and inflexible cloud environments severely throttle the deployment and effectiveness of machine learning models.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our Data &amp; Cloud Engineering capability lays the necessary groundwork for advanced analytics and AI. We architect secure, highly-available cloud topologies, build resilient ETL/ELT data pipelines, and implement vector databases to ensure that your enterprise data is clean, compliant, and continuously available for downstream intelligent systems.
               </p>
 
@@ -85,7 +85,7 @@ export default function DataCloudEngineeringPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Modernize Infrastructure</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Connect with our engineering team to assess your current data architecture and cloud readiness.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

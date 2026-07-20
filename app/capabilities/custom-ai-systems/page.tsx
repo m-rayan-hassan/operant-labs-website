@@ -24,7 +24,7 @@ export default function CustomAISystemsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               Custom AI <span className="text-electric-cyan">Systems</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Build proprietary machine learning models, generative AI applications, and specialized intelligent systems tailored to your unique operational requirements.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function CustomAISystemsPage() {
               <p className="text-base md:text-lg mb-6">
                 Off-the-shelf AI solutions often fail to capture the nuanced domain expertise and specific operational workflows of an enterprise. Real competitive advantage comes from bespoke systems that leverage your proprietary data.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 We engineer custom AI solutions ranging from advanced predictive analytics and computer vision systems to enterprise-grade generative AI co-pilots. Our engineering process focuses on data quality, model fine-tuning, and robust evaluation frameworks, ensuring the systems we deploy are accurate, highly performant, and deeply integrated into your business logic.
               </p>
 
@@ -85,7 +85,7 @@ export default function CustomAISystemsPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Build Proprietary AI</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Discuss your use case with our AI engineers to determine feasibility, data requirements, and technical approach.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

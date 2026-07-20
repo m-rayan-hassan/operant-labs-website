@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="section-number-left">06 / Advantage</div>
+            <div className="section-number-left">Advantage</div>
             <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight mb-8">
               Where Strategy Becomes an{" "}
               <span className="text-electric-cyan font-normal italic">Operating Capability</span>

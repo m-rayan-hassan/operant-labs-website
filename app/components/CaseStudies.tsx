@@ -45,7 +45,7 @@ export default function CaseStudies() {
           className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6"
         >
           <div>
-            <div className="section-number-left">03 / Impact</div>
+            <div className="section-number-left">Impact</div>
             <div className="flex items-center gap-3">
               <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
                 Enterprise Impact
@@ -75,14 +75,28 @@ export default function CaseStudies() {
         </div>
 
         {/* Case Study Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+        >
           {caseStudies.map((study, i) => (
             <motion.div
               key={study.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+              }}
               className="group cursor-pointer flex flex-col h-full"
             >
               {/* Thumbnail */}
@@ -129,7 +143,7 @@ export default function CaseStudies() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Illustrative Scenarios Disclaimer */}
         <div className="mt-12 px-6 py-5 rounded-xl border border-border-subtle bg-surface-dim">

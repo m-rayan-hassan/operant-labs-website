@@ -24,7 +24,7 @@ export default function ManagedAIOperationsPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               Managed AI <span className="text-electric-cyan">Operations</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Provide continuous monitoring, optimization, and support for deployed AI systems to ensure sustained performance and ROI over time.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function ManagedAIOperationsPage() {
               <p className="text-base md:text-lg mb-6">
                 Unlike traditional software, AI systems degrade over time. Data distributions shift, underlying foundational models update, and business logic evolves. Without continuous oversight, a once-accurate model can quickly become a business liability.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our Managed AI Operations (MLOps) service ensures your intelligent systems remain accurate, performant, and secure long after the initial deployment. We provide 24/7 monitoring for model drift, manage pipeline orchestration, handle prompt engineering updates, and provide continuous fine-tuning to maximize the lifespan and ROI of your AI investments.
               </p>
 
@@ -85,7 +85,7 @@ export default function ManagedAIOperationsPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Support Your AI</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Transition your AI projects from deployment to continuous, managed operations.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

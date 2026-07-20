@@ -24,7 +24,7 @@ export default function ForwardDeployedEngineeringPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               Forward-Deployed <span className="text-electric-cyan">Engineering</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Embed specialized, multi-disciplinary engineering teams into your organization to execute complex AI and software implementations at speed.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function ForwardDeployedEngineeringPage() {
               <p className="text-base md:text-lg mb-6">
                 Executing an AI transformation requires specialized talent that is difficult to recruit, retain, and scale. Traditional staff augmentation often fails to deliver cohesive product vision, while rigid outsourced projects struggle to adapt to evolving enterprise needs.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our Forward-Deployed Engineering model solves this by embedding autonomous, high-performing squads directly into your organization. These teams—comprising AI architects, data engineers, full-stack developers, and MLOps specialists—operate as a direct extension of your capability, bringing proprietary frameworks, enterprise governance standards, and a delivery-focused culture to accelerate time-to-value.
               </p>
 
@@ -85,7 +85,7 @@ export default function ForwardDeployedEngineeringPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Mobilize a Team</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Discuss your capability gaps and deploy a specialized engineering squad to accelerate your roadmap.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

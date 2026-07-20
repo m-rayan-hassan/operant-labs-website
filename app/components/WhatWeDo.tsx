@@ -44,13 +44,31 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8 }}
           className="mb-8 text-center"
         >
-          <div className="section-number mx-auto">01 / Philosophy</div>
+          <div className="section-number mx-auto">Philosophy</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight mb-6">
             Engineering AI <span className="text-electric-cyan font-normal italic">Transformation</span>
           </h2>
           <p className="text-on-surface-variant max-w-3xl mx-auto text-base font-light leading-relaxed">
             True AI transformation requires more than off-the-shelf models. It demands deep technical integration, secure architecture, and strategic alignment. Operant Labs acts as the execution engine for enterprise AI, bridging the gap between high-level ambition and robust, scalable production systems.
           </p>
+        </motion.div>
+
+        {/* AI-Native Transformation Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="max-w-3xl mx-auto mb-4 relative"
+        >
+          <div className="glass-card p-8 md:p-10 text-center relative overflow-hidden border-electric-cyan/20">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-electric-cyan/40 to-transparent" />
+            <p className="text-foreground text-base md:text-lg italic font-light leading-relaxed">
+              &ldquo;We don&rsquo;t begin with AI tools. We begin with your
+              business, then redesign it through an AI-Native operating
+              model.&rdquo;
+            </p>
+          </div>
         </motion.div>
 
         {/* Principles Grid */}

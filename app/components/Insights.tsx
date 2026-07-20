@@ -46,7 +46,7 @@ export default function Insights() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="section-number-left">07 / Knowledge</div>
+            <div className="section-number-left">Knowledge</div>
             <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
               Latest Insights
             </h2>

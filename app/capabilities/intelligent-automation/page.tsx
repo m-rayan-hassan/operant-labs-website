@@ -24,7 +24,7 @@ export default function IntelligentAutomationPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               Intelligent <span className="text-electric-cyan">Automation</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Automate complex, multi-step business processes by integrating legacy systems with modern AI capabilities to eliminate manual friction.
             </p>
           </motion.div>
@@ -54,7 +54,7 @@ export default function IntelligentAutomationPage() {
               <p className="text-base md:text-lg mb-6">
                 Legacy robotic process automation (RPA) struggles with unstructured data and exception handling. True operational efficiency requires automation that can read, understand, and make contextual decisions.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our Intelligent Automation solutions combine orchestration engines with generative AI and machine learning to tackle complex, cognitive workflows. We connect disparate legacy systems, automate document processing, and deploy agentic systems that reduce manual overhead, minimize errors, and free your workforce to focus on strategic execution.
               </p>
 
@@ -85,7 +85,7 @@ export default function IntelligentAutomationPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Optimize Workflows</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Identify high-friction processes in your organization and discuss automation strategies with our team.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

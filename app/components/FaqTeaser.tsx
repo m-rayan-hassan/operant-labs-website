@@ -35,7 +35,7 @@ export default function FaqTeaser() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <div className="section-number mx-auto mb-6">08 / FAQ</div>
+          <div className="section-number mx-auto mb-6">FAQ</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
             Common Questions
           </h2>

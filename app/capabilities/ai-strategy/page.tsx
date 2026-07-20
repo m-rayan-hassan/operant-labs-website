@@ -25,7 +25,7 @@ export default function AIStrategyPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               AI Strategy &amp; <span className="text-electric-cyan">Transformation</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Assess enterprise readiness, map value-creation opportunities, and define an implementation roadmap that connects AI capabilities to strategic business outcomes.
             </p>
           </motion.div>
@@ -56,7 +56,7 @@ export default function AIStrategyPage() {
               <p className="text-base md:text-lg mb-6">
                 Many organizations struggle to move AI from proof-of-concept into scaled production. A successful AI transformation requires more than just deploying a model; it requires aligning technology investments with business objectives, assessing data readiness, and defining clear governance frameworks.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our AI Strategy &amp; Transformation service helps enterprises and investment-backed companies bridge the gap between AI ambition and execution. We work alongside executive leadership and technical teams to identify high-impact use cases, evaluate "build vs. buy" scenarios, and sequence implementations to deliver early ROI while building long-term capability.
               </p>
 
@@ -88,7 +88,7 @@ export default function AIStrategyPage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Initiate a Transformation</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Schedule a briefing with our technical strategists to discuss your organization's AI maturity and objectives.
               </p>
               <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">

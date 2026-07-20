@@ -1,17 +1,17 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import FloatingLines from "./FloatingLens";
+import CalendlyButton from "./CalendlyButton";
 
 const ACTION_WORDS = [
   "Strategy",
+  "Due Diligence",
+  "Governance",
   "Architecture",
-  "Engineering",
-  "Deployment",
-  "Scale",
+  "Transformation",
 ];
 
 export default function Hero() {
@@ -25,7 +25,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
+    <section id="hero" className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden">
       {/* FloatingLines background */}
       <div
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -92,7 +92,7 @@ export default function Hero() {
         >
           <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan animate-pulse" />
           <span className="text-[10px] text-foreground uppercase tracking-[0.15em] font-medium">
-            AI Transformation &amp; Engineering
+            AI Transformation &amp; Technical Advisory
           </span>
         </motion.div>
 
@@ -104,8 +104,11 @@ export default function Hero() {
           className="flex flex-col items-center text-[clamp(1.45rem,6vw,4.4rem)] sm:text-4xl md:text-5xl lg:text-[70px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.05] sm:leading-[1.15] tracking-tight text-center"
         >
           {/* Line 1 */}
-          <span className="inline-flex items-center justify-center whitespace-nowrap text-center">
-            From AI{" "}
+          <span className="block">Transforming Portfolio Companies</span>
+
+          {/* Line 2 */}
+          <span className="inline-flex items-center justify-center whitespace-nowrap text-center mt-1 md:mt-2">
+            into AI-Native{" "}
             <span className="relative inline-flex justify-center text-center shrink-0 ml-[0.3em]">
   <AnimatePresence mode="wait">
     <motion.span
@@ -121,9 +124,6 @@ export default function Hero() {
   </AnimatePresence>
 </span>
           </span>
-
-          {/* Line 2 */}
-          <span className="block mt-1 md:mt-2">to Enterprise Execution</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -133,10 +133,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="text-on-surface-variant max-w-2xl mx-auto mb-4 text-base md:text-lg font-light leading-relaxed"
         >
-          We help enterprises and investment-backed companies assess AI
-          opportunities, design scalable architectures, deploy specialized
-          engineering teams, and turn transformation strategies into production
-          systems.
+          Independent AI Strategy, Technical Due Diligence, Governance, and
+          Enterprise Transformation — for investors, boards, and enterprise
+          leaders who need technical advisory they can trust.
         </motion.p>
 
         {/* Supporting line */}
@@ -156,22 +155,22 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
         >
-          <Link
-            href="/contact-us"
+          <CalendlyButton
+            url="https://calendly.com/operantlabs/executive-strategy-session"
             className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer"
           >
-            Discuss an AI Transformation
-          </Link>
-          <Link
-            href="/capabilities"
+            Book Executive Strategy Session
+          </CalendlyButton>
+          <CalendlyButton
+            url="https://calendly.com/operantlabs/technical-discovery"
             className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group"
           >
-            Explore Our Capabilities
+            Request Technical Discovery
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </Link>
+          </CalendlyButton>
         </motion.div>
       </div>
     </section>

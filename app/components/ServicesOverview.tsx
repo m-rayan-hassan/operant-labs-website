@@ -8,6 +8,7 @@ import {
   Cpu,
   Zap,
   Cloud,
+  FileSearch,
   ArrowUpRight,
   ArrowRight,
 } from "lucide-react";
@@ -21,6 +22,14 @@ const capabilities = [
       "Assess enterprise readiness, map value-creation opportunities, and define an implementation roadmap.",
     href: "/capabilities/ai-strategy",
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+  },
+  {
+    icon: FileSearch,
+    title: "AI Due Diligence",
+    description:
+      "Deep technical assessments of AI architectures, data maturity, and algorithmic IP for private equity firms, venture capital, and pre-acquisition reviews.",
+    href: "/capabilities/ai-due-diligence",
+    img: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop",
   },
   {
     icon: LayoutGrid,
@@ -54,14 +63,6 @@ const capabilities = [
     href: "/capabilities/intelligent-automation",
     img: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop",
   },
-  {
-    icon: Cloud,
-    title: "Data & Cloud Engineering",
-    description:
-      "Modernize your data infrastructure and establish secure cloud pipelines ready for AI applications.",
-    href: "/capabilities/data-cloud-engineering",
-    img: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
-  },
 ];
 
 export default function ServicesOverview() {
@@ -79,23 +80,37 @@ export default function ServicesOverview() {
           transition={{ duration: 0.8 }}
           className="mb-16 text-center"
         >
-          <div className="section-number mx-auto mb-6">02 / Expertise</div>
+          <div className="section-number mx-auto mb-6">Expertise</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
             Core Capabilities
           </h2>
         </motion.div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+        >
           {capabilities.map((capability, i) => {
             const Icon = capability.icon;
             return (
               <motion.div
                 key={capability.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 * i }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                }}
                 className="h-full"
               >
                 <Link
@@ -106,6 +121,7 @@ export default function ServicesOverview() {
                     <img
                       src={capability.img}
                       alt={capability.title}
+                      loading="lazy"
                       className="object-cover w-full h-full opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-in-out"
                     />
                     
@@ -146,7 +162,7 @@ export default function ServicesOverview() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* View All Button */}
         <motion.div

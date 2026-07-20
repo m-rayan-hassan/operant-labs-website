@@ -14,6 +14,8 @@ const companyLinks = [
 const capabilitiesLinks = [
   { label: "AI Strategy & Transformation", href: "/capabilities/ai-strategy" },
   { label: "Technical AI Due Diligence", href: "/capabilities/ai-due-diligence" },
+  { label: "Technical Discovery", href: "/capabilities/technical-discovery" },
+  { label: "Independent Technical Opinion", href: "/independent-technical-opinion" },
   { label: "AI Solution Architecture", href: "/capabilities/ai-architecture" },
   { label: "Forward-Deployed Engineering", href: "/capabilities/forward-deployed-engineering" },
   { label: "Custom AI Systems", href: "/capabilities/custom-ai-systems" },
@@ -51,7 +53,7 @@ export default function Footer() {
           {/* Column 1: Brand & Contact Info with Socials */}
           <div className="xl:col-span-1 space-y-10">
             <div>
-              <Link href="/" className="inline-flex items-center gap-2.5 group">
+              <Link href="/" className="inline-flex items-center gap-2.5 group mb-4">
                 <Image
                   src="/logo.png"
                   alt="Operant Labs Logo"
@@ -65,6 +67,10 @@ export default function Footer() {
                   </span>
                 </span>
               </Link>
+              <p className="text-[13px] text-on-surface-variant font-light leading-relaxed max-w-xs">
+                Operant Labs partners with investors, boards, and enterprise leaders to design, validate, and govern AI transformation through independent technical advisory and AI-native operating models
+
+              </p>
             </div>
 
             {/* Contact Info & Socials */}

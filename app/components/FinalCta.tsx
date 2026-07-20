@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import CalendlyButton from "./CalendlyButton";
 
 export default function FinalCta() {
   return (
@@ -56,19 +56,19 @@ export default function FinalCta() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link 
-                href="/contact-us"
+              <CalendlyButton
+                url="https://calendly.com/operantlabs/executive-strategy-session"
                 className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase cursor-pointer hover:shadow-[0_0_20px_rgba(0,240,255,0.3)] transition-all duration-300 flex items-center justify-center"
               >
-                Schedule a Briefing
-              </Link>
-              <Link 
-                href="/contact-us"
+                Book Executive Strategy Session
+              </CalendlyButton>
+              <CalendlyButton
+                url="https://calendly.com/operantlabs/technical-discovery"
                 className="btn-outline bg-background/50 backdrop-blur-md text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer hover:border-electric-cyan transition-colors duration-300 group"
               >
-                Contact Us
+                Request Technical Discovery
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </CalendlyButton>
             </motion.div>
           </div>
         </div>

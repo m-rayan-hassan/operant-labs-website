@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
+import CalendlyButton from "../components/CalendlyButton";
 import {
   Info,
   ShieldCheck,
@@ -24,13 +26,15 @@ type CaseStudy = {
   isIllustrative: boolean;
 };
 
-const categories = ["All", "Private Equity", "Healthcare", "Financial Services", "Manufacturing"];
+const categories = ["All", "Private Equity", "Healthcare", "Financial Services", "Manufacturing", "Defense & Aerospace", "Government"];
 
 const categoryIcons: Record<string, React.ElementType> = {
   "Private Equity": BarChart3,
   "Healthcare": Stethoscope,
   "Financial Services": LineChart,
   "Manufacturing": Factory,
+  "Defense & Aerospace": ShieldCheck,
+  "Government": Globe,
 };
 
 const allCaseStudies: CaseStudy[] = [
@@ -38,19 +42,19 @@ const allCaseStudies: CaseStudy[] = [
     category: "Private Equity",
     icon: categoryIcons["Private Equity"],
     title: "Pre-Acquisition Technical Due Diligence",
-    challenge: "Validating proprietary AI claims for a high-stakes £50M acquisition.",
+    challenge: "Validating proprietary AI claims for a high-stakes acquisition target.",
     solution: "Deep code-level audit and architecture stress testing of core IP.",
-    result: "Prevented £12M overvaluation by identifying significant technical debt.",
+    result: "Identified significant technical debt, informing deal structure and valuation.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    isIllustrative: true,
   },
   {
     category: "Healthcare",
     icon: categoryIcons["Healthcare"],
     title: "Clinical Document Copilot",
-    challenge: "Manual processing of unstructured patient records across 40+ clinics.",
+    challenge: "Manual processing of unstructured patient records across multiple clinics.",
     solution: "HIPAA-compliant RAG architecture for automated medical history synthesis.",
-    result: "85% reduction in manual processing time with 99% extraction accuracy.",
+    result: "Significant reduction in manual processing time with high extraction accuracy.",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
     isIllustrative: true,
   },
@@ -60,38 +64,38 @@ const allCaseStudies: CaseStudy[] = [
     title: "Real-Time Risk Analytics Engine",
     challenge: "Legacy systems failing to process extreme market volatility data.",
     solution: "Event-driven architecture with automated ML risk-scoring layers.",
-    result: "Reduced margin call response time from 4 hours to 12 minutes.",
+    result: "Reduced margin call response time from hours to minutes.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    isIllustrative: true,
   },
   {
     category: "Manufacturing",
     icon: categoryIcons["Manufacturing"],
     title: "Predictive Maintenance for Global Fleet",
-    challenge: "Unplanned downtime costing an estimated $200k per hour.",
+    challenge: "Unplanned downtime causing severe operational disruption.",
     solution: "IoT edge analytics and custom forecasting models for hardware failure.",
-    result: "30% increase in equipment effectiveness and 15% lower repair costs.",
+    result: "Meaningful improvement in equipment effectiveness and lower repair costs.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    isIllustrative: true,
   },
   {
-    category: "Private Equity",
-    icon: categoryIcons["Private Equity"],
-    title: "Portfolio AI Value-Creation Audit",
-    challenge: "VC firm needed to assess AI readiness across 15 portfolio companies.",
-    solution: "Strategic maturity assessment and prioritized implementation roadmaps.",
-    result: "Identified £22M in potential EBITDA improvement through automation.",
-    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    category: "Defense & Aerospace",
+    icon: categoryIcons["Defense & Aerospace"],
+    title: "Supply Chain Resilience Modeling",
+    challenge: "Vulnerabilities in complex, multi-tier defense supply chains.",
+    solution: "Graph-based ML model to simulate disruption scenarios and optimize routing.",
+    result: "Enhanced visibility and proactive risk mitigation across critical nodes.",
+    image: "https://images.unsplash.com/photo-1579227114347-15d08fc37cae?auto=format&fit=crop&w=1200&q=80",
+    isIllustrative: true,
   },
   {
-    category: "Healthcare",
-    icon: categoryIcons["Healthcare"],
-    title: "Autonomous Patient Intake System",
-    challenge: "Front-desk bottlenecks leading to patient churn and data errors.",
-    solution: "Voice-AI intake layer integrated directly with Epic/Cerner EHRs.",
-    result: "40% increase in patient throughput and zero data entry errors.",
-    image: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80",
+    category: "Government",
+    icon: categoryIcons["Government"],
+    title: "Citizen Services Automation",
+    challenge: "High backlog and slow processing times for public service requests.",
+    solution: "Secure, governed NLP classification system for automated request routing.",
+    result: "Accelerated response times and improved citizen satisfaction scores.",
+    image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
     isIllustrative: true,
   },
   {
@@ -100,19 +104,19 @@ const allCaseStudies: CaseStudy[] = [
     title: "Investment Intelligence Platform",
     challenge: "Analysts overwhelmed by manual synthesis of earnings and news.",
     solution: "Agentic AI system for multi-source data synthesis and signal detection.",
-    result: "Increased research capacity by 300% without adding headcount.",
+    result: "Increased research capacity without adding headcount.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    isIllustrative: true,
   },
   {
-    category: "Manufacturing",
-    icon: categoryIcons["Manufacturing"],
-    title: "Post-Merger Tech Consolidation",
-    challenge: "Incompatible tech stacks between two recently merged entities.",
-    solution: "AI-assisted code migration and unified cloud-native architecture.",
-    result: "Achieved full integration in 4 months vs. the projected 12 months.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    category: "Private Equity",
+    icon: categoryIcons["Private Equity"],
+    title: "Portfolio AI Value-Creation Audit",
+    challenge: "Assessing AI readiness across multiple portfolio companies.",
+    solution: "Strategic maturity assessment and prioritized implementation roadmaps.",
+    result: "Identified significant potential EBITDA improvement through automation.",
+    image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1200&q=80",
+    isIllustrative: true,
   },
   {
     category: "Healthcare",
@@ -120,9 +124,9 @@ const allCaseStudies: CaseStudy[] = [
     title: "AI Governance & Security Layer",
     challenge: "Strict regulatory requirements preventing the use of LLMs.",
     solution: "Custom data-masking proxy and secure on-premise model deployment.",
-    result: "Enabled safe LLM usage while maintaining 100% HIPAA compliance.",
+    result: "Enabled safe LLM usage while maintaining strict compliance.",
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
-    isIllustrative: false,
+    isIllustrative: true,
   },
 ];
 
@@ -311,12 +315,18 @@ export default function CaseStudiesPage() {
               required to turn AI potential into production reality.
             </p>
             <div className="flex flex-wrap justify-center gap-5">
-              <button className="btn-solid text-[11px] px-7 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap">
+              <CalendlyButton
+                url="https://calendly.com/operantlabs/executive-strategy-session"
+                className="btn-solid text-[11px] px-7 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap cursor-pointer"
+              >
                 Start a Conversation
-              </button>
-              <button className="btn-outline text-[11px] px-7 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap">
+              </CalendlyButton>
+              <Link 
+                href="/capabilities" 
+                className="btn-outline text-[11px] px-7 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap inline-flex items-center justify-center"
+              >
                 Our Capabilities
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -18,7 +18,7 @@ const capabilities = [
     img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
   },
   {
-    title: "Technical AI Due Diligence",
+    title: "AI Due Diligence",
     description: "Deep technical assessments of AI architectures, data maturity, and algorithmic IP for private equity firms, venture capital, and pre-acquisition reviews.",
     href: "/capabilities/ai-due-diligence",
     icon: FileSearch,
@@ -98,7 +98,7 @@ export default function CapabilitiesIndexPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
             Engineering AI <span className="text-electric-cyan">At Scale</span>
           </h1>
-          <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-10">
+          <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed mb-10">
             From strategic readiness assessments and deep technical due diligence, to forward-deployed engineering and continuous optimization—we provide the complete capability stack required for enterprise AI transformation.
           </p>
         </motion.div>
@@ -136,7 +136,7 @@ export default function CapabilitiesIndexPage() {
                   </div>
                   
                   <h3 className="text-xl font-medium mb-3 group-hover:text-electric-cyan transition-colors leading-snug">{capability.title}</h3>
-                  <p className="text-sm text-on-surface-variant font-light leading-relaxed mb-8 flex-grow">
+                  <p className="text-sm md:text-base text-on-surface-variant font-light leading-relaxed mb-8 flex-grow">
                     {capability.description}
                   </p>
                   

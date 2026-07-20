@@ -105,9 +105,9 @@ export default function EngagementModels() {
           transition={{ duration: 0.8 }}
           className="text-center mb-14"
         >
-          <div className="section-number mx-auto mb-6">04 / Partnership</div>
+          <div className="section-number mx-auto mb-6">Partnership</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight mb-6">
-            Engagement Models
+            Delivery Models
           </h2>
           <p className="text-on-surface-variant max-w-2xl mx-auto text-base font-light leading-relaxed">
             Six ways to work with us — from a single advisory engagement to a

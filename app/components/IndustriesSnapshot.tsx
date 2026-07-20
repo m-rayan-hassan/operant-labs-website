@@ -202,7 +202,7 @@ export default function IndustriesSnapshot() {
           transition={{ duration: 0.8 }}
           className="text-left"
         >
-          <div className="section-number-left mb-6">04 / Sectors</div>
+          <div className="section-number-left mb-6">Sectors</div>
           <h2 className="text-3xl md:text-5xl text-foreground font-semibold tracking-tight">
             Industries We Serve
           </h2>

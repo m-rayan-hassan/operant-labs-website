@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
+import CalendlyButton from "../../components/CalendlyButton";
+import GovernanceStrip from "../../components/GovernanceStrip";
 
 export default function AIGovernancePage() {
   return (
@@ -24,7 +26,7 @@ export default function AIGovernancePage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl italic font-normal mb-6 leading-tight">
               AI <span className="text-electric-cyan">Governance</span>
             </h1>
-            <p className="text-lg text-on-surface-variant font-light leading-relaxed">
+            <p className="text-base md:text-lg text-on-surface-variant font-light leading-relaxed">
               Implement robust frameworks for responsible AI usage, data security, model explainability, and regulatory compliance across the enterprise.
             </p>
           </motion.div>
@@ -54,7 +56,7 @@ export default function AIGovernancePage() {
               <p className="text-base md:text-lg mb-6">
                 As AI models gain direct access to sensitive enterprise data and execute autonomous decisions, risk management can no longer be an afterthought. Hallucinations, data leakage, and algorithmic bias present critical liabilities for regulated organizations.
               </p>
-              <p className="mb-10">
+              <p className="text-base md:text-lg mb-10">
                 Our AI Governance service establishes the technical guardrails and policy frameworks required for safe AI adoption. We implement strict role-based access controls for RAG architectures, deploy observability tools to monitor model drift and toxicity, and construct explainability frameworks that satisfy both internal stakeholders and external regulators.
               </p>
 
@@ -85,16 +87,23 @@ export default function AIGovernancePage() {
               className="glass-card p-8 sticky top-32"
             >
               <h3 className="text-xl font-medium mb-4 text-foreground">Secure Your AI</h3>
-              <p className="text-sm text-on-surface-variant mb-8 font-light">
+              <p className="text-sm md:text-base text-on-surface-variant mb-8 font-light">
                 Protect your enterprise data and manage regulatory risk with a comprehensive AI governance framework.
               </p>
-              <Link href="/contact-us" className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md">
+              <CalendlyButton 
+                url="https://calendly.com/operantlabs/executive-strategy-session"
+                className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md cursor-pointer"
+              >
                 Discuss Governance <ArrowRight size={14} />
-              </Link>
+              </CalendlyButton>
             </motion.div>
           </div>
         </div>
       </section>
+
+      <div className="mt-20">
+        <GovernanceStrip />
+      </div>
     </div>
   );
 }
