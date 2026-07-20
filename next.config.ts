@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true, // <-- This fixes the refresh issue!
 
   images: {
     unoptimized: true,
