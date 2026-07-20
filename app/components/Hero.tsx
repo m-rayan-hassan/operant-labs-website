@@ -7,11 +7,11 @@ import FloatingLines from "./FloatingLens";
 import CalendlyButton from "./CalendlyButton";
 
 const ACTION_WORDS = [
-  "Strategy",
-  "Due Diligence",
-  "Governance",
-  "Architecture",
-  "Transformation",
+  "Transforming",
+  "Scaling",
+  "Architecting",
+  "Governing",
+  "Optimizing",
 ];
 
 export default function Hero() {
@@ -104,25 +104,27 @@ export default function Hero() {
           className="flex flex-col items-center text-[clamp(1.45rem,6vw,4.4rem)] sm:text-4xl md:text-5xl lg:text-[70px] text-foreground w-full max-w-[1200px] mb-6 leading-[1.05] sm:leading-[1.15] tracking-tight text-center"
         >
           {/* Line 1 */}
-          <span className="block">Transforming Portfolio Companies</span>
+          <span className="inline-flex items-center justify-center whitespace-nowrap text-center mt-1 md:mt-2">
+            <span className="relative inline-flex justify-center text-center shrink-0 mr-[0.3em]">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={wordIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)] leading-none"
+                >
+                  {ACTION_WORDS[wordIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            Portfolio Companies
+          </span>
 
           {/* Line 2 */}
-          <span className="inline-flex items-center justify-center whitespace-nowrap text-center mt-1 md:mt-2">
-            into AI-Native{" "}
-            <span className="relative inline-flex justify-center text-center shrink-0 ml-[0.3em]">
-  <AnimatePresence mode="wait">
-    <motion.span
-      key={wordIndex}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="italic pr-[0.1em] text-electric-cyan drop-shadow-[0_0_8px_rgba(0,240,255,0.3)] leading-none"
-    >
-      {ACTION_WORDS[wordIndex]}
-    </motion.span>
-  </AnimatePresence>
-</span>
+          <span className="block mt-1 md:mt-2">
+            into AI-Native Enterprises
           </span>
         </motion.h1>
 
