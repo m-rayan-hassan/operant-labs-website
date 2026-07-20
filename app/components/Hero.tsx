@@ -31,7 +31,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ zIndex: 0 }}
       >
-        <div className="absolute -top-[35%] -left-[20%] w-[140%] h-[140%] opacity-[0.60] dark:opacity-[0.90] transition-opacity duration-700">
+        <div className="absolute -top-[55%] sm:-top-[45%] md:-top-[35%] -left-[20%] w-[140%] h-[140%] opacity-[0.60] dark:opacity-[0.90] transition-opacity duration-700">
           <FloatingLines
             enabledWaves={["top", "middle", "bottom"]}
             lineCount={[4, 6, 3]}
@@ -133,7 +133,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6 }}
-          className="text-on-surface-variant max-w-2xl mx-auto mb-4 text-base md:text-lg font-light leading-relaxed"
+          className="text-white max-w-2xl mx-auto mb-4 text-base md:text-lg font-normal leading-relaxed drop-shadow-md"
         >
           Independent AI Strategy, Technical Due Diligence, Governance, and
           Enterprise Transformation — for investors, boards, and enterprise
@@ -145,7 +145,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.7 }}
-          className="text-on-surface-variant/70 max-w-xl mx-auto mb-10 text-sm italic font-light"
+          className="text-white/90 max-w-xl mx-auto mb-10 text-sm md:text-base italic font-light drop-shadow-md"
         >
           Strategy defines the opportunity. Engineering creates the value.
         </motion.p>

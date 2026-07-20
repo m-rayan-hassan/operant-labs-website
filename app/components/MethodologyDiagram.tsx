@@ -141,7 +141,7 @@ export default function MethodologyDiagram() {
                     </div>
 
                     {/* Stage number */}
-                    <div className="text-[10px] font-mono text-electric-cyan/60 uppercase tracking-[0.2em] mb-2">
+                    <div className="text-sm md:text-base font-mono text-electric-cyan uppercase tracking-[0.2em] mb-2 font-semibold">
                       0{i + 1}
                     </div>
 
@@ -209,7 +209,7 @@ export default function MethodologyDiagram() {
 
                       {/* Label */}
                       <div className="flex-grow min-w-0">
-                        <div className="text-[10px] font-mono text-electric-cyan/60 uppercase tracking-[0.2em] mb-1">
+                        <div className="text-sm md:text-base font-mono text-electric-cyan uppercase tracking-[0.2em] mb-1 font-semibold">
                           0{i + 1}
                         </div>
                         {/* Title - Increased to text-lg and semibold for mobile legibility */}

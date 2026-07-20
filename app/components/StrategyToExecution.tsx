@@ -96,7 +96,7 @@ export default function StrategyToExecution() {
                   </div>
 
                   {/* Stage number badge */}
-                  <div className="text-[9px] font-mono text-electric-cyan/60 uppercase tracking-[0.2em] mb-3">
+                  <div className="text-sm md:text-base font-mono text-electric-cyan uppercase tracking-[0.2em] mb-3 font-semibold">
                     0{i + 1}
                   </div>
 
