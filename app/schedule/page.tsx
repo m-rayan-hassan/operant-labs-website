@@ -4,6 +4,15 @@ import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import WorldMap from "../components/WorldMap";
 
+// Extend Window to include Calendly for TypeScript
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: { url: string; parentElement: HTMLElement; prefill?: any; utm?: any }) => void;
+    };
+  }
+}
+
 export default function SchedulePage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
