@@ -91,7 +91,7 @@ export default function AIGovernancePage() {
                 Protect your enterprise data and manage regulatory risk with a comprehensive AI governance framework.
               </p>
               <CalendlyButton 
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md cursor-pointer"
               >
                 Discuss Governance <ArrowRight size={14} />

@@ -19,8 +19,7 @@ const partners = [
       "Operant Labs played a pivotal role in the JEEL innovation program. Their technical depth in architecting secure, scalable financial ecosystems allowed us to accelerate our digital transformation journey with absolute confidence.",
     name: "Ahmed Al-Enazi",
     title: "Senior Lead, JEEL (Riyadh Bank)",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop",
+    avatar: "",
     logo: Landmark,
     link: "#",
   },
@@ -29,8 +28,7 @@ const partners = [
       "The technical due diligence and engineering strategy provided by Operant Labs for our portfolio has been exceptional. They provide the high-level clarity required for complex asset management and enterprise scaling.",
     name: "Executive Director",
     title: "Braymont Asset Group",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop",
+    avatar: "",
     logo: Building2,
     link: "https://braymontassetgroup.com/",
   },
@@ -39,8 +37,7 @@ const partners = [
       "Working with Operant Labs transformed our technical roadmap. Their ability to bridge the gap between growth-stage capital requirements and robust engineering execution is a massive advantage for our partners.",
     name: "Managing Partner",
     title: "Orion Grow Capital",
-    avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop",
+    avatar: "",
     logo: TrendingUp,
     link: "#",
   },
@@ -195,14 +192,20 @@ const TestimonialCard = memo(function TestimonialCard({
       <div className="flex items-center justify-between mt-auto pt-8 border-t border-border-subtle">
         <div className="flex items-center gap-4">
           <div className="relative w-14 h-14 shrink-0">
-            <Image
-              src={item.avatar}
-              alt={item.name}
-              width={56}
-              height={56}
-              sizes="56px"
-              className="w-full h-full rounded-full object-cover border border-border-strong grayscale group-hover:grayscale-0 transition-all duration-1000"
-            />
+            {item.avatar ? (
+              <Image
+                src={item.avatar}
+                alt={item.name}
+                width={56}
+                height={56}
+                sizes="56px"
+                className="w-full h-full rounded-full object-cover border border-border-strong grayscale group-hover:grayscale-0 transition-all duration-1000"
+              />
+            ) : (
+              <div className="w-full h-full rounded-full bg-surface flex items-center justify-center border border-border-strong text-foreground font-semibold text-[15px] tracking-wider">
+                {item.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+              </div>
+            )}
             <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-background border border-border-subtle rounded-full flex items-center justify-center shadow-sm">
               <LogoIcon size={12} className="text-electric-cyan" />
             </div>

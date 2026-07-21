@@ -329,7 +329,7 @@ export default function TechnicalDiscoveryPage() {
                 assessment before your next strategic decision.
               </p>
               <CalendlyButton
-                url="https://calendly.com/operantlabs/technical-discovery"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md cursor-pointer"
               >
                 Schedule Discovery <ArrowRight size={14} />

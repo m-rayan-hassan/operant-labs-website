@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
-      className="py-16 md:py-24 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
+      className="pt-8 md:pt-12 pb-16 md:pb-24 border-t border-border-subtle bg-surface-dim relative z-10 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

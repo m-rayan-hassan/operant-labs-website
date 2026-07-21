@@ -242,7 +242,7 @@ export default function IndependentTechnicalOpinionPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase shadow-md hover:shadow-lg cursor-pointer"
               >
                 Book a Consultation

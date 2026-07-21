@@ -316,7 +316,7 @@ export default function CaseStudiesPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-5">
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid text-[11px] px-7 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase whitespace-nowrap cursor-pointer"
               >
                 Start a Conversation

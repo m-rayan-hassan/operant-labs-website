@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import FloatingLines from "./FloatingLens";
 import CalendlyButton from "./CalendlyButton";
+import Link from "next/link";
 
 const ACTION_WORDS = [
   "Transforming",
@@ -158,13 +159,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center"
         >
           <CalendlyButton
-            url="https://calendly.com/operantlabs/executive-strategy-session"
+            url="https://calendly.com/executive-strategy-session/30min"
             className="btn-solid text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center cursor-pointer"
           >
             Book Executive Strategy Session
           </CalendlyButton>
-          <CalendlyButton
-            url="https://calendly.com/operantlabs/technical-discovery"
+          <Link
+            href="/contact-us"
             className="btn-outline text-[11px] px-8 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase w-full sm:w-auto text-center flex items-center justify-center gap-2 cursor-pointer group"
           >
             Request Technical Discovery
@@ -172,7 +173,7 @@ export default function Hero() {
               size={16}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </CalendlyButton>
+          </Link>
         </motion.div>
       </div>
     </section>

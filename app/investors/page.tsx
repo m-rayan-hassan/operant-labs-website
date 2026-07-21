@@ -132,13 +132,13 @@ export default function InvestorsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase cursor-pointer text-center"
               >
                 Book Executive Strategy Session
               </CalendlyButton>
               <CalendlyButton
-                url="https://calendly.com/operantlabs/technical-discovery"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-outline text-[11px] px-6 py-3.5 rounded-full font-semibold tracking-[0.1em] uppercase flex items-center justify-center gap-2 cursor-pointer"
               >
                 Request Technical Discovery
@@ -315,7 +315,7 @@ export default function InvestorsPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid text-[11px] px-8 py-4 rounded-full font-semibold tracking-widest uppercase shadow-md hover:shadow-lg cursor-pointer"
               >
                 Book Executive Strategy Session

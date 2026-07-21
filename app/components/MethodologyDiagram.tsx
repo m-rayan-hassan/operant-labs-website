@@ -69,7 +69,7 @@ export default function MethodologyDiagram() {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-16 md:py-24 border-t border-border-subtle bg-surface relative z-10 overflow-hidden">
+    <section className="pt-16 md:pt-24 pb-8 md:pb-12 border-t border-border-subtle bg-surface relative z-10 overflow-hidden">
       {/* Smooth gradient blends */}
       <div
         className="pointer-events-none absolute top-0 inset-x-0 h-16 md:h-24"

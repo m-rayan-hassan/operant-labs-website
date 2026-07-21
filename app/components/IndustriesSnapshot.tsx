@@ -33,7 +33,7 @@ export const industries = [
     icon: Shield,
     name: "Defense",
     desc: "Mission-critical systems, secure communications, and advanced threat intelligence.",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2J5UP_tMGXeNK6--l04L4O5pmTxpmk8DI4lp-TkM7Q&s=10",
+    img: "https://images.unsplash.com/photo-1710750266544-d5b41e6847aa?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     href: "/industries",
   },
   {
@@ -54,7 +54,7 @@ export const industries = [
     icon: Gavel,
     name: "Legal",
     desc: "Automated contract analysis and secure, immutable case management tools.",
-    img: "https://media.licdn.com/dms/image/v2/D4E12AQElsqP5sAif5A/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1685009669416?e=2147483647&v=beta&t=gHg2IIGxZBk09-3VuwGiLMftezCR8ZlZcUWUVnS06LA",
+    img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop",
     href: "/industries",
   },
   {

@@ -349,7 +349,7 @@ export default function AIDueDiligencePage() {
                 prospective target or enterprise AI initiative.
               </p>
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid w-full py-3.5 rounded-xl flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest uppercase shadow-md cursor-pointer"
               >
                 Discuss Due Diligence <ArrowRight size={14} />

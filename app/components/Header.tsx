@@ -441,7 +441,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-1.5 lg:gap-3 xl:gap-4 shrink-0">
           <ThemeToggle />
           <CalendlyButton
-            url="https://calendly.com/operantlabs/executive-strategy-session"
+            url="https://calendly.com/executive-strategy-session/30min"
             className="btn-solid text-[10px] lg:text-[12px] xl:text-[13px] px-3.5 lg:px-5 xl:px-6 py-2 lg:py-2.5 rounded-full font-bold tracking-[0.05em] lg:tracking-[0.1em] uppercase whitespace-nowrap flex items-center justify-center leading-none cursor-pointer"
           >
             Book a Session
@@ -516,7 +516,7 @@ export default function Header() {
               </div>
 
               <CalendlyButton
-                url="https://calendly.com/operantlabs/executive-strategy-session"
+                url="https://calendly.com/executive-strategy-session/30min"
                 className="btn-solid text-sm px-6 py-4 rounded-full font-bold tracking-[0.1em] uppercase mt-4 w-full text-center block leading-none cursor-pointer"
               >
                 Book a Strategy Session

@@ -4,13 +4,10 @@ import WhoWeServe from "./components/WhoWeServe";
 import WhatWeDo from "./components/WhatWeDo";
 import ServicesOverview from "./components/ServicesOverview";
 import CaseStudies from "./components/CaseStudies";
-import EngagementModels from "./components/EngagementModels";
 import EngagementModelsShowcase from "./components/EngagementModelsShowcase";
 import IndustriesSnapshot from "./components/IndustriesSnapshot";
 import MethodologyDiagram from "./components/MethodologyDiagram";
-import OurProcess from "./components/OurProcess";
 import WhyChooseUs from "./components/WhyChooseUs";
-import StrategyToExecution from "./components/StrategyToExecution";
 import GovernanceStrip from "./components/GovernanceStrip";
 import Technologies from "./components/Technologies";
 import Insights from "./components/Insights";
@@ -31,14 +28,11 @@ export default function Home() {
         <WhatWeDo />
         <ServicesOverview />
         <CaseStudies />
-        <EngagementModels />
         <EngagementModelsShowcase />
         <IndustriesSnapshot />
         <MethodologyDiagram />
         <WhyChooseUs />
-        <StrategyToExecution />
         <GovernanceStrip />
-        <OurProcess />
         <Testimonials />  
         <Technologies />
         <Insights />
